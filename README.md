@@ -1,7 +1,7 @@
-1. Copy the Link present in side of https.
-2. Go to the command prompt do git fetch (or clone) link.
 
 ### Git Commands
+
+* Date : 9 December 2017 *
 
 * git status
 * git checkout  -- filename ( Removes local changes )
@@ -13,3 +13,7 @@
 * git push origin Branchname ( push to the speciific branch )
 * git commit -m "Message" ( commits the tree with the pariticular msg )
 * git log ( prints the activities on repository )
+* git clone Repository-link
+* For editing Readme refer to the github site rules
+
+### React
