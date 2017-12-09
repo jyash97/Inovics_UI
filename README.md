@@ -1,7 +1,7 @@
 
 ### Git Commands
 
-* Date : 9 December 2017 *
+# _Date : 9 December 2017 
 
 * git status
 * git checkout  -- filename ( Removes local changes )
