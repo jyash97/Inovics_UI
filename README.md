@@ -30,6 +30,8 @@ ___
 * ES6 : It is the sixth edition of the ECMA-262 standard, and features major changes and improvements to the ECMAScript specification.
 * Babel : Babel is a transpiler for JavaScript best known for its ability to turn ES6 into code ( ES5 ) that runs in your browser today.
 
+___
+
 #### ES6 Coding
 
 ##### **Variables:**
@@ -43,7 +45,7 @@ ___
 	* To prevent access of variables _IIFE_ can be used.
 	* Eg: ``` log( a ); var a = 10; ```  Can access 'a' but not the value of 'a' 
 	
-	
+___	
 	
 * **_Best Pratices_**
 
@@ -51,7 +53,7 @@ ___
 	* Only use Let if rebinding is needed.
 	* Use var for top level variables that are shared across large scopes.
 	
-	
+___	
 		
 * **Understanding Arrow Functions :**
 
