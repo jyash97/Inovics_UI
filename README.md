@@ -16,7 +16,7 @@
 * git clone Repository-link
 * For editing Readme refer to the github site rules
 
-### ES6
+## ES6
 
 ### _Date :_
 
@@ -41,11 +41,10 @@
 	* To prevent access of variables _IIFE_ can be used.
 	* Eg: log( a ); var a = 10; ( Can access 'a' but not the value of 'a' )
 	
-	**_Best Pratices_**
-		* Use const by default
-		* Only use Let if rebinding is needed.
-		* Use var for top level variables that are shared across large scopes.
+* **_Best Pratices_**
+	* Use const by default
+	* Only use Let if rebinding is needed.
+	* Use var for top level variables that are shared across large scopes.
 		
 * **Understanding Arrow Functions :**
 
-	*
