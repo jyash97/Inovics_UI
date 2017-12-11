@@ -16,4 +16,36 @@
 * git clone Repository-link
 * For editing Readme refer to the github site rules
 
-### React
+### ES6
+
+### _Date :_
+
+#### About ES6
+
+* Ecma International creates standard for Technologies. ( QWERTY )
+* ECM - 262 standardization for scripting language.
+* JS : A general purpose scripting language that conforms to the ECMAScript specification.
+* ES6 : It is the sixth edition of the ECMA-262 standard, and features major changes and improvements to the ECMAScript specification.
+* Babel : Babel is a transpiler for JavaScript best known for its ability to turn ES6 into code ( ES5 ) that runs in your browser today.
+
+#### ES6 Coding
+
+##### Variables:
+
+* **Understanding _Const_ , _Let_ and _var_ :**
+
+	... * Const and Let are block scoped. ( [ if(cond){ var a = 10 } access(a) ] _Will Work but let & const will not_ )
+	... * var is functional scope. ( [ function name(){ var a = 10 } access(a) ] _Will give an error_ )
+	... * Let and const are decalared only once.
+	... * _Const_ cannot be reassigned the values whereas _Let_ can be reassigned.
+	... * To prevent access of variables _IIFE_ can be used.
+	... * Eg: log( a ); var a = 10; ( Can access 'a' but not the value of 'a' )
+	
+	... **_Best Pratices_**
+		Use const by default
+		Only use Let if rebinding is needed.
+		Use var for top level variables that are shared across large scopes.
+		
+* **Understanding Arrow Functions :**
+
+	... *
