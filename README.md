@@ -14,7 +14,7 @@
 * git commit -m "Message" ( commits the tree with the pariticular msg )
 * git log ( prints the activities on repository )
 * git clone Repository-link
-* For editing Readme refer to the github site rules
+* For editing Readme refer to this [link](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 ___
 
