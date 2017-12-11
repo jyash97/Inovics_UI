@@ -30,7 +30,7 @@
 
 #### ES6 Coding
 
-##### Variables:
+##### **Variables:**
 
 * **Understanding _Const_ , _Let_ and _var_ :**
 
@@ -42,10 +42,13 @@
 	* Eg: ``` log( a ); var a = 10; ```  Can access 'a' but not the value of 'a' 
 	
 	
+	
 * **_Best Pratices_**
+
 	* Use const by default
 	* Only use Let if rebinding is needed.
 	* Use var for top level variables that are shared across large scopes.
+	
 	
 		
 * **Understanding Arrow Functions :**
