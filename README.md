@@ -34,7 +34,7 @@ ___
 
 #### ES6 Coding
 
-##### **Variables:**
+##### **Variables :**
 
 * **Understanding _Const_ , _Let_ and _var_ :**
 
@@ -47,7 +47,7 @@ ___
 	
 ___	
 	
-* **_Best Pratices_**
+* **Best Pratices**
 
 	* Use const by default
 	* Only use Let if rebinding is needed.
@@ -55,5 +55,5 @@ ___
 	
 ___	
 		
-* **Understanding Arrow Functions :**
+##### **Arrow Functions :**
 
