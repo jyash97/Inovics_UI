@@ -1,4 +1,4 @@
-# Don't Share or Reveal the content of this Repository to Anyone. _**Copyrights : Inovics**_ 
+# Don't Share or Reveal the content of this Repository to Anyone. _**Copyrights : Yash**_ 
 
 ## Git Commands
 
