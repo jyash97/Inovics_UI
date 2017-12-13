@@ -18,8 +18,9 @@
 * For editing Readme refer to this [link](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 #### Error: Unable to Detect Email Address do following :
-	* git config --global user.email "Registered Bitbucket Mail"
-	* git config --global user.name "Bitbucket User Name"
+
+	 git config --global user.email "Registered Bitbucket Mail"
+	 git config --global user.name "Bitbucket User Name"
 
 ___
 
