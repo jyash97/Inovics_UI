@@ -71,10 +71,13 @@ ___
 ```javascript
 // No Argument
 const name = names.map ( () => 'Cool' );
+
 // Single Argument
 const name = names.map ( name => `Cool ${name}` );
+
 // Multiple Arguments
 const name = names.map ( ( name,i ) => `${name} is at ${i+1} position`);
+
 // Assigning in Variable for the sake of Stack Trace
 const funName = ( name ) => { alert(`Hello ${name}`) } ;
 funName('World');
@@ -94,6 +97,7 @@ const b = a.map( name => `${name} Cool`);
 	
 ```javascript
 const ages = [20,30,36,12,45,65,34,87];
+
 //Filter the person who are greater than 18
 const adults = ages.filter( age => age >= 18 );
 ```
