@@ -66,8 +66,9 @@ ___
 * Arrow function is an anonymous function that is it won't give a stack trace.
 * **=>** is known as _Fat Arrow_
 * Arrow Functions in Different arguments :
-	```
-	#!javascript
+
+
+	```javascript
 	// No Argument
 	const name = names.map ( () => 'Cool' );
 	
@@ -84,16 +85,18 @@ ___
 ___
 
 * **Map** is used to iterate over every value of array ( or iterable ) and can be used to manipulate this values and return in different variable.
-	```
-		#!javascript
+	
+	
+	```javascript
 		const a = ['Mark', 'John'];
 		
 		const b = a.map( name => `${name} Cool`);
 	```
 
 * **Filter** is used to filter or keep the data which matches the condition and removes the other data from the array ( or Iterable ).
-	```
-		#!javascript
+	
+	
+	```javascript
 		const ages = [20,30,36,12,45,65,34,87];
 		
 		//Filter the person who are greater than 18
