@@ -9,6 +9,9 @@
 <body>
   <p>Has</p>
   <p>adsd</p>
+  <div>
+
+  </div>
   <script>
     // let a=10;
     // let b=20;
@@ -45,16 +48,36 @@
     // f(10,20);
     // f(10,undefined,30);
 
-    const names = ['Wes','we','col'];
+    // const names = ['Wes','we','col'];
+    //
+    // const markup = `
+    //   <ul>
+    //     ${names.map(name => `<li>${name}</li>`).join('')}
+    //   </ul>
+    // `;
+    //
+    // const a = `The Condition is ${(10 === 10) ? (`True`) : (`False`)}`;
+    //const a=12;
+    // const a =`
+    // aB
+    // canvas
+    // canvasS`
 
-    const markup = `
-      <ul>
-        ${names.map(name => `<li>${name}</li>`).join('')}
-      </ul>
-    `;
+    function hgh(strings,...values){
+      let str='';
+      strings.forEach((string,i) =>{
+        str += `${string}  <span style="color:red">${ (values[i] || '')}</span>`;
+      })
 
-    const a = `The Condition is ${(10 === 10) ? (`True`) : (`False`)}`;
+      return str;
+    }
 
+    const a=10,b=12,c=13;
+
+
+    const sentence = hgh`My number is ${a} and number is ${b} and no. is ${c}`;
+    const div =document.querySelector('div');
+    div.innerHTML = sentence;
   </script>
 </body>
 </html>
