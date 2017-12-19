@@ -14,8 +14,6 @@
     // let b=20;
     // [a,b]=[b,a];
     // console.log(a,b);
-
-<<<<<<< HEAD
     // function f(a,b,c=20){
     //   console.log(a,b,c);
     // }
@@ -33,20 +31,27 @@
     // const a="23.02";
     // const b = parseFloat(a);
 
-    const name='Yash';
+    // const name='Yash';
+    //
+    // const sentence = 'My name is'+ name;
+    //
+    // const sentencenew = `My name is ${name}`
 
-    const sentence = 'My name is'+ name;
+    // function f(a,b=10,c){
+    //   console.log(a,b,c);
+    // }
+    // f(10);
+    // f(10,30);
+    // f(10,20);
+    // f(10,undefined,30);
 
-    const sentencenew = `My name is ${name}`
-=======
-    function f(a,b=10,c){
-      console.log(a,b,c);
-    }
-    f(10);
-    f(10,30);
-    f(10,20);
-    f(10,undefined,30);
->>>>>>> 042cee59a6677404b72b5cb55bcb6a2f7768795a
+    const names = ['Wes','we','col'];
+
+    const markup = `
+      <ul>
+        ${names.map(name => `<li>${name}</li>`).join('')}
+      </ul>
+    `;
   </script>
 </body>
 </html>
