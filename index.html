@@ -86,12 +86,13 @@
     const [captain, assistant, ...players] = team.split(',')
     console.log(captain , assistant, players);
 
-    function name({a=10,b=20,c=30}){
+    function name({a=10,b=20,c=30}={}){
       return a+b+c;
     }
 
     const val= name({c:3,a:2,b:3});
-    console.log(val);
+    const val1 = name();
+    console.log(val,val1);
   </script>
 </body>
 </html>
