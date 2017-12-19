@@ -17,6 +17,11 @@
 * git clone Repository-link
 * For editing Readme refer to this [link](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
+#### Error: Unable to Detect Email Address do following :
+
+	 git config --global user.email "Registered Bitbucket Mail"
+	 git config --global user.name "Bitbucket User Name"
+
 ___
 
 ## ES6
@@ -58,3 +63,50 @@ ___
 		
 ##### **Arrow Functions :**
 
+* Arrow function is an anonymous function that is it won't give a stack trace.
+* **=>** is known as _Fat Arrow_
+* Arrow Functions in Different arguments :
+
+
+```javascript
+// No Argument
+const name = names.map ( () => 'Cool' );
+
+// Single Argument
+const name = names.map ( name => `Cool ${name}` );
+
+// Multiple Arguments
+const name = names.map ( ( name,i ) => `${name} is at ${i+1} position`);
+
+// Assigning in Variable for the sake of Stack Trace
+const funName = ( name ) => { alert(`Hello ${name}`) } ;
+funName('World');
+```
+___
+
+* **Map** is used to iterate over every value of array ( or iterable ) and can be used to manipulate this values and return in different variable.
+	
+	
+```javascript
+const a = ['Mark', 'John'];
+const b = a.map( name => `${name} Cool`);
+```
+
+* **Filter** is used to filter or keep the data which matches the condition and removes the other data from the array ( or Iterable ).
+	
+	
+```javascript
+const ages = [20,30,36,12,45,65,34,87];
+
+//Filter the person who are greater than 18
+const adults = ages.filter( age => age >= 18 );
+```
+
+___
+
+###### Continuous Integration Examples
+
+* Travis 
+* Circle CI
+* SonarQube
+* Jenkins
