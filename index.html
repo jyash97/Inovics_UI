@@ -8,12 +8,18 @@
 </head>
 <body>
   <script>
-    const a=10;
-    const b=20;
-    [a,b]=[b,a];
-    console.log(a,b);
+    // let a=10;
+    // let b=20;
+    // [a,b]=[b,a];
+    // console.log(a,b);
 
-    console.log(win);
+    function f(a,b,c=20){
+      console.log(a,b,c);
+    }
+    f(10);
+    f(10,30);
+    f(10,20);
+    f(10,undefined,30);
   </script>
 </body>
 </html>
