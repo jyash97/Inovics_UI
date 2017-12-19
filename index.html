@@ -9,11 +9,8 @@
 <body>
   <p>Has</p>
   <p>adsd</p>
-  <div>
-
-  </div>
   <script>
-  
+
     // let a=10;
     // let b=20;
     // [a,b]=[b,a];
@@ -84,8 +81,17 @@
     // const div =document.querySelector('div');
     // div.innerHTML = sentence;
 
+    const team = 'YAsh,Style,Cool,as,asd';
 
+    const [captain, assistant, ...players] = team.split(',')
+    console.log(captain , assistant, players);
 
+    function name({a=10,b=20,c=30}){
+      return a+b+c;
+    }
+
+    const val= name({c:3,a:2,b:3});
+    console.log(val);
   </script>
 </body>
 </html>
