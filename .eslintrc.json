@@ -1,0 +1,13 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2016
+  },
+  "env": {
+    "es6": true,
+    "browser":true
+  },
+  "rules":{
+    "semi":2,
+    "quotes":["error", "single"]
+  }
+}
