@@ -1,0 +1,42 @@
+.sidebar{
+  width: 19vw;
+  overflow: hidden;
+  background-color: #20a4f3;
+  height: 91vh;
+  z-index: -1;
+  transition: all .15s ease-in-out;
+}
+
+.sidebar>span{
+  cursor: pointer;
+}
+
+.links li span{
+  font-size: 17px;
+  color: #fffbfc;
+}
+
+.links li img{
+  width: 1.5vw;
+}
+
+.links li{
+  cursor: pointer;
+  box-sizing: border-box;
+  transform: rotateZ(0deg) rotateX(0deg) rotateY(-5deg);
+  transition: all ease-in .12s;
+  transition-delay: .02s;
+  border-bottom: 1px dashed rgba(255,255,255,.4);
+}
+
+.links li:hover span{
+  color:#1d3557;
+  text-decoration: none;
+  transform: scale(1.04);
+}
+
+.links li:hover{
+   transform: scale(1.04) rotateZ(-1.5deg) rotateX(2deg) rotateY(10deg);
+   box-shadow: 1px 1px 5px 5px rgba(255,255,255,.1),2px 2px 14px 10px rgba(255,255,255,.1);
+   background: linear-gradient(to right, rgba(168,218,220,0.85), rgba(238,249,237,.8));
+}
