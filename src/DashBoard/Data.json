@@ -1,0 +1,51 @@
+
+[
+  {
+    "name":"news",
+    "data":"Latest News"
+  },
+  {
+    "name":"books",
+    "data":"Read Books"
+  },
+  {
+    "name":"quotes",
+    "data":"Quotes"
+  },
+  {
+    "name":"entertainment",
+    "data":"Entertainment"
+  },
+  {
+    "name":"movies",
+    "data":"Movies"
+  },
+  {
+    "name":"music",
+    "data":"Music"
+  },
+  {
+    "name":"hotels",
+    "data":"Book Hotels"
+  },
+  {
+    "name":"transport",
+    "data":"Book Transport"
+  },
+  {
+    "name":"food",
+    "data":"Food"
+  },
+  {
+    "name":"cricket",
+    "data":"Cricket Scores"
+  },
+  {
+    "name":"chat",
+    "data":"Chat"
+  },
+  {
+    "name":"weather",
+    "data":"Weather"
+  }
+]
