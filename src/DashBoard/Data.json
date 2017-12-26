@@ -1,51 +1,50 @@
-
 [
   {
-    "name":"news",
-    "data":"Latest News"
+    "name": "news",
+    "data": "Latest News"
   },
   {
-    "name":"books",
-    "data":"Read Books"
+    "name": "books",
+    "data": "Read Books"
   },
   {
-    "name":"quotes",
-    "data":"Quotes"
+    "name": "quotes",
+    "data": "Quotes"
   },
   {
-    "name":"entertainment",
-    "data":"Entertainment"
+    "name": "entertainment",
+    "data": "Entertainment"
   },
   {
-    "name":"movies",
-    "data":"Movies"
+    "name": "movies",
+    "data": "Movies"
   },
   {
-    "name":"music",
-    "data":"Music"
+    "name": "music",
+    "data": "Music"
   },
   {
-    "name":"hotels",
-    "data":"Book Hotels"
+    "name": "hotels",
+    "data": "Book Hotels"
   },
   {
-    "name":"transport",
-    "data":"Book Transport"
+    "name": "transport",
+    "data": "Book Transport"
   },
   {
-    "name":"food",
-    "data":"Food"
+    "name": "food",
+    "data": "Food"
   },
   {
-    "name":"cricket",
-    "data":"Cricket Scores"
+    "name": "cricket",
+    "data": "Cricket Scores"
   },
   {
-    "name":"chat",
-    "data":"Chat"
+    "name": "chat",
+    "data": "Chat"
   },
   {
-    "name":"weather",
-    "data":"Weather"
+    "name": "weather",
+    "data": "Weather"
   }
 ]
