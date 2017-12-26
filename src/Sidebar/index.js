@@ -30,6 +30,7 @@ class Sidebar extends React.Component{
         'height':'5vh'
       };
     }
+    // Profile will be uploaded via Backend just for UI purpose.
     const stylesProfile = {
       'width': '9vw',
       'height': '9vw',
@@ -39,7 +40,7 @@ class Sidebar extends React.Component{
     };
     return(
       <div className="sidebar float-left" style={stylesSidebar}>
-        <span className="float-right p-2" onClick={this.handleWidth}>❤️</span>
+        <span className="float-right p-2" role="img" aria-label="Snowman" onClick={this.handleWidth}>❤️</span>
         <div className="mx-auto my-4 rounded-circle" style={stylesProfile}>
         </div>
         <Links />

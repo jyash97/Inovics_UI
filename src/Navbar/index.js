@@ -8,6 +8,7 @@ import Profile from './Images/profile.jpg';
 
 class Navbar extends React.Component{
   render(){
+    // Should be uploaded from Backend just for UI purpose.
     const styleProfile = {
       'backgroundImage':`url(${Profile})`
     };
