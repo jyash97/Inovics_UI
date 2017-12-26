@@ -13,10 +13,8 @@
     "styled-components": "^2.4.0"
   },
    "lint-staged": {
-     "src/**/*.{js,jsx,json,css}": [
-       "eslint",
-       "prettier --single-quote --write",
-       "git add"
+     "src/**/*.{js,jsx}": [
+       "eslint"
      ]
    },
   "scripts": {
