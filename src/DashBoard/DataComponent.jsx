@@ -6,7 +6,6 @@ import Data from './Data.json';
 class DataComponent extends React.Component {
   render() {
     const a = Data;
-    console.log('Cool');
     return (
       <React.Fragment>
         {a.map(
