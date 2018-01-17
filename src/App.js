@@ -1,17 +1,15 @@
-import React  from 'react';
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './Home';
-import Alert from './Alert';
-import Help from './Help';
+import Routing from './Routing';
 
-const App = () =>(
+const App = () => (
   <Router>
     <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route exact path='/help' component={Help}/>
-      <Route exact path='/alert' component={Alert}/>
-      <Route component={Home}/>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/:component" component={Routing} />
+      <Route component={Home} />
     </Switch>
   </Router>
 );
