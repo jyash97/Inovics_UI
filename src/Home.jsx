@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from './Navbar';
 import DashBoard from './DashBoard';
+import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 
 export default class Home extends React.Component {
@@ -9,7 +9,7 @@ export default class Home extends React.Component {
       <React.Fragment>
         <Navbar />
         <Sidebar />
-        <DashBoard/>
+        <DashBoard />
       </React.Fragment>
     );
   }

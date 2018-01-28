@@ -3,6 +3,8 @@ import React from 'react';
 import Help from '../Help';
 import Alert from '../Alert';
 import Home from '../Home';
+import Navbar from '../Navbar';
+import Movie from '../Movie';
 
 class Routing extends React.Component {
   constructor() {
@@ -16,13 +18,20 @@ class Routing extends React.Component {
         return <Help />;
       case 'alert':
         return <Alert />;
+      case 'movies':
+        return <Movie />;
       default:
         return <Home />;
     }
   }
 
   render() {
-    return <React.Fragment>{this.handleRoute()}</React.Fragment>;
+    return (
+      <React.Fragment>
+        {' '}
+        <Navbar /> {this.handleRoute()}
+      </React.Fragment>
+    );
   }
 }
 
