@@ -7,8 +7,33 @@ class Movie extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      data: [],
+      text: ''
     };
+    this.handleQuery = this.handleQuery.bind(this);
+  }
+
+  async handleQuery(value) {
+    if (value !== '') {
+      const data = await fetch(
+        `http://api.themoviedb.org/3/search/movie?api_key=cc4b67c52acb514bdf4931f7cedfd12b&query=${value}`
+      )
+        .then(response => response.json())
+        .then(data => data.results);
+      const filteredData = data
+        .filter(data => data.backdrop_path !== null)
+        .filter(data => data.vote_average > 5)
+        .sort((a, b) => {
+          if (a.vote_average > b.vote_average) return -1;
+          else if (a.vote_average < b.vote_average) return 1;
+          else {
+            return 0;
+          }
+        });
+      this.setState({
+        data: filteredData
+      });
+    }
   }
 
   async componentWillMount() {
@@ -26,7 +51,7 @@ class Movie extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Input />
+        <Input category="Movies" handleQuery={this.handleQuery} />
         <RenderingData category="movie" data={this.state.data} />
       </React.Fragment>
     );
