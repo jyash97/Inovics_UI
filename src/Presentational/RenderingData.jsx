@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Cards from './Cards';
+import CardsButtons from './CardsButtons';
 import './styles/styleData.css';
 
 class RenderingData extends React.Component {
@@ -22,7 +23,11 @@ class RenderingData extends React.Component {
     return (
       <div className="container">
         <div className="row py-5">
-          <Cards category={this.props.category} data={dataComponent} />
+          {this.props.type === 'cards' ? (
+            <Cards category={this.props.category} data={dataComponent} />
+          ) : (
+            <CardsButtons />
+          )}
         </div>
       </div>
     );

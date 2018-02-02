@@ -7,8 +7,7 @@ class Movie extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: [],
-      text: ''
+      data: []
     };
     this.handleQuery = this.handleQuery.bind(this);
   }
@@ -52,7 +51,7 @@ class Movie extends React.Component {
     return (
       <React.Fragment>
         <Input category="Movies" handleQuery={this.handleQuery} />
-        <RenderingData category="movies" data={this.state.data} />
+        <RenderingData type="cards" category="movies" data={this.state.data} />
       </React.Fragment>
     );
   }

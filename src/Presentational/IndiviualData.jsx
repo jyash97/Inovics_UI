@@ -19,7 +19,13 @@ class IndiviualData extends React.Component {
   }
 
   handleExtraData(value) {
-    this.handleSimilarMovie(value.id);
+    switch (this.props.match.params.component) {
+      case 'movies':
+        this.handleSimilarMovie(value.id);
+        break;
+      default:
+        break;
+    }
   }
 
   async handleSimilarMovie(id) {
