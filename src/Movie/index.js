@@ -52,7 +52,7 @@ class Movie extends React.Component {
     return (
       <React.Fragment>
         <Input category="Movies" handleQuery={this.handleQuery} />
-        <RenderingData category="movie" data={this.state.data} />
+        <RenderingData category="movies" data={this.state.data} />
       </React.Fragment>
     );
   }

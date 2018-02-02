@@ -1,0 +1,10 @@
+.btn-card{
+  font-size: 13px;
+  font-weight: 300;
+  transition: all ease-in-out .2s;
+}
+
+.btn-card:hover{
+  transform: scale(1.02);
+  box-shadow: 1px 1px 5px 2px rgba(0,123,255,.2);
+}
