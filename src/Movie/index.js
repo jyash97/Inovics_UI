@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Input from '../Presentational/Input';
-import RenderingData from '../Presentational/RenderingData';
+import Cards from '../Presentational/Cards';
 
 class Movie extends React.Component {
   constructor() {
@@ -48,10 +48,22 @@ class Movie extends React.Component {
   }
 
   render() {
+    let dataComponent = [];
+    this.state.data.map(data =>
+      dataComponent.push({
+        title: data.original_title,
+        image: `https://image.tmdb.org/t/p/w1280${data.backdrop_path}`,
+        description: data.overview,
+        date: data.release_date,
+        poster: `https://image.tmdb.org/t/p/w500${data.poster_path}`,
+        id: data.id
+      })
+    );
+
     return (
       <React.Fragment>
         <Input category="Movies" handleQuery={this.handleQuery} />
-        <RenderingData type="cards" category="movies" data={this.state.data} />
+        <Cards number={4} category="movies" data={dataComponent} />
       </React.Fragment>
     );
   }
