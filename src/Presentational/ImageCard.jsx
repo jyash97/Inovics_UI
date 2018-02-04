@@ -4,10 +4,10 @@ import converter from './dateConverter';
 
 const ImageCard = props => (
   <div className="container">
-    <h4 className="text-dark font-weight-normal text-uppercase">
+    <h4 className="text-dark font-weight-normal text-uppercase my-3">
       {props.heading}
     </h4>
-    <div className="row p-2">
+    <div className="row p-1">
       <div className="card-columns">
         {props.data.map((data, index) => (
           <React.Fragment key={index}>
@@ -26,9 +26,6 @@ const ImageCard = props => (
                 </a>
               </div>
             </div>
-            {(index + 1) % props.number === 0 ? (
-              <div className="w-100" />
-            ) : null}
           </React.Fragment>
         ))}
       </div>

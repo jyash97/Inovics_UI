@@ -11,6 +11,7 @@ class Movie extends React.Component {
       data: []
     };
     this.handleQuery = this.handleQuery.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   async handleQuery(value) {
@@ -33,6 +34,10 @@ class Movie extends React.Component {
         data: filteredData
       });
     }
+  }
+
+  handleClick(text){
+    this.handleQuery(text);
   }
 
   async componentDidMount() {
@@ -62,7 +67,7 @@ class Movie extends React.Component {
 
     return (
       <React.Fragment>
-        <Input category="Movies" handleQuery={this.handleQuery} />
+        <Input category="Movies" handleClick={this.handleClick} handleQuery={this.handleQuery} />
         <Cards number={4} category="movies" data={dataComponent} />
         <div className="mx-5">
           <BackButton url="/" name="home" />

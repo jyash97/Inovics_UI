@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './styles/styleCards.css';
 
 const Cards = props => (
-  <div className="container">
+  <div  className='px-5'>
     <div className="row py-5">
       {props.data.map((data, index) => (
         <React.Fragment key={`${data.id}`}>

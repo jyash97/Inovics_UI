@@ -11,6 +11,7 @@ class NewsByChannel extends React.Component {
       data: [],
       filter: []
     };
+    this.handleClick=this.handleClick.bind(this);
     this.handleQuery = this.handleQuery.bind(this);
   }
 
@@ -32,6 +33,10 @@ class NewsByChannel extends React.Component {
     }
   }
 
+  handleClick(text){
+    this.handleQuery(text);
+  }
+
   async componentWillMount() {
     const sources = await fetch('https://newsapi.org/v1/sources?language=en')
       .then(r => r.json())
@@ -46,7 +51,7 @@ class NewsByChannel extends React.Component {
     return (
       <React.Fragment>
         <Navbar />
-        <Input handleQuery={this.handleQuery} category="channel" />
+        <Input handleQuery={this.handleQuery} handleClick={this.handleClick} category="channel" />
         <div className="p-2 px-4 mx-4">
           <h4 className="text-uppercase text-dark font-weight-normal">
             All Channels
@@ -54,7 +59,7 @@ class NewsByChannel extends React.Component {
           {this.state.filter
             ? this.state.filter.map(data => (
                 <BackButton
-                  url={`/news/channel/${data.name}`}
+                  url={`/news/channel/${data.id}`}
                   key={data.id}
                   name={data.name}
                 />
