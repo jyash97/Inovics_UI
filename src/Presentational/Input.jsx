@@ -25,6 +25,7 @@ class Input extends React.Component {
     return (
       <div className="input-container my-4">
         <input
+          className="text-capitalize"
           placeholder={`Search ${this.props.category}`}
           value={this.state.text}
           onChange={this.handleChange}

@@ -2,9 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './Home';
-import News from './News';
 import Routing from './Routing';
 import MovieIndiviual from './Movie/MovieIndiviual';
+import NewsByChannel from './News/NewsByChannel';
+import NewsChannel from './News/NewsChannel';
+import NewsByTopic from './News/NewsByTopic';
 
 const App = () => (
   <Router>
@@ -12,8 +14,9 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/:component" component={Routing} />
       <Route exact path="/movies/:id" component={MovieIndiviual} />
-      <Route exact path="/news/search by channel" component={News} />
-      <Route exact path="/news/search by topic" component={News} />
+      <Route exact path="/news/channel/:id" component={NewsChannel} />
+      <Route exact path="/news/search by channel" component={NewsByChannel} />
+      <Route exact path="/news/search by topic" component={NewsByTopic} />
       <Route component={Home} />
     </Switch>
   </Router>

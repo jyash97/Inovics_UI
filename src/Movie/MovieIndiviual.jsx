@@ -9,11 +9,18 @@ class MovieIndiviual extends React.Component {
     super();
     this.state = {
       data: [],
+      mount: false,
       extradata: []
     };
     this.handleLoad = this.handleLoad.bind(this);
     this.renderButtons = this.renderButtons.bind(this);
     this.handleSimilarMovie = this.handleSimilarMovie.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.setState({
+      mount: false
+    });
   }
 
   async handleSimilarMovie(id) {
@@ -45,6 +52,7 @@ class MovieIndiviual extends React.Component {
           id: data.id
         })
       );
+
       this.setState({
         extradata: finalData
       });
@@ -65,9 +73,13 @@ class MovieIndiviual extends React.Component {
       date: dataloaded[0].release_date,
       poster: `https://image.tmdb.org/t/p/w500${dataloaded[0].poster_path}`
     };
-    this.setState({
-      data: dataMovie
-    });
+
+    this.setState(
+      {
+        data: dataMovie
+      },
+      () => this.handleSimilarMovie(this.state.data.id)
+    );
   }
 
   componentDidMount() {
@@ -78,8 +90,7 @@ class MovieIndiviual extends React.Component {
     this.handleLoad(nextProps.match.params.id);
   }
 
-  renderButtons(id) {
-    this.handleSimilarMovie(id);
+  renderButtons() {
     return this.state.extradata.map(data => (
       <LinkButton
         url={`/movies/${data.title}`}

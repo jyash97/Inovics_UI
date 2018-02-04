@@ -29,7 +29,7 @@ const IndiviualData = props => (
         <h1 className="font-weight-light text-primary">{props.data.title}</h1>
         <h5 className="font-weight-light text-muted">{props.data.date}</h5>
         <p>{props.data.description}</p>
-        {props.extraRender(props.data.id)}
+        {props.extraRender()}
         <div className="my-2">{props.renderBack()}</div>
       </div>
     </div>
