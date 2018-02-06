@@ -36,7 +36,7 @@ class Movie extends React.Component {
     }
   }
 
-  handleClick(text){
+  handleClick(text) {
     this.handleQuery(text);
   }
 
@@ -67,10 +67,14 @@ class Movie extends React.Component {
 
     return (
       <React.Fragment>
-        <Input category="Movies" handleClick={this.handleClick} handleQuery={this.handleQuery} />
+        <Input
+          category="Movies"
+          handleClick={this.handleClick}
+          handleQuery={this.handleQuery}
+        />
         <Cards number={4} category="movies" data={dataComponent} />
         <div className="mx-5">
-          <BackButton url="/" name="home" />
+          <BackButton url="/" name="Back to home" />
         </div>
       </React.Fragment>
     );

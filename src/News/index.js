@@ -11,7 +11,7 @@ class News extends React.Component {
     };
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     const data = await fetch(
       'https://newsapi.org/v2/top-headlines?country=in&apiKey=7f6cfa48cc3e42f48752515e6dcac33c'
     )

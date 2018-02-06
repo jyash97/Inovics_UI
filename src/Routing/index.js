@@ -5,6 +5,7 @@ import Alert from '../Alert';
 import Home from '../Home';
 import Navbar from '../Navbar';
 import Movie from '../Movie';
+import Books from '../Books';
 import News from '../News';
 
 class Routing extends React.Component {
@@ -23,6 +24,8 @@ class Routing extends React.Component {
         return <Movie />;
       case 'news':
         return <News />;
+      case 'books':
+        return <Books />;
       default:
         return <Home />;
     }

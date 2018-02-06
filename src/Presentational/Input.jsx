@@ -8,24 +8,24 @@ class Input extends React.Component {
     super();
     this.state = {
       text: '',
-      oldText:''
+      oldText: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
   }
 
-  handleClick(){
+  handleClick() {
     this.setState({
-      oldText:''
+      oldText: ''
     });
-    this.props.handleClick(this.state.text);
+    () => this.props.handleClick(this.state.text);
   }
 
-  handleEnter(event){
-    if(event.key==='Enter'){
+  handleEnter(event) {
+    if (event.key === 'Enter') {
       this.setState({
-        oldText:''
+        oldText: ''
       });
       this.handleClick();
     }
@@ -35,7 +35,7 @@ class Input extends React.Component {
     this.setState(
       {
         text: event.target.value,
-        oldText:event.target.value
+        oldText: event.target.value
       },
       () => this.props.handleQuery(this.state.text)
     );
