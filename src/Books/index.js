@@ -9,25 +9,33 @@ class Books extends React.Component {
     this.state = {
       data: []
     };
-
+    this.handleClick = this.handleClick.bind(this);
     this.handleQuery = this.handleQuery.bind(this);
   }
 
-  async handleQuery(value) {
+  handleQuery(value) {
+    this.setState({
+      value
+    });
+  }
+
+  async handleClick(value) {
     if (value !== '') {
       const data = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${value}&filter=partial&orderBy=relevance&key=AIzaSyBmhAw1Q0kNKuXqbEVHZE5UTypBSwD5u0A`
+        `https://www.googleapis.com/books/v1/volumes?q=${value}&langRestrict=en&orderBy=relevance&key=AIzaSyBEYPWQgGtkUBQb2ZW5oYAFDT84S1yXHhw`
       )
         .then(response => response.json())
         .then(data => data.items);
+
       this.setState({
         data
       });
     }
   }
+
   async componentDidMount() {
     const data = await fetch(
-      'https://www.googleapis.com/books/v1/volumes?q=Book&orderBy=newest&key=AIzaSyBmhAw1Q0kNKuXqbEVHZE5UTypBSwD5u0A'
+      'https://www.googleapis.com/books/v1/volumes?q=books&orderBy=relevance&langRestrict=en&maxResults=15&key=AIzaSyBEYPWQgGtkUBQb2ZW5oYAFDT84S1yXHhw'
     )
       .then(response => response.json())
       .then(data => data.items);
@@ -38,15 +46,15 @@ class Books extends React.Component {
 
   render() {
     let dataComponent = [];
-    this.state.data.map(data => {
+    this.state.data.map(data =>
       dataComponent.push({
         title: data.volumeInfo.title,
         image: data.volumeInfo.imageLinks.smallThumbnail
           ? data.volumeInfo.imageLinks.smallThumbnail
           : null,
         id: data.id
-      });
-    });
+      })
+    );
 
     return (
       <React.Fragment>

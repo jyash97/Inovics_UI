@@ -16,10 +16,12 @@ class Input extends React.Component {
   }
 
   handleClick() {
-    this.setState({
-      oldText: ''
-    });
-    () => this.props.handleClick(this.state.text);
+    this.setState(
+      {
+        oldText: ''
+      },
+      () => this.props.handleClick(this.state.text)
+    );
   }
 
   handleEnter(event) {
