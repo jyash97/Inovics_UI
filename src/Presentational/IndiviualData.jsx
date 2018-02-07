@@ -27,6 +27,9 @@ const IndiviualData = props => (
         style={{ width: props.contentWidth }}
       >
         <h1 className="font-weight-light text-primary">{props.data.title}</h1>
+        <h5 className="font-weight-normal text-muted">
+          {props.data.author ? `By ${props.data.author}` : null}
+        </h5>
         <h5 className="font-weight-light text-muted">{props.data.date}</h5>
         <p>{props.data.description}</p>
         {props.extraRender()}
