@@ -2,6 +2,7 @@ import React from 'react';
 
 import Input from '../Presentational/Input';
 import Cards from '../Presentational/Cards';
+import Navbar from '../Navbar';
 
 class SearchByAuthor extends React.Component {
   constructor() {
@@ -40,6 +41,7 @@ class SearchByAuthor extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Navbar />
         <Input
           category="author"
           handleClick={this.handleClick}

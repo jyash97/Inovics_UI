@@ -2,6 +2,7 @@ import React from 'react';
 
 import Input from '../Presentational/Input';
 import Cards from '../Presentational/Cards';
+import Navbar from '../Navbar';
 
 class SearchByTitle extends React.Component {
   constructor() {
@@ -40,6 +41,7 @@ class SearchByTitle extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Navbar />
         <Input
           category="title"
           handleClick={this.handleClick}
