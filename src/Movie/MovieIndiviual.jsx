@@ -91,13 +91,18 @@ class MovieIndiviual extends React.Component {
   }
 
   renderButtons() {
-    return this.state.extradata.map(data => (
-      <LinkButton
-        url={`/movies/${data.title}`}
-        key={data.id}
-        title={data.title}
-      />
-    ));
+    return (
+      <React.Fragment>
+        <h6 className="text-dark">Recommendations</h6>
+        {this.state.extradata.map(data => (
+          <LinkButton
+            url={`/movies/${data.title}`}
+            key={data.id}
+            title={data.title}
+          />
+        ))}
+      </React.Fragment>
+    );
   }
 
   render() {
@@ -106,7 +111,7 @@ class MovieIndiviual extends React.Component {
         <IndiviualData
           data={this.state.data}
           extraRender={this.renderButtons}
-          renderBack={() => <BackButton url="/movies" name="movies" />}
+          renderBack={() => <BackButton url="/movies" name="back to movies" />}
         />
       </React.Fragment>
     );

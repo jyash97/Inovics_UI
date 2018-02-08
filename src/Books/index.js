@@ -15,15 +15,15 @@ class Books extends React.Component {
       .then(response => response.json())
       .then(data => data.items);
     let dataComponent = [];
-    data.filter((data, index) => index < 4).map(data => {
+    data.filter((data, index) => index < 4).map(data =>
       dataComponent.push({
         title: data.volumeInfo.title,
         image: data.volumeInfo.imageLinks
           ? data.volumeInfo.imageLinks.smallThumbnail
           : null,
         id: data.id
-      });
-    });
+      })
+    );
     this.setState({
       data: dataComponent
     });

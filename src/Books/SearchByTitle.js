@@ -22,15 +22,15 @@ class SearchByTitle extends React.Component {
         .then(response => response.json())
         .then(data => data.items);
       let dataComponent = [];
-      data.map(data => {
+      data.map(data =>
         dataComponent.push({
           title: data.volumeInfo.title,
           image: data.volumeInfo.imageLinks
             ? data.volumeInfo.imageLinks.smallThumbnail
             : null,
           id: data.id
-        });
-      });
+        })
+      );
       this.setState({
         display: true,
         data: dataComponent
