@@ -10,7 +10,7 @@ class Books extends React.Component {
   }
   async componentDidMount() {
     const data = await fetch(
-      'https://www.googleapis.com/books/v1/volumes?q=Book&orderBy=newest&key=AIzaSyBmhAw1Q0kNKuXqbEVHZE5UTypBSwD5u0A'
+      'https://www.googleapis.com/books/v1/volumes?q=books&orderBy=relevance&langRestrict=en&maxResults=15&key=AIzaSyBEYPWQgGtkUBQb2ZW5oYAFDT84S1yXHhw'
     )
       .then(response => response.json())
       .then(data => data.items);

@@ -17,7 +17,7 @@ class SearchByAuthor extends React.Component {
   async handleQuery(value) {
     if (value !== '') {
       const data = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=''+inauthor:${value}&filter=partial&orderBy=relevance&key=AIzaSyBmhAw1Q0kNKuXqbEVHZE5UTypBSwD5u0A`
+        `https://www.googleapis.com/books/v1/volumes?q=''+inauthor:${value}&filter=partial&orderBy=relevance&key=AIzaSyBEYPWQgGtkUBQb2ZW5oYAFDT84S1yXHhw`
       )
         .then(response => response.json())
         .then(data => data.items);
