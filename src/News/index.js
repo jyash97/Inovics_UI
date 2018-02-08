@@ -18,20 +18,17 @@ class News extends React.Component {
       .then(response => response.json())
       .then(response => response.articles);
     let dataComponent = [];
-    data
-      .filter((data, index) => index < 6)
-      .filter(data => data.urlToImage)
-      .map((data, index) =>
-        dataComponent.push({
-          id: index,
-          title: data.title,
-          image: data.urlToImage,
-          link: data.url,
-          linktitle: 'Read Full Story',
-          description: data.description,
-          time: data.publishedAt
-        })
-      );
+    data.filter(data => data.urlToImage).map((data, index) =>
+      dataComponent.push({
+        id: index,
+        title: data.title,
+        image: data.urlToImage,
+        link: data.url,
+        linktitle: 'Read Full Story',
+        description: data.description,
+        time: data.publishedAt
+      })
+    );
     this.setState({
       data: dataComponent
     });
@@ -53,7 +50,9 @@ class News extends React.Component {
     return (
       <React.Fragment>
         <Cards category="news" number={2} data={dataCategory} />
-        <ImageCard heading="Latest" data={this.state.data} number={4} />
+        {this.state.data.length > 3 ? (
+          <ImageCard heading="Latest" data={this.state.data} number={4} />
+        ) : null}
       </React.Fragment>
     );
   }
