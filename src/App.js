@@ -10,6 +10,7 @@ import NewsChannel from './News/NewsChannel';
 import NewsByTopic from './News/NewsByTopic';
 import SearchByTitle from './Books/SearchByTitle';
 import SearchByAuthor from './Books/SearchByAuthor';
+import NotFound from './Presentational/NotFound';
 
 const App = () => (
   <Router>
@@ -24,7 +25,7 @@ const App = () => (
       <Route exact path="/books/author/:id" component={BooksIndividual} />
       <Route exact path="/books/search by title" component={SearchByTitle} />
       <Route exact path="/books/search by author" component={SearchByAuthor} />
-      <Route component={Home} />
+      <Route component={NotFound} />
     </Switch>
   </Router>
 );

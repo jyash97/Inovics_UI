@@ -2,11 +2,11 @@ import React from 'react';
 
 import Help from '../Help';
 import Alert from '../Alert';
-import Home from '../Home';
 import Navbar from '../Navbar';
 import Movie from '../Movie';
 import Books from '../Books';
 import News from '../News';
+import NotFound from '../Presentational/NotFound';
 
 class Routing extends React.Component {
   constructor() {
@@ -27,7 +27,7 @@ class Routing extends React.Component {
       case 'books':
         return <Books />;
       default:
-        return <Home />;
+        return <NotFound />;
     }
   }
 
