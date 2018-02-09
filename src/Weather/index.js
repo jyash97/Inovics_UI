@@ -24,7 +24,7 @@ class Weather extends React.Component {
   }
 
   async handleClick(text) {
-    this.handleQuery(text);
+    window.location.href = `http://localhost:3000/weather/${text}`;
   }
 
   render() {
