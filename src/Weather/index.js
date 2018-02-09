@@ -15,15 +15,18 @@ class Weather extends React.Component {
   }
 
   async handleQuery(value) {
-    var data = city
-      .filter(c => c.city.toUpperCase().includes(value.toUpperCase()))
-      .filter((key, index) => index < 8);
+    let data = [];
+    if (value !== '') {
+      data = city.filter(c =>
+        c.city.toUpperCase().startsWith(value.toUpperCase())
+      );
+    }
     this.setState({
       data
     });
   }
 
-  async handleClick(text) {
+  handleClick(text) {
     this.handleQuery(text);
   }
 
