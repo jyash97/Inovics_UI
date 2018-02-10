@@ -32,7 +32,6 @@ class SearchByTitle extends React.Component {
         })
       );
       this.setState({
-        display: true,
         data: dataComponent
       });
     }
@@ -53,9 +52,7 @@ class SearchByTitle extends React.Component {
           handleClick={this.handleClick}
           handleQuery={this.handleQuery}
         />
-        {this.state.display ? (
-          <Cards number={4} category="books/title" data={this.state.data} />
-        ) : null}
+        <Cards number={4} category="books/title" data={this.state.data} />
       </React.Fragment>
     );
   }

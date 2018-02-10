@@ -32,7 +32,6 @@ class SearchByAuthor extends React.Component {
         })
       );
       this.setState({
-        display: true,
         data: dataComponent
       });
     }
@@ -53,9 +52,8 @@ class SearchByAuthor extends React.Component {
           handleClick={this.handleClick}
           handleQuery={this.handleQuery}
         />
-        {this.state.display ? (
-          <Cards number={4} category="books/author" data={this.state.data} />
-        ) : null}
+
+        <Cards number={4} category="books/author" data={this.state.data} />
       </React.Fragment>
     );
   }

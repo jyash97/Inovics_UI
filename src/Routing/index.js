@@ -6,6 +6,7 @@ import Navbar from '../Navbar';
 import Movie from '../Movie';
 import Books from '../Books';
 import News from '../News';
+import Weather from '../Weather';
 import NotFound from '../Presentational/NotFound';
 
 class Routing extends React.Component {
@@ -26,6 +27,8 @@ class Routing extends React.Component {
         return <News />;
       case 'books':
         return <Books />;
+      case 'weather':
+        return <Weather />;
       default:
         return <NotFound />;
     }
