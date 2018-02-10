@@ -10,8 +10,8 @@ import NewsChannel from './News/NewsChannel';
 import NewsByTopic from './News/NewsByTopic';
 import SearchByTitle from './Books/SearchByTitle';
 import SearchByAuthor from './Books/SearchByAuthor';
-import NotFound from './Presentational/NotFound';
 import WeatherIndividual from './Weather/WeatherIndividual';
+import NotFound from './Presentational/NotFound';
 
 const App = () => (
   <Router>

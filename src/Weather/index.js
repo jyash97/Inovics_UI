@@ -3,7 +3,7 @@ import Input from '../Presentational/Input';
 import Cards from '../Presentational/Cards';
 import BackButton from '../Presentational/BackButton';
 import cities from './cities.json';
-const city = cities;
+
 class Weather extends React.Component {
   constructor() {
     super();
@@ -14,17 +14,20 @@ class Weather extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  async handleQuery(value) {
-    var data = city
-      .filter(c => c.city.toUpperCase().includes(value.toUpperCase()))
-      .filter((key, index) => index < 8);
+  handleQuery(value) {
+    let data = [];
+    if (value !== '') {
+      data = cities
+        .filter(c => c.city.toUpperCase().startsWith(value.toUpperCase()))
+        .filter((key, index) => index < 14);
+    }
     this.setState({
       data
     });
   }
 
   handleClick(text) {
-    window.location.href = `http://localhost:3000/weather/${text}`;
+    window.location.href = `/weather/${text}`;
   }
 
   render() {
