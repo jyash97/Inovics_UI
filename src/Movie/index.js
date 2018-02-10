@@ -74,7 +74,11 @@ class Movie extends React.Component {
         />
         <Cards number={4} category="movies" data={dataComponent} />
         <div className="mx-5">
-          <BackButton url="/" name="Back to home" />
+          <BackButton
+            url="/"
+            classes="btn-outline-notfound"
+            name="Back to home"
+          />
         </div>
       </React.Fragment>
     );

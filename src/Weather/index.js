@@ -23,7 +23,7 @@ class Weather extends React.Component {
     });
   }
 
-  async handleClick(text) {
+  handleClick(text) {
     window.location.href = `http://localhost:3000/weather/${text}`;
   }
 
@@ -55,15 +55,13 @@ class Weather extends React.Component {
           handleQuery={this.handleQuery}
         />
         <div className="ml-5 mb-3">
-          {this.state.data
-            ? this.state.data.map((data, i) => (
-                <BackButton
-                  url={`/weather/${data.city}`}
-                  key={i}
-                  name={data.city}
-                />
-              ))
-            : null}
+          {this.state.data.map((data, i) => (
+            <BackButton
+              url={`/weather/${data.city}`}
+              key={i}
+              name={data.city}
+            />
+          ))}
         </div>
         <Cards number={4} category="weather" data={dataCity} />
       </React.Fragment>
