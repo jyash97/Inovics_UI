@@ -3,7 +3,7 @@ import Input from '../Presentational/Input';
 import Cards from '../Presentational/Cards';
 import BackButton from '../Presentational/BackButton';
 import cities from './cities.json';
-const city = cities;
+
 class Weather extends React.Component {
   constructor() {
     super();
@@ -14,12 +14,12 @@ class Weather extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  async handleQuery(value) {
+  handleQuery(value) {
     let data = [];
     if (value !== '') {
-      data = city.filter(c =>
-        c.city.toUpperCase().startsWith(value.toUpperCase())
-      );
+      data = cities
+        .filter(c => c.city.toUpperCase().startsWith(value.toUpperCase()))
+        .filter((key, index) => index < 14);
     }
     this.setState({
       data
@@ -27,7 +27,7 @@ class Weather extends React.Component {
   }
 
   handleClick(text) {
-    this.handleQuery(text);
+    window.location.href = `/weather/${text}`;
   }
 
   render() {
@@ -57,18 +57,23 @@ class Weather extends React.Component {
           handleClick={this.handleClick}
           handleQuery={this.handleQuery}
         />
-        <div className="ml-5 mb-3">
-          {this.state.data
-            ? this.state.data.map((data, i) => (
-                <BackButton
-                  url={`/weather/${data.city}`}
-                  key={i}
-                  name={data.city}
-                />
-              ))
-            : null}
+        <div className="mx-5">
+          {this.state.data.map((data, i) => (
+            <BackButton
+              url={`/weather/${data.city}`}
+              key={i}
+              name={data.city}
+            />
+          ))}
         </div>
         <Cards number={4} category="weather" data={dataCity} />
+        <div className="mx-5">
+          <BackButton
+            url="/"
+            classes="float-left btn-outline-notfound"
+            name="Back to Home"
+          />
+        </div>
       </React.Fragment>
     );
   }

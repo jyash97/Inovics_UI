@@ -5,10 +5,9 @@ import Data from './Data.json';
 
 class DataComponent extends React.Component {
   render() {
-    const a = Data;
     return (
       <React.Fragment>
-        {a.map(
+        {Data.map(
           i =>
             i.name === 'entertainment' ||
             i.name === 'hotels' ||

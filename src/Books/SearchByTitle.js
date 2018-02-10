@@ -10,11 +10,11 @@ class SearchByTitle extends React.Component {
     this.state = {
       data: []
     };
-
+    this.handleClick = this.handleClick.bind(this);
     this.handleQuery = this.handleQuery.bind(this);
   }
 
-  async handleQuery(value) {
+  async handleClick(value) {
     if (value !== '') {
       const data = await fetch(
         `https://www.googleapis.com/books/v1/volumes?q=${value}&filter=partial&orderBy=relevance&key=AIzaSyBEYPWQgGtkUBQb2ZW5oYAFDT84S1yXHhw`
@@ -32,10 +32,15 @@ class SearchByTitle extends React.Component {
         })
       );
       this.setState({
-        display: true,
         data: dataComponent
       });
     }
+  }
+
+  handleQuery(value) {
+    this.setState({
+      value
+    });
   }
 
   render() {
@@ -47,9 +52,7 @@ class SearchByTitle extends React.Component {
           handleClick={this.handleClick}
           handleQuery={this.handleQuery}
         />
-        {this.state.display ? (
-          <Cards number={4} category="books/title" data={this.state.data} />
-        ) : null}
+        <Cards number={4} category="books/title" data={this.state.data} />
       </React.Fragment>
     );
   }

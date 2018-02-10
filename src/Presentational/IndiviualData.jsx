@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './styles/styleIndiviual.css';
+import converter from './dateConverter';
 
 const IndiviualData = props => (
   <div
@@ -27,11 +28,12 @@ const IndiviualData = props => (
         style={{ width: props.contentWidth }}
       >
         <h1 className="font-weight-light text-primary">{props.data.title}</h1>
-        <h5 className="font-weight-normal text-muted text-capitalize">
-          {props.data.author ? `By ${props.data.author}` : null}
-          {props.data.condition ? `${props.data.condition}` : null}
+        <h5 className="font-weight-normal text-dark text-capitalize">
+          {props.data.text ? props.data.text : null}
         </h5>
-        <h5 className="font-weight-light text-muted">{props.data.date}</h5>
+        <h6 className="font-weight-normal text-muted">
+          {converter(props.data.date)}
+        </h6>
         <p>{props.data.description}</p>
         {props.extraRender()}
         <div className="my-2">{props.renderBack()}</div>
