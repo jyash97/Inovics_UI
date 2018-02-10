@@ -11,6 +11,7 @@ import NewsByTopic from './News/NewsByTopic';
 import SearchByTitle from './Books/SearchByTitle';
 import SearchByAuthor from './Books/SearchByAuthor';
 import NotFound from './Presentational/NotFound';
+import FoodHome from './Food/FoodHome';
 
 const App = () => (
   <Router>
@@ -25,6 +26,7 @@ const App = () => (
       <Route exact path="/books/author/:id" component={BooksIndividual} />
       <Route exact path="/books/search by title" component={SearchByTitle} />
       <Route exact path="/books/search by author" component={SearchByAuthor} />
+      <Route exact path="/food" component={FoodHome} />
       <Route component={NotFound} />
     </Switch>
   </Router>
