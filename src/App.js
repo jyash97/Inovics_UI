@@ -10,11 +10,9 @@ import NewsChannel from './News/NewsChannel';
 import NewsByTopic from './News/NewsByTopic';
 import SearchByTitle from './Books/SearchByTitle';
 import SearchByAuthor from './Books/SearchByAuthor';
-<<<<<<< HEAD
 import WeatherIndividual from './Weather/WeatherIndividual';
-=======
 import NotFound from './Presentational/NotFound';
->>>>>>> 3f5711a54b647e037613735d76c628dbb3ac876a
+
 
 const App = () => (
   <Router>
