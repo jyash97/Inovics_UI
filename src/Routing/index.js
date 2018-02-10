@@ -2,12 +2,15 @@ import React from 'react';
 
 import Help from '../Help';
 import Alert from '../Alert';
-import Home from '../Home';
 import Navbar from '../Navbar';
 import Movie from '../Movie';
 import Books from '../Books';
 import News from '../News';
+<<<<<<< HEAD
 import Weather from '../Weather';
+=======
+import NotFound from '../Presentational/NotFound';
+>>>>>>> 3f5711a54b647e037613735d76c628dbb3ac876a
 
 class Routing extends React.Component {
   constructor() {
@@ -30,7 +33,7 @@ class Routing extends React.Component {
       case 'weather':
         return <Weather />;
       default:
-        return <Home />;
+        return <NotFound />;
     }
   }
 
