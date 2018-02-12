@@ -45,7 +45,7 @@ class Books extends React.Component {
     return (
       <React.Fragment>
         <Cards category="books" number={2} data={dataCategory} />
-        <h2 className="ml-3">Popular Releases</h2>
+        <h2 className="mx-4 my-0 font-weight-normal text-dark">Popular Releases</h2>
         <Cards category="books/title" number={4} data={this.state.data} />
       </React.Fragment>
     );
