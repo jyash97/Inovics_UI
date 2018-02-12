@@ -10,7 +10,10 @@ const cities = [
   'Bhopal',
   'Chandigarh',
   'Chennai',
+  'Coimbatore',
   'Delhi',
+  'Ernakulam',
+  'Guwahati',
   'Hyderabad',
   'Indore',
   'Jaipur',
@@ -23,7 +26,8 @@ const cities = [
   'Patna',
   'Pune',
   'Ranchi',
-  'Surat'
+  'Surat',
+  'Visakhapatnam'
 ];
 const data = [
   'Hungry ?',
@@ -42,7 +46,7 @@ class FoodHome extends Component {
       city: 'Indore'
     };
     this.timer = this.timer.bind(this);
-    this.handleChange = this.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount() {
     this.time = setInterval(() => this.timer(this.state.track), 3000);

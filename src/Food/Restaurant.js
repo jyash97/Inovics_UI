@@ -1,18 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 import NotFound from '../Presentational/NotFound';
 import BackButton from '../Presentational/BackButton';
 import ImageCard from '../Presentational/ImageCard';
-class Restaurant extends Component {
+
+class Restaurant extends React.Component {
   constructor() {
     super();
     this.state = {
       flag: false,
-      city_name: '',
-      city_id: '',
-      res_array: [],
       data: []
     };
+    this.extraLinks = this.extraLinks.bind(this);
+    this.extraData = this.extraData.bind(this);
   }
+
   async componentDidMount() {
     let cityName = this.props.match.params.city;
     const promise = await fetch(
@@ -25,18 +27,18 @@ class Restaurant extends Component {
       }
     ).then(r => r.json());
 
-    let { city_id } = this.state;
     let p = promise['location_suggestions'][0];
-    if (p === undefined) {
+    if (!p) {
       this.setState({ flag: true });
     } else {
-      city_id = p['id'];
-      await this.setState({ city_name: p['name'] });
-
-      await this.setState({ city_id: p['id'] });
+      this.setState({
+        city_id: p['id']
+      });
 
       const promise2 = await fetch(
-        `https://developers.zomato.com/api/v2.1/search?entity_id=${city_id}&entity_type=city`,
+        `https://developers.zomato.com/api/v2.1/search?entity_id=${
+          this.state.city_id
+        }&entity_type=city`,
         {
           headers: {
             Accept: 'application/json',
@@ -45,9 +47,7 @@ class Restaurant extends Component {
         }
       ).then(r => r.json());
       let res_array = promise2['restaurants']
-        .filter(elem => {
-          return elem['restaurant']['thumb'] !== '';
-        })
+        .filter(elem => elem['restaurant']['thumb'] !== '')
         .sort((a, b) => {
           if (
             a['restaurant']['user_rating']['aggregate_rating'] >
@@ -63,27 +63,56 @@ class Restaurant extends Component {
             return 0;
           }
         });
-      await this.setState({ res_array });
 
       let dataComponent = [];
-      this.state.res_array.map((data, index) =>
+      res_array.map((data, index) =>
         dataComponent.push({
           id: index,
           title: data['restaurant']['name'],
           image: data['restaurant']['thumb'],
           link: data['restaurant']['menu_url'],
           linktitle: 'Menu',
-          description: data['restaurant']['cuisines'],
-          time: null
+          images: data['restaurant']['photos_url'],
+          description: data['restaurant']['location']['address'],
+          cuisines: data['restaurant']['cuisines']
         })
       );
-      await this.setState({
+      this.setState({
         data: dataComponent
       });
     }
   }
+
+  extraData(data) {
+    let array = data.cuisines.split(',');
+    return (
+      <div className="my-2">
+        {array.map(data => (
+          <p
+            key={data}
+            className="border rounded border-primary text-primary text-center d-inline-block p-1 m-1"
+          >
+            {data}
+          </p>
+        ))}
+      </div>
+    );
+  }
+
+  extraLinks(data) {
+    return (
+      <a
+        className="btn mx-1 btn-sm btn-primary"
+        href={data.images}
+        target="_blank"
+      >
+        Images
+      </a>
+    );
+  }
+
   render() {
-    let { flag, data, city_name } = this.state;
+    let { flag, data } = this.state;
 
     return (
       <React.Fragment>
@@ -91,12 +120,17 @@ class Restaurant extends Component {
           <NotFound />
         ) : (
           <React.Fragment>
-            <ImageCard heading={city_name} data={data} number={4} />
             <BackButton
               classes="mx-5 my-3 btn-lg"
               url="/food"
               key={1}
               name="Back to Food Search"
+            />
+            <ImageCard
+              extraLinks={this.extraLinks}
+              extraData={this.extraData}
+              heading={this.props.match.params.city}
+              data={data}
             />
           </React.Fragment>
         )}

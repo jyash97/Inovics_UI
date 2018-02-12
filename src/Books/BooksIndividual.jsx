@@ -58,8 +58,8 @@ class BooksIndiviual extends React.Component {
 
       const dataBooks = {
         title: data[0].volumeInfo.title ? data[0].volumeInfo.title : null,
-        author: data[0].volumeInfo.authors
-          ? data[0].volumeInfo.authors[0]
+        text: data[0].volumeInfo.authors
+          ? `By ${data[0].volumeInfo.authors[0]}`
           : null,
         description: data[0].volumeInfo.description
           ? data[0].volumeInfo.description

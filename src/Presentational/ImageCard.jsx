@@ -15,8 +15,11 @@ const ImageCard = props => (
               <img className="card-img-top" src={data.image} alt={data.title} />
               <div className="card-body">
                 <h5 className="card-title my-0">{data.title}</h5>
-                <p className="card-text text-muted">{converter(data.time)}</p>
+                <p className="card-text text-muted">
+                  {data.time ? converter(data.time) : null}
+                </p>
                 <p className="card-text text-justify">{data.description}</p>
+                {props.extraData(data)}
                 <a
                   className="btn btn-sm btn-primary"
                   href={data.link}
@@ -24,6 +27,7 @@ const ImageCard = props => (
                 >
                   {data.linktitle}
                 </a>
+                {props.extraLinks(data)}
               </div>
             </div>
           </React.Fragment>
