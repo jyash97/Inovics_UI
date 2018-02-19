@@ -11,8 +11,9 @@ import NewsByTopic from './News/NewsByTopic';
 import SearchByTitle from './Books/SearchByTitle';
 import SearchByAuthor from './Books/SearchByAuthor';
 import WeatherIndividual from './Weather/WeatherIndividual';
-import NotFound from './Presentational/NotFound';
 import Restaurant from './Food/Restaurant';
+import QuotesIndividual from './Quotes/QuotesIndividual';
+import NotFound from './Presentational/NotFound';
 
 const App = () => (
   <Router>
@@ -29,6 +30,7 @@ const App = () => (
       <Route exact path="/books/search by title" component={SearchByTitle} />
       <Route exact path="/books/search by author" component={SearchByAuthor} />
       <Route exact path="/food/restaurants/:city" component={Restaurant} />
+      <Route exact path="/quotes" component={QuotesIndividual} />
       <Route component={NotFound} />
     </Switch>
   </Router>
