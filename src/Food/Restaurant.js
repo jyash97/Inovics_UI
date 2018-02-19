@@ -47,7 +47,7 @@ class Restaurant extends React.Component {
         }
       ).then(r => r.json());
       let res_array = promise2['restaurants']
-        .filter(elem => elem['restaurant']['thumb'] !== '')
+        .filter(elem => elem['restaurant']['featured_image'] !== '')
         .sort((a, b) => {
           if (
             a['restaurant']['user_rating']['aggregate_rating'] >
@@ -69,7 +69,7 @@ class Restaurant extends React.Component {
         dataComponent.push({
           id: index,
           title: data['restaurant']['name'],
-          image: data['restaurant']['thumb'],
+          image: data['restaurant']['featured_image'],
           link: data['restaurant']['menu_url'],
           linktitle: 'Menu',
           images: data['restaurant']['photos_url'],
