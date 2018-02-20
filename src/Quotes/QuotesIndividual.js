@@ -10,8 +10,11 @@ class QuotesIndividual extends React.Component {
       data: []
     };
     this.handleQuote = this.handleQuote.bind(this);
+    this.extraLinks = this.extraLinks.bind(this);
+    this.extraData = this.extraData.bind(this);
   }
-
+  extraData() {}
+  extraLinks() {}
   async handleQuote() {
     const quote = await fetch(
       'https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en',
@@ -27,7 +30,7 @@ class QuotesIndividual extends React.Component {
     let dataQuote;
     dataQuote = {
       text: quote.quoteText,
-      description: quote.quoteAuthor,
+      description: `By ${quote.quoteAuthor}`,
       title: null,
       image: `${process.env.PUBLIC_URL}/images/weather${randomImage}.jpeg`,
       id: quote.quoteText,
@@ -58,6 +61,8 @@ class QuotesIndividual extends React.Component {
         contentWidth="100%"
         imageWidth="0"
         extraRender={this.renderButtons}
+        extraData={this.extraData}
+        extraLinks={this.extraLinks}
         renderBack={() => <BackButton url="/" name="Back to Home" />}
       />
     );

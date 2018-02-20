@@ -13,6 +13,8 @@ class NewsByTopic extends React.Component {
     };
     this.handleQuery = this.handleQuery.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.extraLinks = this.extraLinks.bind(this);
+    this.extraData = this.extraData.bind(this);
   }
 
   handleQuery(text) {
@@ -21,6 +23,8 @@ class NewsByTopic extends React.Component {
     });
   }
 
+  extraData() {}
+  extraLinks() {}
   async handleClick(text) {
     const data = await fetch(
       `https://newsapi.org/v2/everything?q=${text}&sortBy=latest&apiKey=7f6cfa48cc3e42f48752515e6dcac33c`
@@ -62,6 +66,8 @@ class NewsByTopic extends React.Component {
             heading={`Popular News of ${this.state.text}`}
             data={this.state.data}
             number={4}
+            extraData={this.extraData}
+            extraLinks={this.extraLinks}
           />
         ) : null}
       </React.Fragment>
