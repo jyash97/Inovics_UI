@@ -12,7 +12,7 @@ const ImageCard = props => (
         {props.data.map((data, index) => (
           <React.Fragment key={index}>
             <div className="card">
-              <img className="card-img-top" src={data.image} alt={data.title} />
+              <img className="card-img-top" src={data.image} />
               <div className="card-body">
                 <h5 className="card-title my-0">{data.title}</h5>
                 <p className="card-text text-muted">
@@ -20,13 +20,15 @@ const ImageCard = props => (
                 </p>
                 <p className="card-text text-justify">{data.description}</p>
                 {props.extraData(data)}
-                <a
-                  className="btn btn-sm btn-primary"
-                  href={data.link}
-                  target="_blank"
-                >
-                  {data.linktitle}
-                </a>
+                {data.linktitle ? (
+                  <a
+                    className="btn btn-sm btn-primary"
+                    href={data.link}
+                    target="_blank"
+                  >
+                    {data.linktitle}
+                  </a>
+                ) : null}
                 {props.extraLinks(data)}
               </div>
             </div>

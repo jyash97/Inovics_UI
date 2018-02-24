@@ -2,12 +2,6 @@ import React from 'react';
 import Cards from '../Presentational/Cards';
 
 class Cricket extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      data: []
-    };
-  }
   render() {
     let dataCategory = [
       {
@@ -21,11 +15,7 @@ class Cricket extends React.Component {
         image: `${process.env.PUBLIC_URL}/images/cricket.jpg`
       }
     ];
-    return (
-      <React.Fragment>
-        <Cards category="cricket" number={2} data={dataCategory} />
-      </React.Fragment>
-    );
+    return <Cards category="cricket" number={2} data={dataCategory} />;
   }
 }
 

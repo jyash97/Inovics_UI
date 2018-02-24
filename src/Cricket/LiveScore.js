@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Navbar';
+import BackButton from '../Presentational/BackButton';
 
 class LiveScore extends React.Component {
   constructor() {
@@ -46,8 +46,12 @@ class LiveScore extends React.Component {
           )`
         }}
       >
-        <Navbar />
-        <div className="container justify-content-center w-50 mt-5 pt-5">
+        <BackButton
+          classes="mx-5 my-3 btn-lg"
+          url="/cricket"
+          name="back to cricket"
+        />
+        <div className="container justify-content-center w-50 ">
           {this.state.data.map((match, i) => {
             return (
               <div

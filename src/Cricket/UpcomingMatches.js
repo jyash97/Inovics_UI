@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageCard from '../Presentational/ImageCard';
+import BackButton from '../Presentational/BackButton';
 import Navbar from '../Navbar';
 
 class UpcomingMatches extends React.Component {
@@ -21,13 +22,13 @@ class UpcomingMatches extends React.Component {
     let dataComponent = [];
     data
       .filter(data => !data.matchStarted)
-      .filter((data, index) => index < 8)
-      .map((data, i) =>
+      .filter((data, index) => index < 12)
+      .map(data =>
         dataComponent.push({
           title: `${data['team-1']} vs ${data['team-2']}`,
-          image: `${process.env.PUBLIC_URL}/images/cricketImg${i}.jpg`,
           time: data.date,
-          linktitle: data.type ? data.type : 'Match',
+          image: '',
+          type: data.type ? data.type : 'Match',
           id: data.unique_id
         })
       );
@@ -35,14 +36,26 @@ class UpcomingMatches extends React.Component {
       data: dataComponent
     });
   }
-  extraData() {}
+  extraData(data) {
+    return (
+      <p
+        key={data}
+        className="border rounded border-primary text-primary text-center d-inline-block p-1 w-25"
+      >
+        {data.type}
+      </p>
+    );
+  }
   extraLinks() {}
   render() {
     return (
       <React.Fragment>
         <Navbar />
-        <br />
-        <br />
+        <BackButton
+          classes="mx-5 my-3 btn-lg"
+          url="/cricket"
+          name="back to cricket"
+        />
         <ImageCard
           category="cricket/upcomingmatches"
           data={this.state.data}
