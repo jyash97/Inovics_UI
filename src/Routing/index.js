@@ -9,6 +9,7 @@ import News from '../News';
 import Weather from '../Weather';
 import FoodHome from '../Food/FoodHome';
 import QuotesIndividual from '../Quotes/QuotesIndividual';
+import Cricket from '../Cricket';
 import NotFound from '../Presentational/NotFound';
 
 class Routing extends React.Component {
@@ -35,6 +36,8 @@ class Routing extends React.Component {
         return <FoodHome />;
       case 'quotes':
         return <QuotesIndividual />;
+      case 'cricket':
+        return <Cricket />;
       default:
         return <NotFound />;
     }

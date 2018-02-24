@@ -13,6 +13,8 @@ import SearchByAuthor from './Books/SearchByAuthor';
 import WeatherIndividual from './Weather/WeatherIndividual';
 import Restaurant from './Food/Restaurant';
 import QuotesIndividual from './Quotes/QuotesIndividual';
+import UpcomingMatches from './Cricket/UpcomingMatches';
+import LiveScore from './Cricket/LiveScore';
 import NotFound from './Presentational/NotFound';
 
 const App = () => (
@@ -31,6 +33,12 @@ const App = () => (
       <Route exact path="/books/search by author" component={SearchByAuthor} />
       <Route exact path="/food/restaurants/:city" component={Restaurant} />
       <Route exact path="/quotes" component={QuotesIndividual} />
+      <Route
+        exact
+        path="/cricket/upcoming matches"
+        component={UpcomingMatches}
+      />
+      <Route exact path="/cricket/live scores" component={LiveScore} />
       <Route component={NotFound} />
     </Switch>
   </Router>
