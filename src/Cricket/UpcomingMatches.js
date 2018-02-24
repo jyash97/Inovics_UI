@@ -1,7 +1,6 @@
 import React from 'react';
 import ImageCard from '../Presentational/ImageCard';
 import BackButton from '../Presentational/BackButton';
-import Navbar from '../Navbar';
 
 class UpcomingMatches extends React.Component {
   constructor() {
@@ -50,7 +49,6 @@ class UpcomingMatches extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
         <BackButton
           classes="mx-5 my-3 btn-lg"
           url="/cricket"
