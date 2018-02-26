@@ -7,6 +7,7 @@ import Movie from '../Movie';
 import Books from '../Books';
 import News from '../News';
 import Weather from '../Weather';
+import Resume from '../Resume';
 import NotFound from '../Presentational/NotFound';
 
 class Routing extends React.Component {
@@ -29,6 +30,8 @@ class Routing extends React.Component {
         return <Books />;
       case 'weather':
         return <Weather />;
+      case 'resume':
+        return <Resume />;
       default:
         return <NotFound />;
     }
