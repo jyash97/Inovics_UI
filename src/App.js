@@ -14,6 +14,7 @@ import WeatherIndividual from './Weather/WeatherIndividual';
 import Resume from './Resume';
 import Instructions from './Resume/Instructions';
 import PrintResume from './Resume/PrintResume';
+import DeveloperIndividual from './Developer/DeveloperIndividual';
 import NotFound from './Presentational/NotFound';
 
 const App = () => (
@@ -33,6 +34,7 @@ const App = () => (
       <Route exact path="/books/author/:id" component={BooksIndividual} />
       <Route exact path="/books/search by title" component={SearchByTitle} />
       <Route exact path="/books/search by author" component={SearchByAuthor} />
+      <Route exact path="/developer/:id" component={DeveloperIndividual} />
       <Route component={NotFound} />
     </Switch>
   </Router>
