@@ -15,8 +15,14 @@ class DeveloperIndividual extends React.Component {
 
   handleData(title, value) {
     let dataCourses = [];
-    let data = courses.filter(data => title === data.course);
-    data = data[0].tutorial.filter(data => value === data.price);
+    let data = [];
+    if (value === 'all') {
+      data = courses.filter(data => title === data.course)[0].tutorial;
+    } else {
+      data = courses
+        .filter(data => title === data.course)[0]
+        .tutorial.filter(data => value === data.price);
+    }
     data.map((data, i) =>
       dataCourses.push({
         title: data.title,
@@ -34,7 +40,7 @@ class DeveloperIndividual extends React.Component {
   }
 
   componentDidMount() {
-    this.handleData(this.props.match.params.id, 'free');
+    this.handleData(this.props.match.params.id, 'all');
   }
 
   extraData(data) {
@@ -71,9 +77,9 @@ class DeveloperIndividual extends React.Component {
                 this.handleData(this.props.match.params.id, event.target.value)
               }
             >
-              <option value="free" selected>
-                Free
-              </option>
+              {' '}
+              <option value="all">All</option>
+              <option value="free">Free</option>
               <option value="paid">Paid</option>
             </select>
           </div>
