@@ -13,10 +13,11 @@ class DeveloperIndividual extends React.Component {
     this.extraLinks = this.extraLinks.bind(this);
   }
 
-  handleData(title) {
+  handleData(title, value) {
     let dataCourses = [];
-    const data = courses.filter(data => title === data.course);
-    data[0].tutorial.map((data, i) =>
+    let data = courses.filter(data => title === data.course);
+    data = data[0].tutorial.filter(data => value === data.price);
+    data.map((data, i) =>
       dataCourses.push({
         title: data.title,
         time: Date(),
@@ -33,22 +34,16 @@ class DeveloperIndividual extends React.Component {
   }
 
   componentDidMount() {
-    this.handleData(this.props.match.params.id);
+    this.handleData(this.props.match.params.id, 'free');
   }
 
   extraData(data) {
     return (
       <div className="my-2">
-        <p
-          key={data}
-          className="border rounded border-primary text-primary text-center d-inline-block px-2 m-1 text-capitalize"
-        >
+        <p className="border rounded border-primary text-primary text-center d-inline-block px-2 m-1 text-capitalize">
           {data.source}
         </p>
-        <p
-          key={data}
-          className="border rounded border-primary text-primary text-center d-inline-block px-2 m-1 text-capitalize"
-        >
+        <p className="border rounded border-primary text-primary text-center d-inline-block px-2 m-1 text-capitalize">
           {data.price}
         </p>
       </div>
@@ -67,6 +62,21 @@ class DeveloperIndividual extends React.Component {
             key={1}
             name="Back to Courses"
           />
+
+          <div className="form-group w-10 float-right mt-4 border rounded border-primary">
+            <select
+              className="form-control  text-center text-primary"
+              id="exampleFormControlSelect1"
+              onChange={event =>
+                this.handleData(this.props.match.params.id, event.target.value)
+              }
+            >
+              <option value="free" selected>
+                Free
+              </option>
+              <option value="paid">Paid</option>
+            </select>
+          </div>
         </div>
         <ImageCard
           number={4}
