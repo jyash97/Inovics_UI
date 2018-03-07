@@ -60,19 +60,295 @@
           ]
   },
   {
-    "course":"Javascript"
+    "course":"Javascript",
+    "tutorial":[
+{
+  "title":"JavaScript Tutorial",
+  "link":"https://www.w3schools.com/js/",
+  "price":"free",
+  "source":"w3schools"
+},
+{
+  "title":"Quick Start to JavaScript",
+  "link":"https://www.pluralsight.com/courses/quick-start-javascript-1-1870?aid=7010a000002BZNLAA4",
+  "price":"paid",
+  "source":"PluralSight"
+},
+{
+  "title":"JavaScript Road Trip",
+  "link":"https://www.codeschool.com/courses/javascript-road-trip-part-1",
+  "price":"free",
+  "source":"Jason Millhouse"
+},
+{
+  "title":"The Complete JavaScript Course",
+  "link":"https://www.udemy.com/the-complete-javascript-course/",
+  "price":"paid",
+  "source":"udemy"
+},
+{
+  "title":"ES6 for Everyone",
+  "link":"https://es6.io/",
+  "price":"paid",
+  "source":"Wes Bos"
+},
+{
+  "title":"JavaScript Tutorial",
+  "link":"https://www.tutorialspoint.com/javascript/index.htm",
+  "price":"free",
+  "source":"Tutorialspoint"
+},
+{
+  "title":"Learn Modern JavaScript",
+  "link":"https://www.udemy.com/learn-modern-javascript-advanced-topics/",
+  "price":"paid",
+  "source":"Steven Hancock"
+},
+{
+  "title":"Javascript Beginner Tutorials",
+  "link":"https://www.youtube.com/playlist?list=PL41lfR-6DnOrwYi5d824q9-Y6z3JdSgQa",
+  "price":"free",
+  "source":"Quentin Watt"
+},
+{
+  "title":"Introduction to JavaScript for Developers",
+  "link":"https://www.youtube.com/playlist?list=PLqq-6Pq4lTTYFJxC9NLJ7dSTI5Z1WWB6K",
+  "price":"free",
+  "source":"Java Brains"
+}
+    ]
+  },
+
+  {
+    "course":"Java",
+    "tutorial":[
+      {
+        "title":"Java Tutorial",
+        "link":"https://www.tutorialspoint.com/java/index.htm",
+        "price":"free",
+        "source":"TutorialsPoint"
+      },
+      {
+        "title":"Introduction to Java",
+        "link":"https://www.javatpoint.com/java-tutorial",
+        "price":"free",
+        "source":"javatpoint"
+      },
+      {
+        "title":"Java fr Beginners",
+        "link":"https://www.youtube.com/playlist?list=PLS1QulWo1RIbfTjQvTdj8Y6yyq4R7g-Al",
+        "price":"free",
+        "source":"ProgrammingKnowledge"
+      },
+      {
+        "title":"Java Programming",
+        "link":"https://www.w3schools.in/category/java-tutorial/",
+        "price":"free",
+        "source":"w3schools"
+      },
+      {
+        "title":"Java Tutorial By Durga Sir",
+        "link":"https://www.youtube.com/playlist?list=PLcj5PWxT3sFQqY7BheqtR9fUsPUv4I8sB",
+        "price":"free",
+        "source":"DurgaSoftwareTechnologies"
+      },
+      {
+        "title":"Complete Java MasterClass",
+        "link":"https://www.udemy.com/java-the-complete-java-developer-course/",
+        "price":"paid",
+        "source":"udemy"
+      },
+      {
+        "title":"Java Course-Fundamental",
+        "link":"https://www.udemy.com/java-course-fundamentals/",
+        "price":"paid",
+        "source":"Udemy Sarkhan Rasullu"
+      },
+      {
+        "title":"Java-In-depth",
+        "link":"https://www.udemy.com/java-in-depth-become-a-complete-java-engineer/",
+        "price":"paid",
+        "source":"Udemy"
+      },
+      {
+        "title":"The Complete Java Developer Course",
+        "link":"https://www.udemy.com/java-essential-training/",
+        "price":"paid",
+        "source":"Udemy"
+      }
+    ]
+
   },
   {
-    "course":"Java"
+    "course":"HTML5",
+    "tutorial":[
+{
+  "title":"Learn HTML",
+  "link":"https://www.tutorialspoint.com/html/index.htm",
+  "price":"free",
+  "source":"tutorialspoint"
+},
+{
+  "title":"HTML tutorial",
+  "link":"https://www.javatpoint.com/html-tutorial",
+  "price":"free",
+  "source":"javatpoint"
+},
+{
+  "title":"HTML5 Tutorial",
+  "link":"https://www.w3schools.com/html/",
+  "price":"free",
+  "source":"w3schools"
+},
+{
+  "title":"Beginners Tutorials",
+  "link":"https://www.youtube.com/playlist?list=PL41lfR-6DnOruqMacTfff1zrEcqtmm7Fv",
+  "price":"free",
+  "source":"QuentinWattTutorials"
+},
+{
+  "title":"Build Responsive Website with HTML5",
+  "link":"https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/",
+  "price":"paid",
+  "source":"udemy"
+},
+{
+  "title":"Introduction to HTML5",
+  "link":"https://www.youtube.com/playlist?list=PL081AC329706B2953",
+  "price":"paid",
+  "source":"thenewboston"
+},
+{
+  "title":"Easy HTML for beginners",
+  "link":"https://www.udemy.com/easy-html-and-css-for-beginners/",
+  "price":"paid",
+  "source":"udemy"
+},
+{
+  "title":"HTML5 Mastery",
+  "link":"https://www.udemy.com/html5-mastery-mobile-apps-websites/",
+  "price":"paid",
+  "source":"udemy"
+},
+{
+  "title":"Beginners Crash Course",
+  "link":"https://www.udemy.com/beginner-crash-course-fundamentals-of-html-css-in-60-mins/",
+  "price":"paid",
+  "source":"Tech Lemur"
+}
+    ]
   },
   {
-    "course":"HTML5"
+    "course":"CSS3",
+    "tutorial":[
+      {
+        "title":"Beginners Crash Course",
+        "link":"https://www.udemy.com/beginner-crash-course-fundamentals-of-html-css-in-60-mins/",
+        "price":"paid",
+        "source":"Tech Lemur"
+      },
+      {
+        "title":"Easy CSS for beginners",
+        "link":"https://www.udemy.com/easy-html-and-css-for-beginners/",
+        "price":"paid",
+        "source":"udemy"
+      },
+      {
+        "title":"Build Responsive Website with CSS3",
+        "link":"https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/",
+        "price":"paid",
+        "source":"udemy"
+      },
+      {
+        "title":"Learn CSS",
+        "link":"https://www.tutorialspoint.com/css/index.htm",
+        "price":"free",
+        "source":"tutorialspoint"
+      },
+      {
+        "title":"CSS tutorial",
+        "link":"https://www.javatpoint.com/css-tutorial",
+        "price":"free",
+        "source":"javatpoint"
+      },
+      {
+        "title":"CSS3 Tutorial",
+        "link":"https://www.w3schools.com/css/",
+        "price":"free",
+        "source":"w3schools"
+      },
+      {
+        "title":"CSS3 Tutorial",
+        "link":"https://www.youtube.com/playlist?list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C",
+        "price":"free",
+        "source":"EJ Media"
+      },
+      {
+        "title":"CSS3 Tutorial for Beginners",
+        "link":"https://www.youtube.com/playlist?list=PLfxALjnZodrukHsitsbPp7Cr3LHSjD0L6",
+        "price":"free",
+        "source":"wapinstitute"
+      }
+    ]
   },
   {
-    "course":"CSS"
-  },
-  {
-    "course":"Node.js"
+    "course":"Node.js",
+    "tutorial":[
+{
+  "title":"Real-time Web with Node.js",
+  "link":"https://www.codeschool.com/courses/real-time-web-with-node-js",
+  "price":"free",
+  "source":"Code School"
+},
+{
+  "title":"Learn and Understand Node.js",
+  "link":"https://www.udemy.com/understand-nodejs/",
+  "price":"paid",
+  "source":"Udemy"
+},
+{
+  "title":"Learn Node!",
+  "link":"https://learnnode.com/",
+  "price":"paid",
+  "source":"Wes Bos"
+},
+{
+  "title":"Node.js Tutorial for beginners",
+  "link":"https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_",
+  "price":"free",
+  "source":"the new boston"
+},
+{
+  "title":"Node.js Tutorial for beginners",
+  "link":"https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp",
+  "price":"free",
+  "source":"The Net Ninja"
+},
+{
+  "title":"Tutorial for Node.js",
+  "link":"https://www.youtube.com/playlist?list=PLVBXNyNyLNq3MGbopdcvWc25xijtWaA6X",
+  "price":"free",
+  "source":"Manthan Dave"
+},
+{
+  "title":"Node.js Documentation",
+  "link":"https://nodejs.org/en/docs/",
+  "price":"free",
+  "source":"Official Docs"
+},
+{
+"title":"Introduction to Node.js",
+"link":"https://www.w3schools.com/nodejs/default.asp",
+"price":"free",
+"source":"w3schools.com"
+},
+{
+  "title":"The Complete Node.js Developer Course",
+  "link":"https://www.udemy.com/the-complete-nodejs-developer-course-2/",
+  "price":"paid",
+  "source":"udemy"
+}
+    ]
   },
   {
     "course":"React Native"
@@ -81,10 +357,122 @@
     "course":"Machine Learning"
   },
   {
-    "course":"C"
+    "course":"C",
+    "tutorial":[
+      {
+        "title":"C Primer Plus",
+        "link":"https://www.pearson.com/us/higher-education/program/Prata-C-Primer-Plus-6th-Edition/PGM4399.html",
+        "price":"paid",
+        "source":"Stephen Prata"
+      },
+      {
+        "title":"C Programming Language",
+        "link":"https://www.geeksforgeeks.org/c-programming-language/",
+        "price":"free",
+        "source":"geeksforgeeks"
+      },
+      {
+        "title":"C Language Overview",
+        "link":"https://www.tutorialspoint.com/cprogramming/c_overview.htm",
+        "price":"free",
+        "source":"TutorialsPoint"
+      },
+      {
+        "title":"Learn C",
+        "link":"https://www.javatpoint.com/c-programming-language-tutorial",
+        "price":"free",
+        "source":"javatpoint"
+      },
+      {
+        "title":"C Tutorial",
+        "link":"https://www.w3schools.in/c-tutorial/",
+        "price":"free",
+        "source":"w3schools"
+      },
+      {
+        "title":"Introduction to C Programming",
+        "link":"https://www.youtube.com/playlist?list=PLfVsf4Bjg79CZ5kHTiQHcm-l2q8j06ofd",
+        "price":"free",
+        "source":"LearningLad"
+      },
+      {
+        "title":"C Programming for Beginners",
+        "link":"https://www.udemy.com/c-programming-for-beginners/",
+        "price":"paid",
+        "source":"udemy"
+      },
+      {
+        "title":"Advanced C programmming",
+        "link":"https://www.udemy.com/advanced-c-programming-pointers/",
+        "price":"paid",
+        "source":"udemy"
+      },
+      {
+        "title":"C programmming Language Demystified",
+        "link":"https://www.udemy.com/demystifying-c-programming-language-basic/",
+        "price":"paid",
+        "source":"udemy"
+      }
+    ]
   },
   {
-    "course":"C++"
+    "course":"C++",
+    "tutorial":[
+{
+  "title":"Learn C++",
+  "link":"https://www.tutorialspoint.com/cplusplus/index.htm",
+  "price":"free",
+  "source":"TutorialsPoint"
+},
+{
+  "title":"C++ Tutorial",
+  "link":"https://www.javatpoint.com/cpp-tutorial",
+  "price":"free",
+  "source":"javatpoint"
+},
+{
+  "title":"Introductin to C++",
+  "link":"https://www.w3schools.in/category/cplusplus-tutorial/",
+  "price":"free",
+  "source":"w3schools"
+},
+{
+  "title":"C++ Programming for Beginners",
+  "link":"https://www.youtube.com/playlist?list=PLfVsf4Bjg79Cu5MYkyJ-u4SyQmMhFeC1C",
+  "price":"free",
+  "source":"LearningLad"
+},
+{
+  "title":"C++ By Saurabh Shukla",
+  "link":"https://www.youtube.com/playlist?list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF",
+  "price":"free",
+  "source":"SaurabhShukla"
+},
+{
+  "title":"C++:From Breginner to Expert",
+  "link":"https://www.udemy.com/video-course-c-from-beginner-to-expert/",
+  "price":"paid",
+  "source":"Arkadiusz Włodarczyk"
+},
+{
+  "title":"Learn Advanced C++ Programming",
+  "link":"https://www.udemy.com/learn-advanced-c-programming/",
+  "price":"paid",
+  "source":"udemy"
+},
+{
+  "title":"Beginning Modern Cpp",
+  "link":"https://www.udemy.com/beg-modern-cpp/",
+  "price":"paid",
+  "source":"udemy"
+},
+{
+  "title":"Learn & Understand C++",
+  "link":"https://www.udemy.com/learn-c-plus-plus-from-beginner-to-advanced/",
+  "price":"paid",
+  "source":"udemy"
+}
+    ]
   },
   {
     "course":"Python"
@@ -93,9 +481,85 @@
     "course":"Redux"
   },
   {
-    "course":"jQuery"
+    "course":"jQuery",
+    "tutorial":[
+      {
+        "title":"jQuery Step By Logical Step",
+        "link":"http://nicholasjohnson.com/jquery-book/",
+        "price":"free",
+        "source":"NicholasJohnson"
+      },
+      {
+        "title":"jQuery in action",
+        "link":"https://www.manning.com/books/jquery-in-action-third-edition",
+        "price":"paid",
+        "source":"Manning"
+      },
+      {
+        "title":"jQuery in action",
+        "link":"https://www.manning.com/books/jquery-in-action-third-edition",
+        "price":"paid",
+        "source":"Manning"
+      }
+    ]
   },
   {
-    "course":"MongoDB"
+    "course":"MongoDB",
+    "tutorial":[
+      {
+        "title":"Introduction to MongoDB",
+        "link":"https://docs.mongodb.com/manual/",
+        "price":"free",
+        "source":"Official Docs"
+      },
+      {
+        "title":"Basic Introduction to MongoDB",
+        "link":"http://openmymind.net/2011/3/28/The-Little-MongoDB-Book/",
+        "price":"free",
+        "source":"open my mind"
+      },
+      {
+        "title":"MongoDB Tutorial",
+        "link":"https://www.tutorialspoint.com/mongodb/index.htm",
+        "price":"free",
+        "source":"TutorialsPoint"
+      },
+      {
+        "title":"MongoDB Tutorial for Beginners",
+        "link":"https://www.guru99.com/mongodb-tutorials.html",
+        "price":"free",
+        "source":"guru99"
+      },
+      {
+        "title":"MongoDB Get Started",
+        "link":"https://www.w3schools.com/nodejs/nodejs_mongodb.asp",
+        "price":"free",
+        "source":"w3schools"
+      },
+      {
+        "title":"The Complete Developer's Guide to MongoDB",
+        "link":"https://www.udemy.com/the-complete-developers-guide-to-mongodb/",
+        "price":"paid",
+        "source":"Udemy Stephen Grider"
+      },
+      {
+        "title":"Learn MongoDB",
+        "link":"https://www.udemy.com/learn-mongodb-leading-nosql-database-from-scratch/",
+        "price":"paid",
+        "source":"Udemy Sunil Gupta"
+      },
+      {
+        "title":"Working with MongoDB",
+        "link":"https://www.udemy.com/refactoru-intro-mongodb/",
+        "price":"paid",
+        "source":"RefactorU LLC"
+      },
+      {
+        "title":"Hands-On Introduction to MongoDB",
+        "link":"https://www.udemy.com/hands-on-introduction-to-mongodb-for-beginners/",
+        "price":"paid",
+        "source":"Skills Today"
+      }
+    ]
   }
 ]

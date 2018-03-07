@@ -9,6 +9,7 @@ import News from '../News';
 import Weather from '../Weather';
 import Resume from '../Resume';
 import Developer from '../Developer';
+import Education from '../Education';
 import NotFound from '../Presentational/NotFound';
 
 class Routing extends React.Component {
@@ -35,6 +36,8 @@ class Routing extends React.Component {
         return <Resume />;
       case 'developer':
         return <Developer />;
+      case 'education':
+        return <Education />;
       default:
         return <NotFound />;
     }
