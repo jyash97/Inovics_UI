@@ -18,13 +18,15 @@ const ImageCard = props => (
                 <p className="card-text text-muted">{converter(data.time)}</p>
                 <p className="card-text text-justify">{data.description}</p>
                 {props.extraData(data)}
-                <a
-                  className="btn btn-sm btn-primary"
-                  href={data.link}
-                  target="_blank"
-                >
-                  {data.linktitle}
-                </a>
+                {data.linktitle ? (
+                  <a
+                    className="btn btn-sm btn-primary"
+                    href={data.link}
+                    target="_blank"
+                  >
+                    {data.linktitle}
+                  </a>
+                ) : null}
                 {props.extraLinks(data)}
               </div>
             </div>

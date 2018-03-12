@@ -16,23 +16,24 @@ class Dictionary extends React.Component {
   }
 
   async handleQuery(value) {
-    const data = await fetch(
-      `http://api.wordnik.com/v4/word.json/${value}/definitions?limit=100000&includeRelated=true&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5`
-    ).then(response => response.json());
-    let dataWord = [];
-    data.map(data =>
-      dataWord.push({
-        title: data.word,
-        time: Date(),
-        description: data.text,
-        partOfSpeech: data.partOfSpeech,
-        id: data.sequence
-      })
-    );
-    this.setState({
-      data: dataWord
-    });
-    //te.data.partOfSpeech)
+    if (value !== '') {
+      const data = await fetch(
+        `http://api.wordnik.com/v4/word.json/${value}/definitions?limit=100000&includeRelated=true&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5`
+      ).then(response => response.json());
+      let dataWord = [];
+      data.map(data =>
+        dataWord.push({
+          title: data.word,
+          time: Date.now(),
+          description: data.text,
+          partOfSpeech: data.partOfSpeech,
+          id: data.sequence
+        })
+      );
+      this.setState({
+        data: dataWord
+      });
+    }
   }
 
   handleClick(text) {
@@ -48,7 +49,7 @@ class Dictionary extends React.Component {
           key={data}
           className="border rounded border-primary text-primary text-center d-inline-block px-2 m-1 text-capitalize"
         >
-          {this.state.data.partOfSpeech}
+          {data.partOfSpeech}
         </p>
       </div>
     );
@@ -62,13 +63,15 @@ class Dictionary extends React.Component {
           handleClick={this.handleClick}
           handleQuery={this.handleQuery}
         />
-        <ImageCard
-          number={4}
-          heading={this.props.match.params.id}
-          data={this.state.data}
-          extraData={this.extraData}
-          extraLinks={this.extraLinks}
-        />
+        {this.state.data !== [] ? (
+          <ImageCard
+            number={4}
+            heading={this.props.match.params.id}
+            data={this.state.data}
+            extraData={this.extraData}
+            extraLinks={this.extraLinks}
+          />
+        ) : null}
         <div className="mx-5">
           <BackButton
             url="/"
