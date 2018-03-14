@@ -11,6 +11,10 @@ import NewsByTopic from './News/NewsByTopic';
 import SearchByTitle from './Books/SearchByTitle';
 import SearchByAuthor from './Books/SearchByAuthor';
 import WeatherIndividual from './Weather/WeatherIndividual';
+import Restaurant from './Food/Restaurant';
+import QuotesIndividual from './Quotes/QuotesIndividual';
+import UpcomingMatches from './Cricket/UpcomingMatches';
+import LiveScore from './Cricket/LiveScore';
 import Resume from './Resume';
 import Instructions from './Resume/Instructions';
 import PrintResume from './Resume/PrintResume';
@@ -33,6 +37,14 @@ const App = () => (
       <Route exact path="/books/author/:id" component={BooksIndividual} />
       <Route exact path="/books/search by title" component={SearchByTitle} />
       <Route exact path="/books/search by author" component={SearchByAuthor} />
+      <Route exact path="/food/restaurants/:city" component={Restaurant} />
+      <Route exact path="/quotes" component={QuotesIndividual} />
+      <Route
+        exact
+        path="/cricket/upcoming matches"
+        component={UpcomingMatches}
+      />
+      <Route exact path="/cricket/live scores" component={LiveScore} />
       <Route component={NotFound} />
     </Switch>
   </Router>

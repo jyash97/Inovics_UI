@@ -4,16 +4,24 @@ import ImageCard from '../Presentational/ImageCard';
 import BackButton from '../Presentational/BackButton';
 
 class NewsChannel extends React.Component {
-
-  constructor(){
+  constructor() {
     super();
-    this.state={
-      data:[]
+    this.state = {
+      data: []
     };
+    this.extraLinks = this.extraLinks.bind(this);
+    this.extraData = this.extraData.bind(this);
   }
-
-  async componentDidMount(){
-    const data = await fetch(`https://newsapi.org/v1/articles?source=${this.props.match.params.id}&apiKey=7f6cfa48cc3e42f48752515e6dcac33c`).then(r => r.json()).then(r=>r.articles);
+  extraData() {}
+  extraLinks() {}
+  async componentDidMount() {
+    const data = await fetch(
+      `https://newsapi.org/v1/articles?source=${
+        this.props.match.params.id
+      }&apiKey=7f6cfa48cc3e42f48752515e6dcac33c`
+    )
+      .then(r => r.json())
+      .then(r => r.articles);
     let dataComponent = [];
     data
       .filter((data, index) => index < 6)
@@ -30,15 +38,26 @@ class NewsChannel extends React.Component {
         })
       );
     this.setState({
-      data:dataComponent
+      data: dataComponent
     });
   }
 
   render() {
-    return(
+    return (
       <React.Fragment>
-        <BackButton classes="mx-5 my-3 btn-lg" url='/news/search by channel' key={1} name='Back to Channel Search' />
-        <ImageCard heading="Latest" data={this.state.data} number={4} />
+        <BackButton
+          classes="mx-5 my-3 btn-lg"
+          url="/news/search by channel"
+          key={1}
+          name="Back to Channel Search"
+        />
+        <ImageCard
+          heading="Latest"
+          data={this.state.data}
+          number={4}
+          extraLinks={this.extraLinks}
+          extraData={this.extraData}
+        />
       </React.Fragment>
     );
   }

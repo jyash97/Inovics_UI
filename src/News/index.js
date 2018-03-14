@@ -9,8 +9,11 @@ class News extends React.Component {
     this.state = {
       data: []
     };
+    this.extraLinks = this.extraLinks.bind(this);
+    this.extraData = this.extraData.bind(this);
   }
-
+  extraData() {}
+  extraLinks() {}
   async componentDidMount() {
     const data = await fetch(
       'https://newsapi.org/v2/top-headlines?country=in&apiKey=7f6cfa48cc3e42f48752515e6dcac33c'
@@ -51,7 +54,13 @@ class News extends React.Component {
       <React.Fragment>
         <Cards category="news" number={2} data={dataCategory} />
         {this.state.data.length > 3 ? (
-          <ImageCard heading="Latest" data={this.state.data} number={4} />
+          <ImageCard
+            heading="Latest"
+            data={this.state.data}
+            number={4}
+            extraData={this.extraData}
+            extraLinks={this.extraLinks}
+          />
         ) : null}
       </React.Fragment>
     );
