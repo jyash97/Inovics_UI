@@ -38,6 +38,7 @@ class UpcomingMatches extends React.Component {
       data: dataComponent
     });
   }
+
   extraData(data) {
     return (
       <p key={data} className="btn btn-sm btn-outline-dark">
@@ -45,12 +46,14 @@ class UpcomingMatches extends React.Component {
       </p>
     );
   }
+
   extraLinks() {}
   render() {
     return (
       <React.Fragment>
         <BackButton classes="mx-5 my-3" url="/cricket" name="back to cricket" />
         <ImageCard
+          heading="Upcoming Matches"
           category="cricket/upcomingmatches"
           data={this.state.data}
           extraData={this.extraData}
