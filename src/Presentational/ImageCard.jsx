@@ -10,7 +10,7 @@ const ImageCard = props => (
       </span>
     </div>
     <div className="row p-1">
-      <div className="card-columns">
+      <div className={'card-columns ' + props.classes}>
         {props.data.map((data, index) => (
           <React.Fragment key={index}>
             <div className="card">

@@ -20,16 +20,16 @@
     "data": "Movies"
   },
   {
-    "name": "music",
-    "data": "Music"
+    "name": "developer",
+    "data": "Developer"
   },
   {
     "name": "hotels",
     "data": "Book Hotels"
   },
   {
-    "name": "transport",
-    "data": "Book Transport"
+    "name": "education",
+    "data": "Education"
   },
   {
     "name": "food",
