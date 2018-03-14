@@ -3,28 +3,28 @@ import React from 'react';
 import Cards from '../Presentational/Cards';
 import BackButton from '../Presentational/BackButton';
 
-class Education extends React.Component {
+class Cricket extends React.Component {
   render() {
     let dataCategory = [
       {
-        title: 'Resume',
+        title: 'live scores',
         id: 1,
-        image: `${process.env.PUBLIC_URL}/images/b2.jpg`
+        image: `${process.env.PUBLIC_URL}/images/cricket.jpeg`
       },
       {
-        title: 'Dictionary',
+        title: 'upcoming matches',
         id: 2,
-        image: `${process.env.PUBLIC_URL}/images/books1.jpg`
+        image: `${process.env.PUBLIC_URL}/images/cricket.jpg`
       }
     ];
     return (
       <React.Fragment>
-        <Cards category="education" number={2} data={dataCategory} />
+        <Cards category="cricket" number={2} data={dataCategory} />
         <div className="mx-5">
           <BackButton
             url="/"
-            classes="float-left btn-outline-notfound"
-            name="Back to Home"
+            classes="btn-outline-notfound"
+            name="Back to home"
           />
         </div>
       </React.Fragment>
@@ -32,4 +32,4 @@ class Education extends React.Component {
   }
 }
 
-export default Education;
+export default Cricket;

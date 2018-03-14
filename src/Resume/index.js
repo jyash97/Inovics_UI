@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Input from './Input';
 import Preview from './Preview';
 import './styles/styles.css';
+import BackButton from '../Presentational/BackButton';
 
 class Resume extends React.Component {
   constructor() {
@@ -156,7 +157,7 @@ class Resume extends React.Component {
           to see the Saved Data.
           <span className="bg-light">
             If not getting how to use the app, Please see the{' '}
-            <Link to="/instructions">Instructions</Link>.
+            <Link to="/education/resume/instructions">Instructions</Link>.
           </span>
         </div>
         <div className="row">
@@ -238,6 +239,13 @@ class Resume extends React.Component {
         >
           Next
         </Link>
+        <div className="my-2">
+          <BackButton
+            url="/education"
+            name="back to education"
+            classes="btn-outline-notfound"
+          />
+        </div>
         <Preview
           handleGeneralDelete={this.handleGeneralDelete}
           modal={this.state.modal}

@@ -15,7 +15,9 @@ class Dictionary extends React.Component {
     this.extraLinks = this.extraLinks.bind(this);
   }
 
-  async handleQuery(value) {
+  handleQuery() {}
+
+  async handleClick(value) {
     if (value !== '') {
       const data = await fetch(
         `http://api.wordnik.com/v4/word.json/${value}/definitions?limit=100000&includeRelated=true&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5`
@@ -27,6 +29,7 @@ class Dictionary extends React.Component {
           time: Date.now(),
           description: data.text,
           partOfSpeech: data.partOfSpeech,
+          image: '',
           id: data.sequence
         })
       );
@@ -34,10 +37,6 @@ class Dictionary extends React.Component {
         data: dataWord
       });
     }
-  }
-
-  handleClick(text) {
-    this.handleQuery(text);
   }
 
   extraLinks() {}
@@ -65,8 +64,9 @@ class Dictionary extends React.Component {
         />
         {this.state.data !== [] ? (
           <ImageCard
+            classes="card-deck"
             number={4}
-            heading={this.props.match.params.id}
+            heading="Search Your Word"
             data={this.state.data}
             extraData={this.extraData}
             extraLinks={this.extraLinks}

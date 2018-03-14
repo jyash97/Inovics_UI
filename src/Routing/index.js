@@ -7,6 +7,9 @@ import Movie from '../Movie';
 import Books from '../Books';
 import News from '../News';
 import Weather from '../Weather';
+import FoodHome from '../Food/FoodHome';
+import QuotesIndividual from '../Quotes/QuotesIndividual';
+import Cricket from '../Cricket';
 import Resume from '../Resume';
 import Developer from '../Developer';
 import Education from '../Education';
@@ -32,6 +35,12 @@ class Routing extends React.Component {
         return <Books />;
       case 'weather':
         return <Weather />;
+      case 'food':
+        return <FoodHome push={this.props.history.push} />;
+      case 'quotes':
+        return <QuotesIndividual />;
+      case 'cricket':
+        return <Cricket />;
       case 'resume':
         return <Resume />;
       case 'developer':

@@ -1,0 +1,49 @@
+blockquote{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  padding: 10px;
+  transform: translate(-50%,-50%);
+  border: 1px solid;
+}
+
+.quote-text{
+  background: linear-gradient(to right, transparent 50%,rgba(37, 204, 247,.2) 50%);
+  background-position: 0;
+  font-style: italic;
+  transition: all ease .4s;
+  background-size: 200%;
+  padding: 5px;
+}
+
+.blockquote-footer{
+  background: linear-gradient(to right, transparent 50%,rgba(37, 204, 247,.2) 50%);
+  background-position: 0;
+  transition: all ease .4s;
+  background-size: 200%;
+}
+
+blockquote:hover .quote-text{
+  background-position: -100%;
+}
+
+blockquote:hover .blockquote-footer{
+  background-position: 100%;
+  font-style: normal;
+}
+
+.quote-buttons{
+  position: absolute;
+  bottom: 15%;
+  left: 2%;
+}
+
+.quote-button{
+  box-shadow: 2px 2px 4px rgba(46, 204, 113,.4);
+  transition: all ease .2s;
+}
+
+.quote-button:hover{
+  box-shadow: 3px 3px 6px rgba(46, 204, 113,.4);
+  transform: scale(1.05);
+}

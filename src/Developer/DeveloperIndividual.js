@@ -27,6 +27,7 @@ class DeveloperIndividual extends React.Component {
       dataCourses.push({
         title: data.title,
         time: Date(),
+        image: '',
         link: data.link,
         price: data.price,
         source: data.source,
@@ -46,10 +47,10 @@ class DeveloperIndividual extends React.Component {
   extraData(data) {
     return (
       <div className="my-2">
-        <p className="border rounded border-primary text-primary text-center d-inline-block px-2 m-1 text-capitalize">
+        <p className="border rounded btn-sm px-2 border-muted bg-light text-muted text-center d-inline-block m-1 text-capitalize">
           {data.source}
         </p>
-        <p className="border rounded border-primary text-primary text-center d-inline-block px-2 m-1 text-capitalize">
+        <p className="border rounded btn-sm px-2 border-muted bg-light text-muted text-center d-inline-block m-1 text-capitalize">
           {data.price}
         </p>
       </div>
@@ -63,7 +64,7 @@ class DeveloperIndividual extends React.Component {
       <React.Fragment>
         <div className="mx-5">
           <BackButton
-            classes="mx-5 my-3 btn-lg"
+            classes="mx-5 my-3"
             url="/developer"
             key={1}
             name="Back to Courses"
