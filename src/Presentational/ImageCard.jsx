@@ -4,15 +4,23 @@ import converter from './dateConverter';
 
 const ImageCard = props => (
   <div className="container">
-    <h4 className="text-dark font-weight-normal text-uppercase my-3">
-      {props.heading}
-    </h4>
+    <div className="alert alert-primary">
+      <span className="text-dark font-weight-bold text-uppercase my-3">
+        {props.heading}
+      </span>
+    </div>
     <div className="row p-1">
       <div className="card-columns">
         {props.data.map((data, index) => (
           <React.Fragment key={index}>
             <div className="card">
-              <img className="card-img-top" src={data.image} />
+              {data.image === '' ? null : (
+                <img
+                  className="card-img-top"
+                  src={data.image}
+                  alt={data.title}
+                />
+              )}
               <div className="card-body">
                 <h5 className="card-title my-0">{data.title}</h5>
                 <p className="card-text text-muted">

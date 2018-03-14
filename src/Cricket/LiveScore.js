@@ -46,11 +46,7 @@ class LiveScore extends React.Component {
           )`
         }}
       >
-        <BackButton
-          classes="mx-5 my-3 btn-lg"
-          url="/cricket"
-          name="back to cricket"
-        />
+        <BackButton classes="mx-5 my-3" url="/cricket" name="back to cricket" />
         <div className="container justify-content-center w-50 ">
           {this.state.data.map((match, i) => {
             return (

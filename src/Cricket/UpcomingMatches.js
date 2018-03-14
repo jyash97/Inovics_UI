@@ -18,7 +18,9 @@ class UpcomingMatches extends React.Component {
     )
       .then(response => response.json())
       .then(data => data.matches);
+
     let dataComponent = [];
+
     data
       .filter(data => !data.matchStarted)
       .filter((data, index) => index < 12)
@@ -31,16 +33,14 @@ class UpcomingMatches extends React.Component {
           id: data.unique_id
         })
       );
+
     this.setState({
       data: dataComponent
     });
   }
   extraData(data) {
     return (
-      <p
-        key={data}
-        className="border rounded border-primary text-primary text-center d-inline-block p-1 w-25"
-      >
+      <p key={data} className="btn btn-sm btn-outline-dark">
         {data.type}
       </p>
     );
@@ -49,11 +49,7 @@ class UpcomingMatches extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <BackButton
-          classes="mx-5 my-3 btn-lg"
-          url="/cricket"
-          name="back to cricket"
-        />
+        <BackButton classes="mx-5 my-3" url="/cricket" name="back to cricket" />
         <ImageCard
           category="cricket/upcomingmatches"
           data={this.state.data}

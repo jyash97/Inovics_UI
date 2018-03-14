@@ -90,7 +90,7 @@ class Restaurant extends React.Component {
         {array.map(data => (
           <p
             key={data}
-            className="border rounded border-primary text-primary text-center d-inline-block p-1 m-1"
+            className="border rounded btn-sm px-2 border-muted bg-light text-muted text-center d-inline-block m-1"
           >
             {data}
           </p>
@@ -106,7 +106,7 @@ class Restaurant extends React.Component {
         href={data.images}
         target="_blank"
       >
-        Images
+        See Images
       </a>
     );
   }
@@ -121,9 +121,8 @@ class Restaurant extends React.Component {
         ) : (
           <React.Fragment>
             <BackButton
-              classes="mx-5 my-3 btn-lg"
+              classes="mx-5 my-3"
               url="/food"
-              key={1}
               name="Back to Food Search"
             />
             <ImageCard
