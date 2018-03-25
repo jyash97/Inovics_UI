@@ -50,42 +50,46 @@ class Developer extends React.Component {
   }
 
   handleChange(event) {
-    console.log(event.target.name, event.target.value);
     this.setState({
       [event.target.name]: event.target.value
     });
   }
 
-  handleSave() {
+  async handleSave() {
+    const language = this.state.language.toLowerCase();
+    const author = this.state.author.toLowerCase();
+    const name = this.state.name.toLowerCase();
+    const link = this.state.link.toLowerCase();
+
     if (
-      this.state.title === '' &&
+      this.state.name === '' &&
       this.state.language === '' &&
       this.state.author === ''
     ) {
       alert('Please fill all details');
     } else {
-      axios
-        .post(
-          'http://localhost:3554/create/courses',
-          {
-            language: this.state.language,
-            author: this.state.author,
-            link: this.state.link,
-            name: this.state.name,
-            price: this.state.price
-          },
-          {
-            headers: { 'Access-Control-Allow-Origin': '*' },
-            'Content-Type': 'application/json',
-            Accept: 'application/json'
-          }
-        )
+      await axios
+        .post('http://localhost:3554/create/courses', {
+          language,
+          author,
+          link,
+          name,
+          price: this.state.price
+        })
         .then(response => {
           console.log(response);
         })
         .catch(err => {
           console.log(err);
         });
+      this.setState({
+        language: '',
+        author: '',
+        link: '',
+        name: '',
+        price: ''
+      });
+      this.handleModal();
     }
   }
 
