@@ -1,47 +1,50 @@
 import React from 'react';
-import courses from './courses.json';
 import ImageCard from '../Presentational/ImageCard';
 import BackButton from '../Presentational/BackButton';
+import axios from 'axios';
+
 class DeveloperIndividual extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      data: [],
+      filterData: []
     };
     this.handleData = this.handleData.bind(this);
     this.extraData = this.extraData.bind(this);
     this.extraLinks = this.extraLinks.bind(this);
   }
 
-  handleData(title, value) {
+  async handleData() {
     let dataCourses = [];
     let data = [];
-    if (value === 'all') {
-      data = courses.filter(data => title === data.course)[0].tutorial;
-    } else {
-      data = courses
-        .filter(data => title === data.course)[0]
-        .tutorial.filter(data => value === data.price);
-    }
+    const language = this.props.match.params.id.toLowerCase();
+    await axios
+      .get(`http://localhost:3554/courses/${language}`)
+      .then(response => {
+        data = response.data;
+      })
+      .catch(err => console.log(err));
     data.map((data, i) =>
       dataCourses.push({
-        title: data.title,
+        title: data.name,
         time: Date(),
         image: '',
         link: data.link,
         price: data.price,
-        source: data.source,
+        source: data.author,
         linktitle: 'Visit Now',
-        id: i
+        id: data.id
       })
     );
     this.setState({
-      data: dataCourses
+      data: dataCourses,
+      allData: dataCourses
     });
   }
 
   componentDidMount() {
-    this.handleData(this.props.match.params.id, 'all');
+    this.handleData();
   }
 
   extraData(data) {
@@ -55,6 +58,21 @@ class DeveloperIndividual extends React.Component {
         </p>
       </div>
     );
+  }
+
+  handleFilter(value) {
+    if (value !== 'all') {
+      const FilteredData = this.state.allData.filter(
+        data => data.price.toLowerCase() === value
+      );
+      this.setState({
+        data: FilteredData
+      });
+    } else {
+      this.setState({
+        data: this.state.allData
+      });
+    }
   }
 
   extraLinks() {}
@@ -74,9 +92,7 @@ class DeveloperIndividual extends React.Component {
             <select
               className="form-control  text-center text-primary"
               id="exampleFormControlSelect1"
-              onChange={event =>
-                this.handleData(this.props.match.params.id, event.target.value)
-              }
+              onChange={event => this.handleFilter(event.target.value)}
             >
               {' '}
               <option value="all">All</option>
