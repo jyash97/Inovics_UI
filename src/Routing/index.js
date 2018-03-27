@@ -13,6 +13,7 @@ import Cricket from '../Cricket';
 import Resume from '../Resume';
 import Developer from '../Developer';
 import Education from '../Education';
+import Jobs from '../Jobs';
 import NotFound from '../Presentational/NotFound';
 
 class Routing extends React.Component {
@@ -47,6 +48,8 @@ class Routing extends React.Component {
         return <Developer />;
       case 'education':
         return <Education />;
+      case 'jobs':
+        return <Jobs />;
       default:
         return <NotFound />;
     }
