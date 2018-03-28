@@ -20,6 +20,7 @@ import Instructions from './Resume/Instructions';
 import PrintResume from './Resume/PrintResume';
 import DeveloperIndividual from './Developer/DeveloperIndividual';
 import Dictionary from './Education/Dictionary';
+import JobsIndividual from './Jobs/JobsIndividual';
 import NotFound from './Presentational/NotFound';
 
 const App = () => (
@@ -44,6 +45,7 @@ const App = () => (
       <Route exact path="/books/search by title" component={SearchByTitle} />
       <Route exact path="/books/search by author" component={SearchByAuthor} />
       <Route exact path="/developer/:id" component={DeveloperIndividual} />
+      <Route exact path="/jobs/:id" component={JobsIndividual} />
       <Route exact path="/education/dictionary" component={Dictionary} />
       <Route exact path="/food/restaurants/:city" component={Restaurant} />
       <Route exact path="/quotes" component={QuotesIndividual} />

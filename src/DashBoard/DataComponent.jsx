@@ -10,7 +10,7 @@ class DataComponent extends React.Component {
         {Data.map(
           i =>
             i.name === 'entertainment' ||
-            i.name === 'hotels' ||
+            i.name === 'jobs' ||
             i.name === 'cricket' ? (
               <React.Fragment key={i.name}>
                 <div className="w-100 my-3" />
