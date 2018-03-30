@@ -21,6 +21,7 @@ import PrintResume from './Resume/PrintResume';
 import DeveloperIndividual from './Developer/DeveloperIndividual';
 import Dictionary from './Education/Dictionary';
 import JobsIndividual from './Jobs/JobsIndividual';
+import WebSearchBot from './Chatbot/WebSearchBot';
 import NotFound from './Presentational/NotFound';
 
 const App = () => (
@@ -55,6 +56,7 @@ const App = () => (
         component={UpcomingMatches}
       />
       <Route exact path="/cricket/live scores" component={LiveScore} />
+      <Route exact path="/chat" component={WebSearchBot} />
       <Route component={NotFound} />
     </Switch>
   </Router>
