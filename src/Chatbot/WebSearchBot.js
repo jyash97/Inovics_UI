@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import ChatBot, { Loading } from 'react-simple-chatbot';
 
-class WebSearch extends Component {
+class WebSearch extends React.Component {
   constructor() {
     super();
-
     this.state = {
-      data: '',
+      data: [],
       loading: true,
       trigger: false
     };
@@ -34,8 +33,8 @@ class WebSearch extends Component {
       data: dataComponent,
       loading: false
     });
-    console.log(this.state.data);
   }
+
   triggetNext() {
     this.setState({ trigger: true }, () => {
       this.props.triggerNextStep();
@@ -45,14 +44,14 @@ class WebSearch extends Component {
   render() {
     const { trigger, loading, data } = this.state;
     return (
-      <div>
+      <div key="dataloader">
         {loading ? (
           <Loading />
         ) : (
           data.map((data, index) => {
             return (
-              <div key={index}>
-                <div className="text-capitalize h6 font-weight-bold">
+              <div key={data.title}>
+                <div className="text-capitalize font-weight-bold">
                   <a href={data.url} target="_blank">
                     {data.title}
                   </a>
@@ -65,6 +64,7 @@ class WebSearch extends Component {
         )}
         {!loading && (
           <div
+            key="Trigger"
             style={{
               textAlign: 'center',
               marginTop: 20
@@ -96,18 +96,19 @@ WebSearch.defaultProps = {
 };
 
 const theme = {
-  background: '#f5f8fb',
+  background:
+    'linear-gradient(to bottom, rgba(168,218,220,0.99), rgba(238,249,237,1))',
   headerBgColor: '#20a4f3',
   headerFontColor: '#fff',
   headerFontSize: '15px',
-  botBubbleColor: '#20a4f3',
-  botFontColor: '#fff',
-  userBubbleColor: '#20a4f3',
-  userFontColor: '#fff'
+  botBubbleColor: 'rgba(252,252,252,.8)',
+  botFontColor: 'rgba(41,51,92,.8)',
+  userBubbleColor: 'rgba(252,252,252,.9)',
+  userFontColor: 'rgba(41,51,92,.9)'
 };
 
 const WebSearchBot = () => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider kwy="theme" theme={theme}>
     <ChatBot
       steps={[
         {
@@ -127,9 +128,10 @@ const WebSearchBot = () => (
           trigger: '1'
         }
       ]}
-      width="1200px"
-      inputStyle={{ width: '1355px' }}
-      style={{ margin: '40px 80px' }}
+      key="data"
+      headerComponent={<p />}
+      contentStyle={{ minHeight: '84.8vh' }}
+      style={{ minWidth: '100%', borderRadius: 0 }}
     />
   </ThemeProvider>
 );

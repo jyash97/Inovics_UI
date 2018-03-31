@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Redirect } from 'react-router';
 import { ThemeProvider } from 'styled-components';
 import ChatBot from 'react-simple-chatbot';
 
-class Navigation extends Component {
+class NavigationChat extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -22,14 +23,15 @@ class Navigation extends Component {
 
   render() {
     const theme = {
-      background: '#f5f8fb',
+      background:
+        'linear-gradient(to bottom, rgba(168,218,220,0.99), rgba(238,249,237,1))',
       headerBgColor: '#20a4f3',
       headerFontColor: '#fff',
       headerFontSize: '15px',
-      botBubbleColor: '#20a4f3',
-      botFontColor: '#fff',
-      userBubbleColor: '#20a4f3',
-      userFontColor: '#fff'
+      botBubbleColor: 'rgba(252,252,252,.8)',
+      botFontColor: 'rgba(41,51,92,.8)',
+      userBubbleColor: 'rgba(252,252,252,.9)',
+      userFontColor: 'rgba(41,51,92,.9)'
     };
 
     if (this.state.redirect) {
@@ -204,13 +206,29 @@ class Navigation extends Component {
               ]
             }
           ]}
+          headerTitle="Navigation Chat"
+          inputStyle={{ visibility: 'hidden', display: 'none' }}
+          bubbleStyle={{
+            borderRadius: '3px 5px 3px 5px',
+            padding: '4px 8px',
+            background: 'rgba(252,252,252,.85)',
+            color: 'rgba(41,51,92,.85)'
+          }}
+          style={{
+            boxShadow:
+              '2px 2px 5px rgba(41,51,92,.1),3px 3px 10px rgba(41,41,92,0.08)',
+            borderRadius: '5px',
+            border: '1px solid rgba(41,51,92,.1)'
+          }}
           floating={true}
-          style={{ color: 'white' }}
-          width="450px"
+          width="350px"
         />
       </ThemeProvider>
     );
   }
 }
+
+const Navigation = () =>
+  ReactDOM.createPortal(<NavigationChat />, document.getElementById('chat'));
 
 export default Navigation;
