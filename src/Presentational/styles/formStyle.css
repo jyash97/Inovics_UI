@@ -11,19 +11,6 @@
   transform: translate(-50%,-50%);
 }
 
-::-webkit-scrollbar {
-    width: 4px;
-}
-
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(32,164,243,0.4);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgb(41, 51, 92);
-  outline: 1px solid rgb(41, 51, 92);
-}
-
 .Overlay {
    position: fixed;
    top: 0;

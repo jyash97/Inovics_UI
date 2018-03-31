@@ -45,7 +45,7 @@ class Input extends React.Component {
 
   render() {
     return (
-      <div className="input-container my-4">
+      <div className="inputcomponent-container my-4">
         <input
           className="text-capitalize"
           placeholder={`Search ${this.props.category}`}
