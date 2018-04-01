@@ -172,7 +172,6 @@ class Developer extends React.Component {
               onChange={this.handleChange}
               value={this.state.price}
             >
-              {' '}
               <option value="free">Free</option>
               <option value="paid">Paid</option>
             </select>

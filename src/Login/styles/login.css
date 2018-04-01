@@ -1,0 +1,100 @@
+.login-form{
+  overflow: hidden;
+}
+
+.login-form input, .login-form select{
+  width: 80%;
+  margin: 15px;
+  color: rgba(80,82,196,1);
+  border:1px solid rgba(80,82,196,.3);
+}
+
+.login-form input:hover , .login-form select:hover{
+  border:1px solid rgba(80,82,196,.4);
+  color: rgba(80,82,196,.9);
+}
+
+.login-form input:focus , .login-form select:focus{
+  border:1px solid rgba(80,82,196,.6);
+  color: rgba(80,82,196,1);
+  box-shadow: none;
+}
+
+.login-form input:active , .login-form select:active{
+  border:1px solid rgba(80,82,196,.5);
+  color: rgba(80,82,196,.95);
+  box-shadow: none;
+}
+
+.login-image img{
+  width: 90%;
+  margin: 40px auto;
+}
+
+.login-form button{
+  background: rgba(80,82,196,.9);
+  color: white;
+  margin: 15px;
+  width: 80%;
+  box-shadow: 3px 3px 6px rgba(100,102,244,.5);
+  outline: none;
+}
+
+.login-form button:hover{
+  background: rgba(80,82,196,.8);
+  outline: none;
+  box-shadow: 2px 2px 5px rgba(100,102,244,.4);
+}
+
+.login-form button:active{
+  background: rgba(80,82,196,.95);
+  outline: none;
+  box-shadow: 1px 1px 5px rgba(100,102,244,.6);
+}
+
+.login-form button:focus{
+  outline: none;
+  background: rgba(80,82,196,1);
+  box-shadow:1px 1px 6px rgba(100,102,244,.5);
+}
+
+.login-form ::placeholder{
+  color: rgba(80,82,196,.7);
+}
+
+.login-form .link{
+  color: rgba(80,82,196,1);
+  border: 1px solid rgba(80,82,196,.9);
+  display: block;
+  margin: 5px 15px;
+  width: 80%;
+  box-shadow: 3px 3px 6px rgba(100,102,244,.4);
+}
+
+.login-form .link:hover{
+  background: rgba(80,82,196,.9);
+  outline: none;
+  color: white;
+  box-shadow: 2px 2px 5px rgba(100,102,244,.4);
+}
+
+.login-form .btn-outline-primary{
+  color: rgba(80,82,196,1);
+  margin: 15px;
+  border: 1px solid rgba(80,82,196,.9);
+}
+
+.login-form .btn-outline-primary:hover{
+  background: rgba(80,82,196,.9);
+  outline: none;
+  color: white;
+}
+
+.login-form .alert{
+  background: white;
+  color: tomato;
+  border: 1px dashed tomato;
+  width: 80%;
+  padding: 8px 5px;
+  margin: 0px 15px;
+}

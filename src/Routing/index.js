@@ -16,6 +16,8 @@ import Education from '../Education';
 import Jobs from '../Jobs';
 import WebSearchBot from '../Chatbot/WebSearchBot';
 import NotFound from '../Presentational/NotFound';
+import Register from '../Register';
+import Login from '../Login';
 
 class Routing extends React.Component {
   constructor() {
@@ -53,6 +55,10 @@ class Routing extends React.Component {
         return <Jobs />;
       case 'chat':
         return <WebSearchBot />;
+      case 'register':
+        return <Register />;
+      case 'login':
+        return <Login />;
       default:
         return <NotFound />;
     }
