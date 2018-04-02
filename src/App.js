@@ -23,43 +23,71 @@ import Dictionary from './Education/Dictionary';
 import JobsIndividual from './Jobs/JobsIndividual';
 import WebSearchBot from './Chatbot/WebSearchBot';
 import NotFound from './Presentational/NotFound';
+import Login from './Login';
+import Register from './Register';
 
-const App = () => (
-  <Router>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/:component" component={Routing} />
-      <Route exact path="/movies/:id" component={MovieIndiviual} />
-      <Route exact path="/news/channel/:id" component={NewsChannel} />
-      <Route exact path="/weather/:id" component={WeatherIndividual} />
-      <Route exact path="/news/search by channel" component={NewsByChannel} />
-      <Route exact path="/news/search by topic" component={NewsByTopic} />
-      <Route exact path="/education/resume" component={Resume} />
-      <Route
-        exact
-        path="/education/resume/instructions"
-        component={Instructions}
-      />
-      <Route exact path="/resume/print" component={PrintResume} />
-      <Route exact path="/books/title/:id" component={BooksIndividual} />
-      <Route exact path="/books/author/:id" component={BooksIndividual} />
-      <Route exact path="/books/search by title" component={SearchByTitle} />
-      <Route exact path="/books/search by author" component={SearchByAuthor} />
-      <Route exact path="/developer/:id" component={DeveloperIndividual} />
-      <Route exact path="/jobs/:id" component={JobsIndividual} />
-      <Route exact path="/education/dictionary" component={Dictionary} />
-      <Route exact path="/food/restaurants/:city" component={Restaurant} />
-      <Route exact path="/quotes" component={QuotesIndividual} />
-      <Route
-        exact
-        path="/cricket/upcoming matches"
-        component={UpcomingMatches}
-      />
-      <Route exact path="/cricket/live scores" component={LiveScore} />
-      <Route exact path="/chat" component={WebSearchBot} />
-      <Route component={NotFound} />
-    </Switch>
-  </Router>
-);
+class App extends React.Component {
+  render() {
+    const isLogin = JSON.parse(localStorage.getItem('userData'));
+    console.log(isLogin);
+    return isLogin ? (
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/:component" component={Routing} />
+          <Route exact path="/movies/:id" component={MovieIndiviual} />
+          <Route exact path="/news/channel/:id" component={NewsChannel} />
+          <Route exact path="/weather/:id" component={WeatherIndividual} />
+          <Route
+            exact
+            path="/news/search by channel"
+            component={NewsByChannel}
+          />
+          <Route exact path="/news/search by topic" component={NewsByTopic} />
+          <Route exact path="/education/resume" component={Resume} />
+          <Route
+            exact
+            path="/education/resume/instructions"
+            component={Instructions}
+          />
+          <Route exact path="/resume/print" component={PrintResume} />
+          <Route exact path="/books/title/:id" component={BooksIndividual} />
+          <Route exact path="/books/author/:id" component={BooksIndividual} />
+          <Route
+            exact
+            path="/books/search by title"
+            component={SearchByTitle}
+          />
+          <Route
+            exact
+            path="/books/search by author"
+            component={SearchByAuthor}
+          />
+          <Route exact path="/developer/:id" component={DeveloperIndividual} />
+          <Route exact path="/jobs/:id" component={JobsIndividual} />
+          <Route exact path="/education/dictionary" component={Dictionary} />
+          <Route exact path="/food/restaurants/:city" component={Restaurant} />
+          <Route exact path="/quotes" component={QuotesIndividual} />
+          <Route
+            exact
+            path="/cricket/upcoming matches"
+            component={UpcomingMatches}
+          />
+          <Route exact path="/cricket/live scores" component={LiveScore} />
+          <Route exact path="/chat" component={WebSearchBot} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    ) : (
+      <Router>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route component={Login} />
+        </Switch>
+      </Router>
+    );
+  }
+}
 
 export default App;

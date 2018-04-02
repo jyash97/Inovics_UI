@@ -24,7 +24,9 @@ const ImageCard = props => (
                   />
                 )}
                 <div className="card-body">
-                  <h5 className="card-title my-0">{data.title}</h5>
+                  <h5 className="card-title my-0 text-capitalize">
+                    {data.title}
+                  </h5>
                   <p className="card-text text-muted">
                     {data.time ? converter(data.time) : null}
                   </p>

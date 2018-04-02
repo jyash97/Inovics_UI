@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Links extends React.Component {
   render() {
-    let a = ['help', 'logout', 'alert'];
+    let a = ['help', 'alert'];
     return (
       <React.Fragment>
         {a.map((name, i) => (

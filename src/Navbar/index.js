@@ -8,10 +8,20 @@ import Navigation from '../Chatbot/Navigation';
 import Profile from './Images/profile.jpg';
 
 class Navbar extends React.Component {
+  handleLogout() {
+    localStorage.removeItem('userData');
+    window.location.href = '/login';
+  }
+
   render() {
+    let imageURL = JSON.parse(localStorage.getItem('userData')).image;
+    fetch(imageURL)
+      .then(res => res.blob())
+      .then(blob => (imageURL = window.URL.createObjectURL(blob)));
+
     // Should be uploaded from Backend just for UI purpose.
     const styleProfile = {
-      backgroundImage: `url(${Profile})`
+      backgroundImage: `url(${imageURL})`
     };
     return (
       <React.Fragment>
@@ -25,6 +35,13 @@ class Navbar extends React.Component {
           <div className="navbar-collapse">
             <ul className="navbar-nav ml-auto">
               <Links />
+              <li className="nav-item text-capitalize">
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/logout.svg`}
+                  onClick={() => this.handleLogout()}
+                  alt="Logout Button"
+                />
+              </li>
               <li
                 className="rounded-circle bg-light profile"
                 style={styleProfile}

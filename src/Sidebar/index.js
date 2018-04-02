@@ -29,11 +29,15 @@ class Sidebar extends React.Component {
         height: '5vh'
       };
     }
+    let imageURL = JSON.parse(localStorage.getItem('userData')).image;
+    fetch(imageURL)
+      .then(res => res.blob())
+      .then(blob => (imageURL = window.URL.createObjectURL(blob)));
     // Profile will be uploaded via Backend just for UI purpose.
     const stylesProfile = {
       width: '9vw',
       height: '9vw',
-      backgroundImage: `url(${Profile})`,
+      backgroundImage: `url(${imageURL})`,
       backgroundSize: 'cover',
       backgroundPosition: 'top center'
     };
