@@ -32,14 +32,28 @@ class Login extends React.Component {
           email: this.state.email,
           password: this.state.password
         })
-        .then(res => {
+        .then(async res => {
           if (res.data.error) {
             this.setState({
               error: true,
               message: res.data.message
             });
           } else {
-            window.location.href = '/';
+            const userData = await axios
+              .post('http://localhost:3554/islogin', {
+                email: this.state.email
+              })
+              .then(res => {
+                console.log(res);
+                localStorage.setItem('userData', JSON.stringify(res.data));
+                window.location.href = '/';
+              })
+              .catch(err =>
+                this.setState({
+                  error: true,
+                  message: 'Something went wrong with the server'
+                })
+              );
           }
         })
         .catch(err =>
