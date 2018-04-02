@@ -102,6 +102,7 @@ class Register extends React.Component {
         <div className="container-fluid">
           <div className="row my-5 py-5">
             <div className="col-md-6 p-5 align-middle form-group register-form">
+              <h3 className="heading">Get started with Inovics Application!</h3>
               {this.state.error
                 ? this.state.message.map(msg => (
                     <div className="text-center alert" key="msg">

@@ -39,14 +39,26 @@ class Login extends React.Component {
               message: res.data.message
             });
           } else {
-            const userData = await axios
+            await axios
               .post('http://localhost:3554/islogin', {
                 email: this.state.email
               })
               .then(res => {
                 console.log(res);
-                localStorage.setItem('userData', JSON.stringify(res.data));
-                window.location.href = '/';
+                if (res.data.isVerified) {
+                  localStorage.setItem('userData', JSON.stringify(res.data));
+                  window.location.href = '/';
+                } else {
+                  localStorage.setItem(
+                    'userData',
+                    JSON.stringify({
+                      email: res.data.email,
+                      image: res.data.image,
+                      isVerified: res.data.isVerified
+                    })
+                  );
+                  window.location.href = '/otp';
+                }
               })
               .catch(err =>
                 this.setState({
@@ -83,6 +95,7 @@ class Login extends React.Component {
               />
             </div>
             <div className="col-md-6 p-5 my-5 form-group login-form">
+              <h4 className="heading">Welcome to Inovics Login</h4>
               {this.state.error ? (
                 <div className="alert text-center">{this.state.message}</div>
               ) : (
@@ -91,7 +104,7 @@ class Login extends React.Component {
               <input
                 type="email"
                 name="email"
-                className="form-control mt-5"
+                className="form-control mt-4"
                 value={this.state.email}
                 placeholder="Email"
                 onChange={this.handleChange}
