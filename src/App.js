@@ -23,6 +23,7 @@ import Dictionary from './Education/Dictionary';
 import JobsIndividual from './Jobs/JobsIndividual';
 import WebSearchBot from './Chatbot/WebSearchBot';
 import NotFound from './Presentational/NotFound';
+import Favorites from './Favorites';
 import Login from './Login';
 import Register from './Register';
 
@@ -75,6 +76,7 @@ class App extends React.Component {
           />
           <Route exact path="/cricket/live scores" component={LiveScore} />
           <Route exact path="/chat" component={WebSearchBot} />
+          <Route exact path="/favorites" component={Favorites} />
           <Route component={NotFound} />
         </Switch>
       </Router>

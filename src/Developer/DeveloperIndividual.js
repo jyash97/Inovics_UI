@@ -13,6 +13,7 @@ class DeveloperIndividual extends React.Component {
     this.handleData = this.handleData.bind(this);
     this.extraData = this.extraData.bind(this);
     this.extraLinks = this.extraLinks.bind(this);
+    this.handleFavorites = this.handleFavorites.bind(this);
   }
 
   async handleData() {
@@ -34,13 +35,37 @@ class DeveloperIndividual extends React.Component {
         price: data.price,
         source: data.author,
         linktitle: 'Visit Now',
-        id: data.id
+        id: data._id,
+        user: data.user
       })
     );
     this.setState({
       data: dataCourses,
       allData: dataCourses
     });
+    console.log(this.state.data);
+  }
+
+  async handleFavorites(data) {
+    const language = this.props.match.params.id.toLowerCase();
+    await axios
+      .post(`http://localhost:3554/courses/${language}/${data.id}`, {
+        email: JSON.parse(localStorage.getItem('userData')).email,
+        user_id: JSON.parse(localStorage.getItem('userData')).id
+      })
+      .then(async res => {
+        console.log(res);
+      });
+  }
+
+  async handleDelete(data) {
+    await axios
+      .post('http://localhost:3554/delete/courses', {
+        course_id: data.id
+      })
+      .then(async res => {
+        console.log(res);
+      });
   }
 
   componentDidMount() {
@@ -75,7 +100,28 @@ class DeveloperIndividual extends React.Component {
     }
   }
 
-  extraLinks() {}
+  extraLinks(data) {
+    return (
+      <span>
+        <button
+          className="btn btn-sm btn-primary ml-1"
+          onClick={() => this.handleFavorites(data)}
+        >
+          Add To Favorites
+        </button>
+        {data.user === JSON.parse(localStorage.getItem('userData')).email ? (
+          <button
+            className="btn btn-sm btn-primary ml-1"
+            onClick={() => this.handleDelete(data)}
+          >
+            Delete Course
+          </button>
+        ) : (
+          ''
+        )}
+      </span>
+    );
+  }
 
   render() {
     return (

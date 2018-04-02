@@ -33,14 +33,37 @@ class JobsIndividual extends React.Component {
         price: data.salary,
         source: data.company,
         linktitle: 'Visit Now',
-        id: data.id,
-        salary: data.salary
+        id: data._id,
+        salary: data.salary,
+        user: data.user
       })
     );
     this.setState({
       data: dataJobs
     });
     console.log(dataJobs);
+  }
+
+  async handleFavorites(data) {
+    const tag = this.props.match.params.id.toLowerCase();
+    await axios
+      .post(`http://localhost:3554/jobs/${tag}/${data.id}`, {
+        email: JSON.parse(localStorage.getItem('userData')).email,
+        user_id: JSON.parse(localStorage.getItem('userData')).id
+      })
+      .then(async res => {
+        console.log(res);
+      });
+  }
+
+  async handleDelete(data) {
+    await axios
+      .post('http://localhost:3554/delete/jobs', {
+        job_id: data.id
+      })
+      .then(async res => {
+        console.log(res);
+      });
   }
 
   componentDidMount() {
@@ -60,7 +83,28 @@ class JobsIndividual extends React.Component {
     );
   }
 
-  extraLinks() {}
+  extraLinks(data) {
+    return (
+      <span>
+        <button
+          className="btn btn-sm btn-primary ml-1"
+          onClick={() => this.handleFavorites(data)}
+        >
+          Add To Favorites
+        </button>
+        {data.user === JSON.parse(localStorage.getItem('userData')).email ? (
+          <button
+            className="btn btn-sm btn-primary ml-1"
+            onClick={() => this.handleDelete(data)}
+          >
+            Delete Job
+          </button>
+        ) : (
+          ''
+        )}
+      </span>
+    );
+  }
 
   render() {
     return (

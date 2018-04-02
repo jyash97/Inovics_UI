@@ -19,6 +19,7 @@ import WebSearchBot from '../Chatbot/WebSearchBot';
 import NotFound from '../Presentational/NotFound';
 import Register from '../Register';
 import Login from '../Login';
+import Favorites from '../Favorites';
 
 class Routing extends React.Component {
   constructor() {
@@ -62,6 +63,8 @@ class Routing extends React.Component {
         return <Register />;
       case 'login':
         return <Login />;
+      case 'favorites':
+        return <Favorites />;
       default:
         return <NotFound />;
     }

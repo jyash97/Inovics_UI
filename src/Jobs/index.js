@@ -73,6 +73,7 @@ class Jobs extends React.Component {
     const company = this.state.company.toLowerCase();
     const link = this.state.link.toLowerCase();
     const title = this.state.title.toLowerCase();
+    const user = JSON.parse(localStorage.getItem('userData')).email;
 
     if (
       this.state.tags === '' ||
@@ -87,7 +88,8 @@ class Jobs extends React.Component {
           company,
           link,
           salary,
-          title
+          title,
+          user
         })
         .then(response => {
           console.log(response);
