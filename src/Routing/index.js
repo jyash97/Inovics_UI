@@ -18,6 +18,7 @@ import Entertainment from '../Entertainment';
 import WebSearchBot from '../Chatbot/WebSearchBot';
 import NotFound from '../Presentational/NotFound';
 import Feedback from '../Feedback';
+import Profile from '../Profile';
 import Favorites from '../Favorites';
 
 class Routing extends React.Component {
@@ -62,6 +63,8 @@ class Routing extends React.Component {
         return <Feedback />;
       case 'favorites':
         return <Favorites />;
+      case 'profile':
+        return <Profile />;
       default:
         return <NotFound />;
     }
