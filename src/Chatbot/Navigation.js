@@ -207,6 +207,7 @@ class NavigationChat extends React.Component {
             }
           ]}
           headerTitle="Navigation Chat"
+          userAvatar={JSON.parse(localStorage.getItem('userData')).image}
           inputStyle={{ visibility: 'hidden', display: 'none' }}
           bubbleStyle={{
             borderRadius: '3px 5px 3px 5px',

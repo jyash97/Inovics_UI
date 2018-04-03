@@ -129,6 +129,7 @@ const WebSearchBot = () => (
         }
       ]}
       key="data"
+      userAvatar={JSON.parse(localStorage.getItem('userData')).image}
       headerComponent={<p />}
       contentStyle={{ minHeight: '84.8vh' }}
       style={{ minWidth: '100%', borderRadius: 0 }}
