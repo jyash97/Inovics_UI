@@ -43,6 +43,7 @@
   background: rgba(80,82,196,.9);
   color: white;
   margin: 15px;
+  cursor: pointer;
   width: 80%;
   box-shadow: 3px 3px 6px rgba(100,102,244,.5);
   outline: none;
@@ -93,4 +94,9 @@
   width: 80%;
   padding: 8px 5px;
   margin: 10px 15px;
+}
+
+.register-form .heading{
+  color:rgba(80,82,196,1);
+  margin-bottom: 20px;
 }

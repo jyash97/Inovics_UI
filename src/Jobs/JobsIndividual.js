@@ -51,18 +51,42 @@ class JobsIndividual extends React.Component {
         email: JSON.parse(localStorage.getItem('userData')).email,
         user_id: JSON.parse(localStorage.getItem('userData')).id
       })
-      .then(async res => {
+      .then(res => {
         console.log(res);
       });
   }
 
   async handleDelete(data) {
+    let tag = this.props.match.params.id.toLowerCase();
     await axios
       .post('http://localhost:3554/delete/jobs', {
         job_id: data.id
       })
-      .then(async res => {
-        console.log(res);
+      .then(res => {
+        if (res.data === null) {
+          this.setState({
+            data: []
+          });
+        } else {
+          const dataJobs = [];
+          res.data.map((data, i) =>
+            dataJobs.push({
+              title: data.title,
+              time: Date(),
+              image: '',
+              link: data.link,
+              price: data.salary,
+              source: data.company,
+              linktitle: 'Visit Now',
+              id: data._id,
+              salary: data.salary,
+              user: data.user
+            })
+          );
+          this.setState({
+            data: dataJobs
+          });
+        }
       });
   }
 

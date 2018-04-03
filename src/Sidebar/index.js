@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Links from './Links';
-import Profile from './images/profile.jpg';
 
 class Sidebar extends React.Component {
   constructor() {

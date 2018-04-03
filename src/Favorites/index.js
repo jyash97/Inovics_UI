@@ -24,38 +24,45 @@ class Favorites extends React.Component {
   async componentDidMount() {
     let dataCourses = [];
     let dataJobs = [];
-    let data = [];
+    let courseData = [];
+    let jobsData = [];
     await axios
       .get(
-        `http://localhost:3554/favorites/${
+        `http://localhost:3554/courseFavorites/${
           JSON.parse(localStorage.getItem('userData')).email
         }`
       )
       .then(response => {
-        data = response.data;
+        courseData = response.data;
       })
       .catch(err => console.log(err));
-    console.log(data);
-    data.courses.map((data, i) =>
+    await axios
+      .get(
+        `http://localhost:3554/jobFavorites/${
+          JSON.parse(localStorage.getItem('userData')).email
+        }`
+      )
+      .then(response => {
+        jobsData = response.data;
+      })
+      .catch(err => console.log(err));
+    courseData.courses.map((data, i) =>
       dataCourses.push({
         title: data.name,
         time: Date(),
         image: '',
         link: data.link,
-        price: data.price,
-        source: data.author,
         linktitle: 'Visit Now',
         id: data._id
       })
     );
-    data.jobs.map((data, i) =>
+
+    jobsData.jobs.map((data, i) =>
       dataJobs.push({
         title: data.title,
         time: Date(),
         image: '',
         link: data.link,
-        salary: data.salary,
-        company: data.company,
         linktitle: 'Visit Now',
         id: data._id
       })
@@ -64,7 +71,6 @@ class Favorites extends React.Component {
       courseData: dataCourses,
       jobData: dataJobs
     });
-    console.log(this.state.data);
   }
 
   render() {

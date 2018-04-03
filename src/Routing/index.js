@@ -17,8 +17,7 @@ import Jobs from '../Jobs';
 import Entertainment from '../Entertainment';
 import WebSearchBot from '../Chatbot/WebSearchBot';
 import NotFound from '../Presentational/NotFound';
-import Register from '../Register';
-import Login from '../Login';
+import Feedback from '../Feedback';
 import Favorites from '../Favorites';
 
 class Routing extends React.Component {
@@ -59,10 +58,8 @@ class Routing extends React.Component {
         return <Entertainment />;
       case 'chat':
         return <WebSearchBot />;
-      case 'register':
-        return <Register />;
-      case 'login':
-        return <Login />;
+      case 'feedback':
+        return <Feedback />;
       case 'favorites':
         return <Favorites />;
       default:

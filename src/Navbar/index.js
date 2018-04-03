@@ -5,8 +5,6 @@ import Links from './Links';
 import './styles/style.css';
 import Navigation from '../Chatbot/Navigation';
 
-import Profile from './Images/profile.jpg';
-
 class Navbar extends React.Component {
   handleLogout() {
     localStorage.removeItem('userData');
