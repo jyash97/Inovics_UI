@@ -12,6 +12,7 @@ class JobsIndividual extends React.Component {
     this.handleData = this.handleData.bind(this);
     this.extraData = this.extraData.bind(this);
     this.extraLinks = this.extraLinks.bind(this);
+    this.fetchUserFavorites = this.fetchUserFavorites.bind(this);
   }
 
   async handleData() {
@@ -41,7 +42,6 @@ class JobsIndividual extends React.Component {
     this.setState({
       data: dataJobs
     });
-    console.log(dataJobs);
   }
 
   async handleFavorites(data) {
@@ -52,7 +52,7 @@ class JobsIndividual extends React.Component {
         user_id: JSON.parse(localStorage.getItem('userData')).id
       })
       .then(res => {
-        console.log(res);
+        this.fetchUserFavorites();
       });
   }
 
@@ -90,8 +90,25 @@ class JobsIndividual extends React.Component {
       });
   }
 
+  async fetchUserFavorites() {
+    await axios
+      .get(
+        `http://localhost:3554/jobFavorites/${
+          JSON.parse(localStorage.getItem('userData')).email
+        }`
+      )
+      .then(response => {
+        this.setState({
+          favorites: response.data
+        });
+      })
+      .catch(err => console.log(err));
+    console.log(this.state);
+  }
+
   componentDidMount() {
     this.handleData();
+    this.fetchUserFavorites();
   }
 
   extraData(data) {
@@ -108,24 +125,30 @@ class JobsIndividual extends React.Component {
   }
 
   extraLinks(data) {
+    let isadd = false;
+    console.log(this.state.favorites);
+    if (this.state.favorites) {
+      const specifiedJob = this.state.favorites.jobs.filter(
+        job => job._id === data.id
+      );
+      isadd = specifiedJob.length > 0 ? true : false;
+    }
     return (
       <span>
         <button
           className="btn btn-sm btn-primary ml-1"
           onClick={() => this.handleFavorites(data)}
         >
-          Add To Favorites
+          {isadd ? 'Remove from favorites' : 'Add to Favorites'}
         </button>
         {data.user === JSON.parse(localStorage.getItem('userData')).email ? (
           <button
             className="btn btn-sm btn-primary ml-1"
             onClick={() => this.handleDelete(data)}
           >
-            Delete Job
+            Delete Course
           </button>
-        ) : (
-          ''
-        )}
+        ) : null}
       </span>
     );
   }
