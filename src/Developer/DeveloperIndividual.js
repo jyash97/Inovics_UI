@@ -13,6 +13,9 @@ class DeveloperIndividual extends React.Component {
     this.handleData = this.handleData.bind(this);
     this.extraData = this.extraData.bind(this);
     this.extraLinks = this.extraLinks.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleFavorites = this.handleFavorites.bind(this);
+    this.fetchUserFavorites = this.fetchUserFavorites.bind(this);
   }
 
   async handleData() {
@@ -34,7 +37,8 @@ class DeveloperIndividual extends React.Component {
         price: data.price,
         source: data.author,
         linktitle: 'Visit Now',
-        id: data.id
+        id: data._id,
+        user: data.user
       })
     );
     this.setState({
@@ -43,8 +47,68 @@ class DeveloperIndividual extends React.Component {
     });
   }
 
+  async handleFavorites(data) {
+    const language = this.props.match.params.id.toLowerCase();
+    await axios
+      .post(`http://localhost:3554/courses/${language}/${data.id}`, {
+        email: JSON.parse(localStorage.getItem('userData')).email,
+        user_id: JSON.parse(localStorage.getItem('userData')).id
+      })
+      .then(res => {
+        this.fetchUserFavorites();
+      });
+  }
+
+  async handleDelete(data) {
+    await axios
+      .post('http://localhost:3554/delete/courses', {
+        course_id: data.id
+      })
+      .then(res => {
+        if (res.data === null) {
+          this.setState({
+            data: []
+          });
+        } else {
+          const dataCourses = [];
+          res.data.map((data, i) =>
+            dataCourses.push({
+              title: data.name,
+              time: Date(),
+              image: '',
+              link: data.link,
+              price: data.price,
+              source: data.author,
+              linktitle: 'Visit Now',
+              id: data._id,
+              user: data.user
+            })
+          );
+          this.setState({
+            data: dataCourses
+          });
+        }
+      });
+  }
+
+  async fetchUserFavorites() {
+    await axios
+      .get(
+        `http://localhost:3554/courseFavorites/${
+          JSON.parse(localStorage.getItem('userData')).email
+        }`
+      )
+      .then(response => {
+        this.setState({
+          favorites: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
   componentDidMount() {
     this.handleData();
+    this.fetchUserFavorites();
   }
 
   extraData(data) {
@@ -75,7 +139,33 @@ class DeveloperIndividual extends React.Component {
     }
   }
 
-  extraLinks() {}
+  extraLinks(data) {
+    let isadd = false;
+    if (this.state.favorites) {
+      const specifiedCourse = this.state.favorites.courses.filter(
+        course => course._id === data.id
+      );
+      isadd = specifiedCourse.length > 0 ? true : false;
+    }
+    return (
+      <span>
+        <button
+          className="btn btn-sm btn-primary ml-1"
+          onClick={() => this.handleFavorites(data)}
+        >
+          {isadd ? 'Remove from favorites' : 'Add to Favorites'}
+        </button>
+        {data.user === JSON.parse(localStorage.getItem('userData')).email ? (
+          <button
+            className="btn btn-sm btn-primary ml-1"
+            onClick={() => this.handleDelete(data)}
+          >
+            Delete Course
+          </button>
+        ) : null}
+      </span>
+    );
+  }
 
   render() {
     return (

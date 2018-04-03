@@ -60,7 +60,6 @@ class Otp extends React.Component {
             message: ['Something went wrong with the Server']
           })
         );
-      console.log('true');
     } else {
       const errors = [];
       if (this.state.otp === '') {

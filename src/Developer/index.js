@@ -60,6 +60,7 @@ class Developer extends React.Component {
     const author = this.state.author.toLowerCase();
     const name = this.state.name.toLowerCase();
     const link = this.state.link.toLowerCase();
+    const user = JSON.parse(localStorage.getItem('userData')).email;
 
     if (
       this.state.name === '' &&
@@ -74,7 +75,8 @@ class Developer extends React.Component {
           author,
           link,
           name,
-          price: this.state.price
+          price: this.state.price,
+          user
         })
         .then(response => {
           console.log(response);
