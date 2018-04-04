@@ -23,7 +23,7 @@ class Dictionary extends React.Component {
         `http://api.wordnik.com/v4/word.json/${value}/definitions?limit=100000&includeRelated=true&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5`
       ).then(response => response.json());
       let dataWord = [];
-      data.map(data =>
+      data.filter((key, index) => index < 5).map(data =>
         dataWord.push({
           title: data.word,
           time: Date.now(),

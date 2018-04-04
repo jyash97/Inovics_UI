@@ -25,47 +25,40 @@ class Reset extends React.Component {
   }
 
   async handleReset() {
-    // if (this.state.email !== '') {
-    //   const email = JSON.parse(localStorage.getItem('userData')).email;
-    //   await axios
-    //     .post(`http://localhost:3554/otp/verify/${email}`, {
-    //       email: this.state.otp
-    //     })
-    //     .then(res => {
-    //       if (res.data.error) {
-    //         this.setState({
-    //           error: true,
-    //           message: res.data.message
-    //         });
-    //       } else {
-    //         localStorage.removeItem('userData');
-    //         localStorage.setItem(
-    //           'userData',
-    //           JSON.stringify({
-    //             name: res.data.name,
-    //             email: res.data.email,
-    //             image: res.data.image,
-    //             isVerified: res.data.isVerified
-    //           })
-    //         );
-    //       }
-    //     })
-    //     .catch(err =>
-    //       this.setState({
-    //         error: true,
-    //         message: ['Something went wrong with the Server']
-    //       })
-    //     );
-    // } else {
-    //   const errors = [];
-    //   if (this.state.otp === '') {
-    //     errors.push('Please enter the OTP');
-    //   }
-    //   this.setState({
-    //     error: true,
-    //     message: errors
-    //   });
-    // }
+    if (this.state.email) {
+      await axios
+        .post('http://localhost:3554/reset', {
+          email: this.state.email
+        })
+        .then(res => {
+          if (res.data.error) {
+            this.setState({
+              error: true,
+              message: res.data.message
+            });
+          } else {
+            this.setState({
+              error: true,
+              message: res.data.message
+            });
+          }
+        })
+        .catch(err =>
+          this.setState({
+            error: true,
+            message: ['Something went wrong with the Server']
+          })
+        );
+    } else {
+      const errors = [];
+      if (!this.state.email) {
+        errors.push('Please enter the Email');
+      }
+      this.setState({
+        error: true,
+        message: errors
+      });
+    }
   }
 
   render() {
@@ -79,12 +72,10 @@ class Reset extends React.Component {
                 src={`${process.env.PUBLIC_URL}/images/reset.png`}
                 alt="Reset Email for Users"
               />
-              {this.state.error ? (
-                <Errors errors={this.state.messages} />
-              ) : null}
+              {this.state.error ? <Errors errors={this.state.message} /> : null}
               <input
                 type="email"
-                name="otp"
+                name="email"
                 className="form-control mx-auto"
                 value={this.state.email}
                 placeholder="Enter Email"

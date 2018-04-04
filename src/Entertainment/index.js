@@ -1,5 +1,6 @@
 import React from 'react';
-import Cards from '../Presentational/Cards';
+import ImageCard from '../Presentational/ImageCard';
+import BackButton from '../Presentational/BackButton';
 
 class Entertainment extends React.Component {
   constructor() {
@@ -7,22 +8,39 @@ class Entertainment extends React.Component {
     this.state = {
       data: []
     };
+    this.extraData = this.extraData.bind(this);
+    this.extraLinks = this.extraLinks.bind(this);
   }
 
+  extraData() {}
+  extraLinks() {}
+
+  componentDidMount() {
+    let dataComponent = [];
+    dataComponent.push({
+      title: 'Drumkit',
+      time: Date.now(),
+      image: `${process.env.PUBLIC_URL}/images/entertainment1.jpeg`,
+      linktitle: 'Play Now',
+      link: '//drumkit/index.html'
+    });
+    this.setState({
+      data: dataComponent
+    });
+  }
   render() {
-    let dataCategory = [
-      {
-        title: 'Drumkit',
-        id: 1,
-        image: `${process.env.PUBLIC_URL}/images/entertainment1.jpeg`
-      },
-      {
-        title: 'Whack-A-Mole',
-        id: 2,
-        image: `${process.env.PUBLIC_URL}/images/entertainment2.jpg`
-      }
-    ];
-    return <Cards category="entertainment" number={2} data={dataCategory} />;
+    return (
+      <React.Fragment>
+        <BackButton classes="mx-5 my-3" url="/cricket" name="back to home" />
+        <ImageCard
+          heading="Entertainment"
+          category="cricket/upcomingmatches"
+          data={this.state.data}
+          extraData={this.extraData}
+          extraLinks={this.extraLinks}
+        />
+      </React.Fragment>
+    );
   }
 }
 
