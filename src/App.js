@@ -27,6 +27,7 @@ import Favorites from './Favorites';
 import Login from './Login';
 import Otp from './Otp';
 import Register from './Register';
+import Reset from './Reset';
 
 const AuthController = () => {
   const isVerified = JSON.parse(localStorage.getItem('userData')).isVerified;
@@ -90,6 +91,7 @@ class App extends React.Component {
     ) : (
       <Router>
         <Switch>
+          <Route exact path="/reset" component={Reset} />
           <Route exact path="/register" component={Register} />
           <Route component={Login} />
         </Switch>

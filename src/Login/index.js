@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import './styles/login.css';
+import Errors from '../Presentational/Errors';
 
 class Login extends React.Component {
   constructor() {
@@ -11,7 +12,7 @@ class Login extends React.Component {
       email: '',
       password: '',
       error: false,
-      message: ''
+      message: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
@@ -36,7 +37,7 @@ class Login extends React.Component {
           if (res.data.error) {
             this.setState({
               error: true,
-              message: res.data.message
+              message: [res.data.message]
             });
           } else {
             await axios
@@ -63,7 +64,7 @@ class Login extends React.Component {
               .catch(err =>
                 this.setState({
                   error: true,
-                  message: 'Something went wrong with the server'
+                  message: ['Something went wrong with the server']
                 })
               );
           }
@@ -71,13 +72,13 @@ class Login extends React.Component {
         .catch(err =>
           this.setState({
             error: true,
-            message: 'Something went wrong with the Server'
+            message: ['Something went wrong with the Server']
           })
         );
     } else {
       this.setState({
         error: true,
-        message: 'Please fill the details Properly'
+        message: ['Please fill the details Properly']
       });
     }
   }

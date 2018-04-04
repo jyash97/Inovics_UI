@@ -32,7 +32,6 @@ class Sidebar extends React.Component {
     fetch(imageURL)
       .then(res => res.blob())
       .then(blob => (imageURL = window.URL.createObjectURL(blob)));
-    // Profile will be uploaded via Backend just for UI purpose.
     const stylesProfile = {
       width: '9vw',
       height: '9vw',
@@ -50,7 +49,7 @@ class Sidebar extends React.Component {
         >
           ❤️
         </span>
-        <div className="mx-auto my-4 rounded-circle" style={stylesProfile} />
+        <div className="mx-auto my-5 rounded-circle" style={stylesProfile} />
         <Links />
       </div>
     );

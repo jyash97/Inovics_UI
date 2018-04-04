@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageCard from '../Presentational/ImageCard';
 import axios from 'axios';
+import Sidebar from '../Sidebar';
 
 class Favorites extends React.Component {
   constructor() {
@@ -76,22 +77,27 @@ class Favorites extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <ImageCard
-          number={4}
-          heading="Favorite Courses"
-          data={this.state.courseData}
-          extraData={this.extraData}
-          extraLinks={this.extraLinks}
-          handleFavorites={this.handleFavorites}
-        />
-        <ImageCard
-          number={4}
-          heading="favorite Jobs"
-          data={this.state.jobData}
-          extraData={this.extraData}
-          extraLinks={this.extraLinks}
-          handleFavorites={this.handleFavorites}
-        />
+        <Sidebar />
+        <div className="container-fluid">
+          <div className="row">
+            <ImageCard
+              number={4}
+              heading="Favorite Courses"
+              data={this.state.courseData}
+              extraData={this.extraData}
+              extraLinks={this.extraLinks}
+              handleFavorites={this.handleFavorites}
+            />
+            <ImageCard
+              number={4}
+              heading="favorite Jobs"
+              data={this.state.jobData}
+              extraData={this.extraData}
+              extraLinks={this.extraLinks}
+              handleFavorites={this.handleFavorites}
+            />
+          </div>
+        </div>
       </React.Fragment>
     );
   }

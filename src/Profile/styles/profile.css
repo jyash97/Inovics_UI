@@ -61,14 +61,14 @@
 }
 
 .edit-form button:active{
-  background: rgba(80,82,196,.95);
+  background: rgba(80,82,196,.95) !important;
   outline: none;
-  box-shadow: 1px 1px 5px rgba(100,102,244,.6);
+  box-shadow: 1px 1px 5px rgba(100,102,244,.6) !important;
 }
 
 .edit-form button:focus{
   outline: none;
-  background: rgba(80,82,196,1);
+  background: white;
   box-shadow:1px 1px 6px rgba(100,102,244,.5);
 }
 
@@ -105,7 +105,20 @@
   color: white;
 }
 
+.edit-form .btn-primary:focus{
+  color: rgba(80,82,196,1) !important;
+  margin: 15px;
+  background: white;
+  border: 1px solid rgba(80,82,196,.9);
+}
+
 .edit-form .alert{
+  width: 80%;
+  padding: 8px 5px;
+  margin: 0px 15px;
+}
+
+.edit-form .alert-danger{
   background: white;
   color: tomato;
   border: 1px dashed tomato;
@@ -114,7 +127,17 @@
   margin: 0px 15px;
 }
 
+.edit-form .alert-sucess{
+  color: #28a745;
+  border: 1px dotted #28a745;
+}
+
 .edit-form .heading{
   color:rgba(80,82,196,1);
   margin-bottom: 20px;
+}
+
+.edit-form canvas{
+  max-width: 300px;
+  max-height: 300px;
 }

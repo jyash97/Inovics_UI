@@ -43,7 +43,7 @@ class NavigationChat extends React.Component {
         />
       );
     }
-    return (
+    return JSON.parse(localStorage.getItem('userData')).isVerified ? (
       <ThemeProvider theme={theme}>
         <ChatBot
           steps={[
@@ -225,7 +225,7 @@ class NavigationChat extends React.Component {
           width="350px"
         />
       </ThemeProvider>
-    );
+    ) : null;
   }
 }
 
