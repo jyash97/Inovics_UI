@@ -79,7 +79,7 @@
   box-shadow: 2px 2px 5px rgba(100,102,244,.4);
 }
 
-.reset-form .alert{
+.reset-form .alert-danger{
   background: white;
   color: tomato;
   border: 1px dashed tomato;

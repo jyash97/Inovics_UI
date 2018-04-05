@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Links from './Links';
 import './styles/style.css';
 import Navigation from '../Chatbot/Navigation';
 
@@ -32,7 +31,6 @@ class Navbar extends React.Component {
           </Link>
           <div className="navbar-collapse">
             <ul className="navbar-nav ml-auto">
-              <Links />
               <li className="nav-item text-capitalize">
                 <img
                   src={`${process.env.PUBLIC_URL}/images/logout.svg`}
@@ -40,7 +38,8 @@ class Navbar extends React.Component {
                   alt="Logout Button"
                 />
               </li>
-              <li
+              <Link
+                to="/profile"
                 className="rounded-circle bg-light profile"
                 style={styleProfile}
               />

@@ -22,7 +22,7 @@ class Entertainment extends React.Component {
       time: Date.now(),
       image: `${process.env.PUBLIC_URL}/images/entertainment1.jpeg`,
       linktitle: 'Play Now',
-      link: '//drumkit/index.html'
+      link: `${process.env.PUBLIC_URL}/drumkit/index.html`
     });
     this.setState({
       data: dataComponent
@@ -31,14 +31,21 @@ class Entertainment extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <BackButton classes="mx-5 my-3" url="/cricket" name="back to home" />
-        <ImageCard
-          heading="Entertainment"
-          category="cricket/upcomingmatches"
-          data={this.state.data}
-          extraData={this.extraData}
-          extraLinks={this.extraLinks}
-        />
+        <div className="container-fluid">
+          <div className="row p-5 px-5">
+            <ImageCard
+              heading="Entertainment"
+              data={this.state.data}
+              extraData={this.extraData}
+              extraLinks={this.extraLinks}
+            />
+            <BackButton
+              url="/"
+              classes="btn-outline-notfound"
+              name="Back to home"
+            />
+          </div>
+        </div>
       </React.Fragment>
     );
   }

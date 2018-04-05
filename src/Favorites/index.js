@@ -84,6 +84,7 @@ class Favorites extends React.Component {
               number={4}
               heading="Favorite Courses"
               data={this.state.courseData}
+              classes="card-deck"
               extraData={this.extraData}
               extraLinks={this.extraLinks}
               handleFavorites={this.handleFavorites}
@@ -92,6 +93,7 @@ class Favorites extends React.Component {
               number={4}
               heading="favorite Jobs"
               data={this.state.jobData}
+              classes="card-deck"
               extraData={this.extraData}
               extraLinks={this.extraLinks}
               handleFavorites={this.handleFavorites}

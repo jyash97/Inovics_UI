@@ -5,6 +5,7 @@ import axios from 'axios';
 import AvatarEditor from 'react-avatar-editor';
 
 import Errors from '../Presentational/Errors';
+import Notifications from '../Presentational/Notifications';
 
 import './styles/reset.css';
 
@@ -12,7 +13,9 @@ class Reset extends React.Component {
   constructor() {
     super();
     this.state = {
-      otp: ''
+      email: '',
+      message: [],
+      error: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -38,7 +41,7 @@ class Reset extends React.Component {
             });
           } else {
             this.setState({
-              error: true,
+              error: false,
               message: res.data.message
             });
           }
@@ -66,13 +69,18 @@ class Reset extends React.Component {
       <React.Fragment>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-6 align-middle mx-auto text-center px-5 py-4 form-group otp-form">
+            <div className="col-md-6 align-middle mx-auto text-center px-5 py-4 form-group reset-form">
+              {this.state.error ? (
+                <Errors errors={this.state.message} />
+              ) : (
+                <Notifications notifications={this.state.message} />
+              )}
+
               <img
                 className="align-middle"
                 src={`${process.env.PUBLIC_URL}/images/reset.png`}
                 alt="Reset Email for Users"
               />
-              {this.state.error ? <Errors errors={this.state.message} /> : null}
               <input
                 type="email"
                 name="email"
