@@ -47,3 +47,15 @@ blockquote:hover .blockquote-footer{
   box-shadow: 3px 3px 6px rgba(46, 204, 113,.4);
   transform: scale(1.05);
 }
+
+.clipBtn{
+  position: absolute;
+  left : 50%;
+  top: 66%;
+  transform: translate(-50%,-66%);
+}
+
+.alert{
+  width:40%;
+  margin: 0 auto;
+}
