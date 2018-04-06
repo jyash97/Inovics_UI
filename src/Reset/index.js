@@ -1,8 +1,6 @@
 import React from 'react';
-import Dropzone from 'react-dropzone';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import AvatarEditor from 'react-avatar-editor';
 
 import Errors from '../Presentational/Errors';
 import Notifications from '../Presentational/Notifications';

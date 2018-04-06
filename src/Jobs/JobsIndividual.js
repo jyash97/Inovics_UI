@@ -57,7 +57,6 @@ class JobsIndividual extends React.Component {
   }
 
   async handleDelete(data) {
-    let tag = this.props.match.params.id.toLowerCase();
     await axios
       .post('http://localhost:3554/delete/jobs', {
         job_id: data.id
