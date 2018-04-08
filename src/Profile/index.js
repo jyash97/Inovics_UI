@@ -6,11 +6,13 @@ import axios from 'axios';
 import Sidebar from '../Sidebar';
 import Notifications from '../Presentational/Notifications';
 import Errors from '../Presentational/Errors';
+import Navbar from '../Navbar';
 
 import './styles/profile.css';
 
 class Profile extends React.Component {
   constructor() {
+    //isImage on false gives default image
     super();
     this.state = {
       name: '',
@@ -123,8 +125,10 @@ class Profile extends React.Component {
   }
 
   render() {
+    const isVerified = JSON.parse(localStorage.getItem('userData')).isVerified;
     return (
       <React.Fragment>
+        {isVerified ? null : <Navbar />}
         <Sidebar />
         <div className="container-fluid">
           <div className="row">
@@ -141,7 +145,7 @@ class Profile extends React.Component {
                   border={100}
                   width={300}
                   height={300}
-                  borderRadius={50}
+                  borderRadius={500}
                   color={[255, 255, 255, 1]}
                   rotate={0}
                 />

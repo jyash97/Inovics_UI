@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+
+import Navbar from '../Navbar';
 import Sidebar from '../Sidebar';
 
 import './styles/feedback.css';
@@ -60,8 +62,10 @@ class feedback extends React.Component {
   }
 
   render() {
+    const isVerified = JSON.parse(localStorage.getItem('userData')).isVerified;
     return (
       <React.Fragment>
+        {isVerified ? null : <Navbar />}
         <Sidebar />
         <div className="container-fluid">
           <div className="row">

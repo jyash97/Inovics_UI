@@ -21,7 +21,11 @@ class Links extends React.Component {
           {a.map(
             (name, i) =>
               name === 'logout' ? (
-                <li className="p-3" onClick={this.handleLogout.bind(this)}>
+                <li
+                  className="p-3"
+                  key={name}
+                  onClick={this.handleLogout.bind(this)}
+                >
                   <img
                     src={`${process.env.PUBLIC_URL}/images/${name}.svg`}
                     alt={name}

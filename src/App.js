@@ -23,11 +23,12 @@ import Dictionary from './Education/Dictionary';
 import JobsIndividual from './Jobs/JobsIndividual';
 import WebSearchBot from './Chatbot/WebSearchBot';
 import NotFound from './Presentational/NotFound';
-import Favorites from './Favorites';
 import Login from './Login';
 import Otp from './Otp';
 import Register from './Register';
 import Reset from './Reset';
+import Profile from './Profile';
+import Feedback from './Feedback';
 
 const AuthController = () => {
   const isVerified = JSON.parse(localStorage.getItem('userData')).isVerified;
@@ -77,6 +78,8 @@ const AuthController = () => {
   ) : (
     <Router>
       <Switch>
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/feedback" component={Feedback} />
         <Route component={Otp} />
       </Switch>
     </Router>
