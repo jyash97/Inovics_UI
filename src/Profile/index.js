@@ -12,6 +12,7 @@ import './styles/profile.css';
 
 class Profile extends React.Component {
   constructor() {
+    //isImage on false gives default image
     super();
     this.state = {
       name: '',

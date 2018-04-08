@@ -1,8 +1,5 @@
 import React from 'react';
-import Dropzone from 'react-dropzone';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-import AvatarEditor from 'react-avatar-editor';
 
 import './styles/otp.css';
 
@@ -36,6 +33,7 @@ class Otp extends React.Component {
           otp: this.state.otp
         })
         .then(res => {
+          console.log(res.data);
           if (res.data.error) {
             this.setState({
               error: true,
@@ -52,6 +50,7 @@ class Otp extends React.Component {
                 isVerified: res.data.isVerified
               })
             );
+            window.location.href = '/';
           }
         })
         .catch(err =>
