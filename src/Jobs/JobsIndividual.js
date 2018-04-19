@@ -1,7 +1,9 @@
 import React from 'react';
+import axios from 'axios';
+
 import ImageCard from '../Presentational/ImageCard';
 import BackButton from '../Presentational/BackButton';
-import axios from 'axios';
+import Warning from '../Presentational/Warning';
 
 class JobsIndividual extends React.Component {
   constructor() {
@@ -163,13 +165,17 @@ class JobsIndividual extends React.Component {
             name="Back to Jobs"
           />
         </div>
-        <ImageCard
-          number={4}
-          heading={this.props.match.params.id}
-          data={this.state.data}
-          extraData={this.extraData}
-          extraLinks={this.extraLinks}
-        />
+        {this.state.data.length > 0 ? (
+          <ImageCard
+            number={4}
+            heading={`${this.props.match.params.id} Jobs`}
+            data={this.state.data}
+            extraData={this.extraData}
+            extraLinks={this.extraLinks}
+          />
+        ) : (
+          <Warning msg={`No jobs found for ${this.props.match.params.id}`} />
+        )}
       </React.Fragment>
     );
   }

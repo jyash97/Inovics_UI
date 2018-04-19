@@ -1,4 +1,7 @@
 import React from 'react';
+
+import './styles/style.css';
+
 import ImageCard from '../Presentational/ImageCard';
 import BackButton from '../Presentational/BackButton';
 
@@ -38,21 +41,22 @@ class Entertainment extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container-fluid">
-          <div className="row p-5 px-5">
+        <div className="container-fluid px-4">
+          <div className="row px-5 m-5 entertainment">
             <ImageCard
               heading="Entertainment"
               data={this.state.data}
               extraData={this.extraData}
               extraLinks={this.extraLinks}
-            />
-            <BackButton
-              url="/"
-              classes="btn-outline-notfound"
-              name="Back to home"
+              classes="card-deck"
             />
           </div>
         </div>
+        <BackButton
+          url="/"
+          classes="btn-outline-notfound mx-5"
+          name="Back to home"
+        />
       </React.Fragment>
     );
   }

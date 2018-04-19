@@ -52,7 +52,7 @@ class NewsChannel extends React.Component {
           name="Back to Channel Search"
         />
         <ImageCard
-          heading="Latest"
+          heading={this.props.match.params.id.replace('-', ' ')}
           data={this.state.data}
           number={4}
           extraLinks={this.extraLinks}

@@ -1,7 +1,9 @@
 import React from 'react';
+import axios from 'axios';
+
 import ImageCard from '../Presentational/ImageCard';
 import BackButton from '../Presentational/BackButton';
-import axios from 'axios';
+import Warning from '../Presentational/Warning';
 
 class DeveloperIndividual extends React.Component {
   constructor() {
@@ -191,13 +193,17 @@ class DeveloperIndividual extends React.Component {
             </select>
           </div>
         </div>
-        <ImageCard
-          number={4}
-          heading={this.props.match.params.id}
-          data={this.state.data}
-          extraData={this.extraData}
-          extraLinks={this.extraLinks}
-        />
+        {this.state.data.length > 0 ? (
+          <ImageCard
+            number={4}
+            heading={`${this.props.match.params.id} Courses`}
+            data={this.state.data}
+            extraData={this.extraData}
+            extraLinks={this.extraLinks}
+          />
+        ) : (
+          <Warning msg={`No Courses found for ${this.props.match.params.id}`} />
+        )}
       </React.Fragment>
     );
   }

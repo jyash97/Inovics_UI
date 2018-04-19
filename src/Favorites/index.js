@@ -78,26 +78,38 @@ class Favorites extends React.Component {
     return (
       <React.Fragment>
         <Sidebar />
-        <div className="container-fluid">
+        <div className="container-fluid p-5">
           <div className="row">
-            <ImageCard
-              number={4}
-              heading="Favorite Courses"
-              data={this.state.courseData}
-              classes="card-deck"
-              extraData={this.extraData}
-              extraLinks={this.extraLinks}
-              handleFavorites={this.handleFavorites}
-            />
-            <ImageCard
-              number={4}
-              heading="favorite Jobs"
-              data={this.state.jobData}
-              classes="card-deck"
-              extraData={this.extraData}
-              extraLinks={this.extraLinks}
-              handleFavorites={this.handleFavorites}
-            />
+            {this.state.courseData.length > 0 ? (
+              <ImageCard
+                number={4}
+                heading="Favorite Courses"
+                data={this.state.courseData}
+                classes="card-deck p-2"
+                extraData={this.extraData}
+                extraLinks={this.extraLinks}
+                handleFavorites={this.handleFavorites}
+              />
+            ) : (
+              <div className="alert alert-danger w-75 mx-auto">
+                No Courses Saved!
+              </div>
+            )}
+            {this.state.jobData.length > 0 ? (
+              <ImageCard
+                number={4}
+                heading="favorite Jobs"
+                data={this.state.jobData}
+                classes="card-deck p-2"
+                extraData={this.extraData}
+                extraLinks={this.extraLinks}
+                handleFavorites={this.handleFavorites}
+              />
+            ) : (
+              <div className="alert alert-danger w-75 mx-auto">
+                No Jobs Saved!
+              </div>
+            )}
           </div>
         </div>
       </React.Fragment>
