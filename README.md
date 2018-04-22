@@ -15,3 +15,6 @@ ___
 ___
 ### BackButton
 * Renders a button which says back to Category (props.name) and links to Category page URL(props.url)
+___
+### Server Things
+- Clone `Inovics_Node` Repository [https://github.com/jyash97/Inovics_Backend] and follow the instructions in the Readme.
