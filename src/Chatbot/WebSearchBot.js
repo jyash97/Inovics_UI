@@ -17,7 +17,7 @@ class WebSearch extends React.Component {
   async componentWillMount() {
     const { steps } = this.props;
     const search = steps.search.value;
-    const queryUrl = `http://www.gigablast.com/search?c=main&qlangcountry=en-us&qlang=en&q=${search}&reepx=3933958019&format=json`;
+    const queryUrl = `https://www.gigablast.com/search?c=main&qlangcountry=en-us&qlang=en&q=${search}&bhit=3122920202&format=json`;
     const data = await fetch(queryUrl)
       .then(res => res.json())
       .then(data => data.results);
@@ -44,41 +44,30 @@ class WebSearch extends React.Component {
   render() {
     const { trigger, loading, data } = this.state;
     return (
-      <div key="dataloader">
+      <div key="dataloader" style={{ border: '0px' }}>
         {loading ? (
           <Loading />
         ) : (
           data.map((data, index) => {
             return (
-              <div key={data.title}>
+              <div
+                key={data.title}
+                style={{
+                  margin: '10px',
+                  background: 'rgba(252,252,252,.8)',
+                  padding: '15px',
+                  borderRadius: '20px 20px 20px 0px'
+                }}
+              >
                 <div className="text-capitalize font-weight-bold">
                   <a href={data.url} target="_blank">
                     {data.title}
                   </a>
                 </div>
                 <div>{data.text}</div>
-                <hr />
               </div>
             );
           })
-        )}
-        {!loading && (
-          <div
-            key="Trigger"
-            style={{
-              textAlign: 'center',
-              marginTop: 20
-            }}
-          >
-            {!trigger && (
-              <button
-                className="btn btn-primary"
-                onClick={() => this.triggetNext()}
-              >
-                Search Again
-              </button>
-            )}
-          </div>
         )}
       </div>
     );
@@ -124,8 +113,7 @@ const WebSearchBot = () => (
         {
           id: '3',
           component: <WebSearch />,
-          waitAction: true,
-          trigger: '1'
+          trigger: 'search'
         }
       ]}
       key="data"
@@ -133,6 +121,7 @@ const WebSearchBot = () => (
       headerComponent={<p />}
       contentStyle={{ minHeight: '84.8vh' }}
       style={{ minWidth: '100%', borderRadius: 0 }}
+      customStyle={{ background: 'transparent', width: '50%', border: '0px' }}
     />
   </ThemeProvider>
 );
