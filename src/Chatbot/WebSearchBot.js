@@ -8,8 +8,7 @@ class WebSearch extends React.Component {
     super();
     this.state = {
       data: [],
-      loading: true,
-      trigger: false
+      loading: true
     };
     this.triggetNext = this.triggetNext.bind(this);
   }
@@ -36,13 +35,11 @@ class WebSearch extends React.Component {
   }
 
   triggetNext() {
-    this.setState({ trigger: true }, () => {
-      this.props.triggerNextStep();
-    });
+    this.props.triggerNextStep();
   }
 
   render() {
-    const { trigger, loading, data } = this.state;
+    const { loading, data } = this.state;
     return (
       <div key="dataloader" style={{ border: '0px' }}>
         {loading ? (
@@ -59,7 +56,10 @@ class WebSearch extends React.Component {
                   borderRadius: '20px 20px 20px 0px'
                 }}
               >
-                <div className="text-capitalize font-weight-bold">
+                <div
+                  className="text-capitalize font-weight-bold"
+                  key={data.url}
+                >
                   <a href={data.url} target="_blank">
                     {data.title}
                   </a>
