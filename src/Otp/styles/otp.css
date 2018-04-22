@@ -1,0 +1,89 @@
+.otp-form{
+  overflow: hidden;
+}
+
+.otp-form input{
+  width: 80%;
+  margin: 15px;
+  color: rgba(80,82,196,1);
+  border:1px solid rgba(80,82,196,.3);
+}
+
+.otp-form input:hover{
+  border:1px solid rgba(80,82,196,.4);
+  color: rgba(80,82,196,.9);
+}
+
+.otp-form input:focus{
+  border:1px solid rgba(80,82,196,.6);
+  color: rgba(80,82,196,1);
+  box-shadow: none;
+}
+
+.otp-form input:active {
+  border:1px solid rgba(80,82,196,.5);
+  color: rgba(80,82,196,.95);
+  box-shadow: none;
+}
+
+.otp-form img{
+  width: 55%;
+  margin: 40px auto;
+}
+
+.otp-form .btn{
+  background: rgba(80,82,196,.9);
+  color: white;
+  margin: 15px;
+  width: 80%;
+  box-shadow: 3px 3px 6px rgba(100,102,244,.5);
+  outline: none;
+}
+
+.otp-form .btn:hover{
+  background: rgba(80,82,196,.8);
+  outline: none;
+  box-shadow: 2px 2px 5px rgba(100,102,244,.4);
+}
+
+.otp-form .btn:active{
+  background: rgba(80,82,196,.95);
+  outline: none;
+  box-shadow: 1px 1px 5px rgba(100,102,244,.6);
+}
+
+.otp-form .btn:focus{
+  outline: none;
+  background: rgba(80,82,196,1);
+  box-shadow:1px 1px 6px rgba(100,102,244,.5);
+}
+
+.otp-form ::placeholder{
+  color: rgba(80,82,196,.7);
+}
+
+.otp-form .link{
+  color: rgba(80,82,196,1);
+  border: 1px solid rgba(80,82,196,.9);
+  display: block;
+  margin: 5px 15px;
+  width: 80%;
+  background: white;
+  box-shadow: 3px 3px 6px rgba(100,102,244,.4);
+}
+
+.otp-form .link:hover{
+  background: rgba(80,82,196,.9);
+  outline: none;
+  color: white;
+  box-shadow: 2px 2px 5px rgba(100,102,244,.4);
+}
+
+.otp-form .alert{
+  background: white;
+  color: tomato;
+  border: 1px dashed tomato;
+  width: 80%;
+  padding: 8px 5px;
+  margin: 10px 15px;
+}

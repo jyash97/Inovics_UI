@@ -2,6 +2,7 @@ import React from 'react';
 
 import Input from '../Presentational/Input';
 import ImageCard from '../Presentational/ImageCard';
+import Warning from '../Presentational/Warning';
 import Navbar from '../Navbar';
 
 class NewsByTopic extends React.Component {
@@ -27,7 +28,7 @@ class NewsByTopic extends React.Component {
   extraLinks() {}
   async handleClick(text) {
     const data = await fetch(
-      `https://newsapi.org/v2/everything?q=${text}&sortBy=latest&apiKey=7f6cfa48cc3e42f48752515e6dcac33c`
+      `https://newsapi.org/v2/everything?q=${text}&sortBy=popular&apiKey=7f6cfa48cc3e42f48752515e6dcac33c`
     )
       .then(r => r.json())
       .then(r => r.articles);
@@ -61,15 +62,21 @@ class NewsByTopic extends React.Component {
           category="topic"
           handleQuery={this.handleQuery}
         />
-        {this.state.display ? (
-          <ImageCard
-            heading={`Popular News of ${this.state.text}`}
-            data={this.state.data}
-            number={4}
-            extraData={this.extraData}
-            extraLinks={this.extraLinks}
-          />
-        ) : null}
+        {this.state.text ? (
+          this.state.display ? (
+            <ImageCard
+              heading={`Popular News of ${this.state.text}`}
+              data={this.state.data}
+              number={4}
+              extraData={this.extraData}
+              extraLinks={this.extraLinks}
+            />
+          ) : (
+            <Warning msg="Loading Data" />
+          )
+        ) : (
+          <Warning msg="Please Enter your Search Query in Input." />
+        )}
       </React.Fragment>
     );
   }

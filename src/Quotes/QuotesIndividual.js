@@ -1,16 +1,18 @@
 import React from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import './styles/style.css';
+
 import BackButton from '../Presentational/BackButton';
 import LinkButton from '../Presentational/LinkButton';
+import Notifications from '../Presentational/Notifications';
 
 class QuotesIndividual extends React.Component {
   constructor() {
     super();
     this.state = {
-      text:
-        'Let us sacrifice our today so that our children can have a better tomorrow.',
-      author: 'A. P. J. Abdul Kalam'
+      text: 'loading',
+      copied: false
     };
     this.handleQuote = this.handleQuote.bind(this);
   }
@@ -38,6 +40,9 @@ class QuotesIndividual extends React.Component {
 
   componentWillReceiveProps() {
     this.handleQuote();
+    this.setState({
+      copied: false
+    });
   }
 
   renderButtons() {
@@ -61,12 +66,23 @@ class QuotesIndividual extends React.Component {
             url="/"
             name="back to home"
           />
+          <CopyToClipboard
+            text={this.state.text}
+            onCopy={() => this.setState({ copied: true })}
+          >
+            <button className="btn btn-outline-danger btn-sm clipBtn">
+              Copy Quote
+            </button>
+          </CopyToClipboard>
           <BackButton
             classes="btn-outline-success quote-button"
             url="/quotes"
             name="Get new quote"
           />
         </div>
+        {this.state.copied ? (
+          <Notifications notifications={['Quote Copied Successfully!']} />
+        ) : null}
       </React.Fragment>
     );
   }

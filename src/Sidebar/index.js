@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Links from './Links';
-import Profile from './images/profile.jpg';
 
 class Sidebar extends React.Component {
   constructor() {
@@ -29,11 +28,14 @@ class Sidebar extends React.Component {
         height: '5vh'
       };
     }
-    // Profile will be uploaded via Backend just for UI purpose.
+    let imageURL = JSON.parse(localStorage.getItem('userData')).image;
+    fetch(imageURL)
+      .then(res => res.blob())
+      .then(blob => (imageURL = window.URL.createObjectURL(blob)));
     const stylesProfile = {
       width: '9vw',
       height: '9vw',
-      backgroundImage: `url(${Profile})`,
+      backgroundImage: `url(${imageURL})`,
       backgroundSize: 'cover',
       backgroundPosition: 'top center'
     };
@@ -47,7 +49,7 @@ class Sidebar extends React.Component {
         >
           ❤️
         </span>
-        <div className="mx-auto my-4 rounded-circle" style={stylesProfile} />
+        <div className="mx-auto my-5 rounded-circle" style={stylesProfile} />
         <Links />
       </div>
     );

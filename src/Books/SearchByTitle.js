@@ -2,6 +2,7 @@ import React from 'react';
 
 import Input from '../Presentational/Input';
 import Cards from '../Presentational/Cards';
+import Warning from '../Presentational/Warning';
 import Navbar from '../Navbar';
 
 class SearchByTitle extends React.Component {
@@ -52,7 +53,11 @@ class SearchByTitle extends React.Component {
           handleClick={this.handleClick}
           handleQuery={this.handleQuery}
         />
-        <Cards number={4} category="books/title" data={this.state.data} />
+        {this.state.data.length > 0 ? (
+          <Cards number={4} category="books/title" data={this.state.data} />
+        ) : (
+          <Warning msg="Please Enter your Search Query in Input." />
+        )}
       </React.Fragment>
     );
   }

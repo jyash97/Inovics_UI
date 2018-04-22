@@ -1,0 +1,143 @@
+.edit-form{
+  overflow: hidden;
+}
+
+.rejectedarea{
+  background: tomato;
+}
+
+.edit-form input, .droparea {
+  width: 80%;
+  margin: 15px;
+  color: rgba(80,82,196,1);
+  border:1px solid rgba(80,82,196,.3);
+}
+
+.edit-form .droparea{
+  margin:0px 15px;
+}
+
+.edit-form input:hover, .droparea:hover {
+  border:1px solid rgba(80,82,196,.4);
+  color: rgba(80,82,196,.9);
+}
+
+.edit-form .droparea:hover{
+  background: rgba(80,82,196,.9);
+  color: white;
+  cursor: pointer;
+}
+
+.edit-form input:focus {
+  border:1px solid rgba(80,82,196,.6);
+  color: rgba(80,82,196,1);
+  box-shadow: none;
+}
+
+.edit-form input:active {
+  border:1px solid rgba(80,82,196,.5);
+  color: rgba(80,82,196,.95);
+  box-shadow: none;
+}
+
+.edit-form .form-control[readOnly]{
+  background: rgba(100,102,244,.1);
+}
+
+.edit-form button{
+  background: rgba(80,82,196,.9);
+  color: white;
+  cursor: pointer;
+  margin: 15px;
+  width: 80%;
+  box-shadow: 3px 3px 6px rgba(100,102,244,.5);
+  outline: none;
+}
+
+.edit-form button:hover{
+  background: rgba(80,82,196,.8);
+  outline: none;
+  box-shadow: 2px 2px 5px rgba(100,102,244,.4);
+}
+
+.edit-form button:active{
+  background: rgba(80,82,196,.95) !important;
+  outline: none;
+  box-shadow: 1px 1px 5px rgba(100,102,244,.6) !important;
+}
+
+.edit-form button:focus{
+  outline: none;
+  background: white;
+  box-shadow:1px 1px 6px rgba(100,102,244,.5);
+}
+
+.edit-form ::placeholder{
+  color: rgba(80,82,196,.7);
+}
+
+.edit-form .link{
+  color: rgba(80,82,196,1);
+  border: 1px solid rgba(80,82,196,.9);
+  display: block;
+  margin: 5px 15px;
+  width: 80%;
+  box-shadow: 3px 3px 6px rgba(100,102,244,.4);
+}
+
+.edit-form .link:hover{
+  background: rgba(80,82,196,.9);
+  outline: none;
+  color: white;
+  box-shadow: 2px 2px 5px rgba(100,102,244,.4);
+}
+
+.edit-form .btn-outline-primary{
+  color: rgba(80,82,196,1);
+  margin: 15px;
+  background: white;
+  border: 1px solid rgba(80,82,196,.9);
+}
+
+.edit-form .btn-outline-primary:hover{
+  background: rgba(80,82,196,.9);
+  outline: none;
+  color: white;
+}
+
+.edit-form .btn-primary:focus{
+  color: rgba(80,82,196,1) !important;
+  margin: 15px;
+  background: white;
+  border: 1px solid rgba(80,82,196,.9);
+}
+
+.edit-form .alert{
+  width: 80%;
+  padding: 8px 5px;
+  margin: 0px 15px;
+}
+
+.edit-form .alert-danger{
+  background: white;
+  color: tomato;
+  border: 1px dashed tomato;
+  width: 80%;
+  padding: 8px 5px;
+  margin: 0px 15px;
+}
+
+.edit-form .alert-sucess{
+  color: #28a745;
+  border: 1px dotted #28a745;
+}
+
+.edit-form .heading{
+  color:rgba(80,82,196,1);
+  margin-bottom: 20px;
+}
+
+.edit-form canvas{
+  max-width: 300px;
+  max-height: 300px;
+}
