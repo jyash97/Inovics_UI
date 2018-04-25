@@ -7,7 +7,7 @@ import Navigation from '../Chatbot/Navigation';
 class Navbar extends React.Component {
   handleLogout() {
     localStorage.removeItem('userData');
-    window.location.href = '/login';
+    window.location.href = '/';
   }
 
   render() {

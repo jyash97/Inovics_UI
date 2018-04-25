@@ -6,7 +6,7 @@ import './styles/styles.css';
 class Links extends React.Component {
   handleLogout() {
     localStorage.removeItem('userData');
-    window.location.href = '/login';
+    window.location.href = '/';
   }
 
   render() {
