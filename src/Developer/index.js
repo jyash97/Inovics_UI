@@ -70,7 +70,7 @@ class Developer extends React.Component {
       alert('Please fill all details');
     } else {
       await axios
-        .post('http://localhost:3554/create/courses', {
+        .post('http://inovics.herokuapp.com/create/courses', {
           language,
           author,
           link,

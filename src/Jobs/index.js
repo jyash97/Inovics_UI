@@ -83,7 +83,7 @@ class Jobs extends React.Component {
       alert('Please fill all details');
     } else {
       await axios
-        .post('http://localhost:3554/create/jobs', {
+        .post('http://inovics.herokuapp.com/create/jobs', {
           tags,
           company,
           link,

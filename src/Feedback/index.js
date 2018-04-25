@@ -25,7 +25,7 @@ class feedback extends React.Component {
   async handleFeedback() {
     if (this.state.feedback !== '') {
       await axios
-        .post('http://localhost:3554/feedback', {
+        .post('http://inovics.herokuapp.com/feedback', {
           feedback: this.state.feedback
         })
         .then(res => {

@@ -28,7 +28,7 @@ class Reset extends React.Component {
   async handleReset() {
     if (this.state.email) {
       await axios
-        .post('http://localhost:3554/reset', {
+        .post('http://inovics.herokuapp.com/reset', {
           email: this.state.email
         })
         .then(res => {
