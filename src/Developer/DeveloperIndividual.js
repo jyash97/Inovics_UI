@@ -155,7 +155,7 @@ class DeveloperIndividual extends React.Component {
           className="btn btn-sm btn-primary ml-1"
           onClick={() => this.handleFavorites(data)}
         >
-          {isadd ? 'Remove from favorites' : 'Add to Favorites'}
+          {isadd ? 'Remove favorites' : 'Add to Favorites'}
         </button>
         {data.user === JSON.parse(localStorage.getItem('userData')).email ? (
           <button
