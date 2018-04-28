@@ -20,4 +20,4 @@ ___
 - Clone `Inovics_Node` Repository [https://github.com/jyash97/Inovics_Backend] and follow the instructions in the Readme.
 ___
 ### Live Demo
-- If the Live demo doesn't work and on clicking a server error is shown, please unable to load unsafe scripts. Then the demo would work properly.
+- If the Live demo doesn't work and on clicking a server error is shown, please enable `load unsafe scripts` in your Browser. Then the demo would work properly.
