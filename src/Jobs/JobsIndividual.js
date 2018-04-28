@@ -22,7 +22,7 @@ class JobsIndividual extends React.Component {
     let data = [];
     let tag = this.props.match.params.id.toLowerCase();
     await axios
-      .get(`http://inovics.herokuapp.com/jobs/${tag}`)
+      .get(`https://inovics.herokuapp.com/jobs/${tag}`)
       .then(response => {
         data = response.data;
       })
@@ -49,7 +49,7 @@ class JobsIndividual extends React.Component {
   async handleFavorites(data) {
     const tag = this.props.match.params.id.toLowerCase();
     await axios
-      .post(`http://inovics.herokuapp.com/jobs/${tag}/${data.id}`, {
+      .post(`https://inovics.herokuapp.com/jobs/${tag}/${data.id}`, {
         email: JSON.parse(localStorage.getItem('userData')).email,
         user_id: JSON.parse(localStorage.getItem('userData')).id
       })
@@ -60,7 +60,7 @@ class JobsIndividual extends React.Component {
 
   async handleDelete(data) {
     await axios
-      .post('http://inovics.herokuapp.com/delete/jobs', {
+      .post('https://inovics.herokuapp.com/delete/jobs', {
         job_id: data.id
       })
       .then(res => {
@@ -94,7 +94,7 @@ class JobsIndividual extends React.Component {
   async fetchUserFavorites() {
     await axios
       .get(
-        `http://inovics.herokuapp.com/jobFavorites/${
+        `https://inovics.herokuapp.com/jobFavorites/${
           JSON.parse(localStorage.getItem('userData')).email
         }`
       )

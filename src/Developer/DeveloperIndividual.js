@@ -25,7 +25,7 @@ class DeveloperIndividual extends React.Component {
     let data = [];
     const language = this.props.match.params.id.toLowerCase();
     await axios
-      .get(`http://inovics.herokuapp.com/courses/${language}`)
+      .get(`https://inovics.herokuapp.com/courses/${language}`)
       .then(response => {
         data = response.data;
       })
@@ -52,7 +52,7 @@ class DeveloperIndividual extends React.Component {
   async handleFavorites(data) {
     const language = this.props.match.params.id.toLowerCase();
     await axios
-      .post(`http://inovics.herokuapp.com/courses/${language}/${data.id}`, {
+      .post(`https://inovics.herokuapp.com/courses/${language}/${data.id}`, {
         email: JSON.parse(localStorage.getItem('userData')).email,
         user_id: JSON.parse(localStorage.getItem('userData')).id
       })
@@ -63,7 +63,7 @@ class DeveloperIndividual extends React.Component {
 
   async handleDelete(data) {
     await axios
-      .post('http://inovics.herokuapp.com/delete/courses', {
+      .post('https://inovics.herokuapp.com/delete/courses', {
         course_id: data.id
       })
       .then(res => {
@@ -96,7 +96,7 @@ class DeveloperIndividual extends React.Component {
   async fetchUserFavorites() {
     await axios
       .get(
-        `http://inovics.herokuapp.com/courseFavorites/${
+        `https://inovics.herokuapp.com/courseFavorites/${
           JSON.parse(localStorage.getItem('userData')).email
         }`
       )

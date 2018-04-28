@@ -58,7 +58,7 @@ class Profile extends React.Component {
     if (this.state.name !== '') {
       const userData = JSON.parse(localStorage.getItem('userData'));
       await axios
-        .post('http://inovics.herokuapp.com/update', {
+        .post('https://inovics.herokuapp.com/update', {
           email: userData.email,
           name: this.state.name,
           image: canvasScaled

@@ -29,7 +29,7 @@ class Otp extends React.Component {
     if (this.state.otp !== '') {
       const email = JSON.parse(localStorage.getItem('userData')).email;
       await axios
-        .post(`http://inovics.herokuapp.com/otp/verify/${email}`, {
+        .post(`https://inovics.herokuapp.com/otp/verify/${email}`, {
           otp: this.state.otp
         })
         .then(res => {
