@@ -152,14 +152,16 @@ class DeveloperIndividual extends React.Component {
     return (
       <span>
         <button
-          className="btn btn-sm btn-primary ml-1"
+          className={`btn btn-sm btn-primary ml-1 ${
+            isadd ? 'btn-danger' : 'btn-success'
+          }`}
           onClick={() => this.handleFavorites(data)}
         >
-          {isadd ? 'Remove from favorites' : 'Add to Favorites'}
+          {isadd ? 'Remove Favorite' : 'Add Favorite'}
         </button>
         {data.user === JSON.parse(localStorage.getItem('userData')).email ? (
           <button
-            className="btn btn-sm btn-primary ml-1"
+            className="btn btn-sm btn-info ml-1"
             onClick={() => this.handleDelete(data)}
           >
             Delete Course

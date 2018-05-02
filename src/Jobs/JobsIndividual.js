@@ -104,7 +104,6 @@ class JobsIndividual extends React.Component {
         });
       })
       .catch(err => console.log(err));
-    console.log(this.state);
   }
 
   componentDidMount() {
@@ -127,7 +126,6 @@ class JobsIndividual extends React.Component {
 
   extraLinks(data) {
     let isadd = false;
-    console.log(this.state.favorites);
     if (this.state.favorites) {
       const specifiedJob = this.state.favorites.jobs.filter(
         job => job._id === data.id
@@ -137,14 +135,16 @@ class JobsIndividual extends React.Component {
     return (
       <span>
         <button
-          className="btn btn-sm btn-primary ml-1"
+          className={`btn btn-sm btn-primary ml-1 ${
+            isadd ? 'btn-danger' : 'btn-success'
+          }`}
           onClick={() => this.handleFavorites(data)}
         >
-          {isadd ? 'Remove from favorites' : 'Add to Favorites'}
+          {isadd ? 'Remove Favorite' : 'Add Favorite'}
         </button>
         {data.user === JSON.parse(localStorage.getItem('userData')).email ? (
           <button
-            className="btn btn-sm btn-primary ml-1"
+            className="btn btn-sm btn-info ml-1"
             onClick={() => this.handleDelete(data)}
           >
             Delete Course

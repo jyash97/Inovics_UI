@@ -150,14 +150,6 @@ class Developer extends React.Component {
               value={this.state.language}
               name="language"
             />
-            <label htmlFor="created">Created on</label>
-            <input
-              type="text"
-              onChange={this.handleChange}
-              placeholder="Enter Course Release Date"
-              value={this.state.created}
-              name="created"
-            />
             <label htmlFor="Link">Link</label>
             <input
               type="text"
