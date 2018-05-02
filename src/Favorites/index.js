@@ -29,7 +29,7 @@ class Favorites extends React.Component {
     let jobsData = [];
     await axios
       .get(
-        `http://localhost:3554/courseFavorites/${
+        `https://inovics.herokuapp.com/courseFavorites/${
           JSON.parse(localStorage.getItem('userData')).email
         }`
       )
@@ -39,7 +39,7 @@ class Favorites extends React.Component {
       .catch(err => console.log(err));
     await axios
       .get(
-        `http://localhost:3554/jobFavorites/${
+        `https://inovics.herokuapp.com/jobFavorites/${
           JSON.parse(localStorage.getItem('userData')).email
         }`
       )

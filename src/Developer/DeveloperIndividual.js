@@ -25,7 +25,7 @@ class DeveloperIndividual extends React.Component {
     let data = [];
     const language = this.props.match.params.id.toLowerCase();
     await axios
-      .get(`http://localhost:3554/courses/${language}`)
+      .get(`https://inovics.herokuapp.com/courses/${language}`)
       .then(response => {
         data = response.data;
       })
@@ -52,7 +52,7 @@ class DeveloperIndividual extends React.Component {
   async handleFavorites(data) {
     const language = this.props.match.params.id.toLowerCase();
     await axios
-      .post(`http://localhost:3554/courses/${language}/${data.id}`, {
+      .post(`https://inovics.herokuapp.com/courses/${language}/${data.id}`, {
         email: JSON.parse(localStorage.getItem('userData')).email,
         user_id: JSON.parse(localStorage.getItem('userData')).id
       })
@@ -63,7 +63,7 @@ class DeveloperIndividual extends React.Component {
 
   async handleDelete(data) {
     await axios
-      .post('http://localhost:3554/delete/courses', {
+      .post('https://inovics.herokuapp.com/delete/courses', {
         course_id: data.id
       })
       .then(res => {
@@ -96,7 +96,7 @@ class DeveloperIndividual extends React.Component {
   async fetchUserFavorites() {
     await axios
       .get(
-        `http://localhost:3554/courseFavorites/${
+        `https://inovics.herokuapp.com/courseFavorites/${
           JSON.parse(localStorage.getItem('userData')).email
         }`
       )
@@ -152,14 +152,16 @@ class DeveloperIndividual extends React.Component {
     return (
       <span>
         <button
-          className="btn btn-sm btn-primary ml-1"
+          className={`btn btn-sm btn-primary ml-1 ${
+            isadd ? 'btn-danger' : 'btn-success'
+          }`}
           onClick={() => this.handleFavorites(data)}
         >
-          {isadd ? 'Remove favorites' : 'Add to Favorites'}
+          {isadd ? 'Remove Favorite' : 'Add Favorite'}
         </button>
         {data.user === JSON.parse(localStorage.getItem('userData')).email ? (
           <button
-            className="btn btn-sm btn-primary ml-1"
+            className="btn btn-sm btn-info ml-1"
             onClick={() => this.handleDelete(data)}
           >
             Delete Course

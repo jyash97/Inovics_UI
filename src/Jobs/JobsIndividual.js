@@ -22,7 +22,7 @@ class JobsIndividual extends React.Component {
     let data = [];
     let tag = this.props.match.params.id.toLowerCase();
     await axios
-      .get(`http://localhost:3554/jobs/${tag}`)
+      .get(`https://inovics.herokuapp.com/jobs/${tag}`)
       .then(response => {
         data = response.data;
       })
@@ -49,7 +49,7 @@ class JobsIndividual extends React.Component {
   async handleFavorites(data) {
     const tag = this.props.match.params.id.toLowerCase();
     await axios
-      .post(`http://localhost:3554/jobs/${tag}/${data.id}`, {
+      .post(`https://inovics.herokuapp.com/jobs/${tag}/${data.id}`, {
         email: JSON.parse(localStorage.getItem('userData')).email,
         user_id: JSON.parse(localStorage.getItem('userData')).id
       })
@@ -60,7 +60,7 @@ class JobsIndividual extends React.Component {
 
   async handleDelete(data) {
     await axios
-      .post('http://localhost:3554/delete/jobs', {
+      .post('https://inovics.herokuapp.com/delete/jobs', {
         job_id: data.id
       })
       .then(res => {
@@ -94,7 +94,7 @@ class JobsIndividual extends React.Component {
   async fetchUserFavorites() {
     await axios
       .get(
-        `http://localhost:3554/jobFavorites/${
+        `https://inovics.herokuapp.com/jobFavorites/${
           JSON.parse(localStorage.getItem('userData')).email
         }`
       )
@@ -104,7 +104,6 @@ class JobsIndividual extends React.Component {
         });
       })
       .catch(err => console.log(err));
-    console.log(this.state);
   }
 
   componentDidMount() {
@@ -127,7 +126,6 @@ class JobsIndividual extends React.Component {
 
   extraLinks(data) {
     let isadd = false;
-    console.log(this.state.favorites);
     if (this.state.favorites) {
       const specifiedJob = this.state.favorites.jobs.filter(
         job => job._id === data.id
@@ -137,14 +135,16 @@ class JobsIndividual extends React.Component {
     return (
       <span>
         <button
-          className="btn btn-sm btn-primary ml-1"
+          className={`btn btn-sm btn-primary ml-1 ${
+            isadd ? 'btn-danger' : 'btn-success'
+          }`}
           onClick={() => this.handleFavorites(data)}
         >
-          {isadd ? 'Remove favorites' : 'Add to Favorites'}
+          {isadd ? 'Remove Favorite' : 'Add Favorite'}
         </button>
         {data.user === JSON.parse(localStorage.getItem('userData')).email ? (
           <button
-            className="btn btn-sm btn-primary ml-1"
+            className="btn btn-sm btn-info ml-1"
             onClick={() => this.handleDelete(data)}
           >
             Delete Course

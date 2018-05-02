@@ -52,7 +52,7 @@ class Register extends React.Component {
       this.state.password === this.state.confirmPassword
     ) {
       await axios
-        .post('http://localhost:3554/register', {
+        .post('https://inovics.herokuapp.com/register', {
           email: this.state.email,
           name: this.state.name,
           image: canvasScaled,

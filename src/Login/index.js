@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import './styles/login.css';
-import Errors from '../Presentational/Errors';
 
 class Login extends React.Component {
   constructor() {
@@ -29,7 +28,7 @@ class Login extends React.Component {
     const isEmail = email.test(String(this.state.email).toLowerCase());
     if (isEmail && this.state.password) {
       await axios
-        .post('http://localhost:3554/login', {
+        .post('https://inovics.herokuapp.com/login', {
           email: this.state.email,
           password: this.state.password
         })
@@ -41,7 +40,7 @@ class Login extends React.Component {
             });
           } else {
             await axios
-              .post('http://localhost:3554/islogin', {
+              .post('https://inovics.herokuapp.com/islogin', {
                 email: this.state.email
               })
               .then(res => {

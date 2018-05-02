@@ -25,7 +25,6 @@ class Jobs extends React.Component {
       showModal: false,
       tags: '',
       company: '',
-      created: '',
       link: '',
       title: '',
       salary: ''
@@ -83,7 +82,7 @@ class Jobs extends React.Component {
       alert('Please fill all details');
     } else {
       await axios
-        .post('http://localhost:3554/create/jobs', {
+        .post('https://inovics.herokuapp.com/create/jobs', {
           tags,
           company,
           link,
@@ -160,6 +159,7 @@ class Jobs extends React.Component {
               type="text"
               onChange={this.handleChange}
               value={this.state.tags}
+              className="form-control  text-center text-primary"
               name="tags"
             >
               <option>Select Job category</option>
@@ -169,14 +169,6 @@ class Jobs extends React.Component {
                 </option>
               ))}
             </select>
-            <label htmlFor="created">Created on</label>
-            <input
-              type="text"
-              onChange={this.handleChange}
-              placeholder="Enter Job Release Date"
-              value={this.state.created}
-              name="created"
-            />
             <label htmlFor="Link">Link</label>
             <input
               type="text"
@@ -187,7 +179,7 @@ class Jobs extends React.Component {
             />
             <label htmlFor="course">Salary</label>
             <input
-              type="text"
+              type="number"
               onChange={this.handleChange}
               placeholder="Enter Salary"
               value={this.state.salary}

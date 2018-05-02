@@ -70,7 +70,7 @@ class Developer extends React.Component {
       alert('Please fill all details');
     } else {
       await axios
-        .post('http://localhost:3554/create/courses', {
+        .post('https://inovics.herokuapp.com/create/courses', {
           language,
           author,
           link,
@@ -149,14 +149,6 @@ class Developer extends React.Component {
               placeholder="Enter Course language"
               value={this.state.language}
               name="language"
-            />
-            <label htmlFor="created">Created on</label>
-            <input
-              type="text"
-              onChange={this.handleChange}
-              placeholder="Enter Course Release Date"
-              value={this.state.created}
-              name="created"
             />
             <label htmlFor="Link">Link</label>
             <input
