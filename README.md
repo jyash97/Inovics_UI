@@ -21,3 +21,6 @@ ___
 ___
 ### Live Demo
 - If the Live demo doesn't work and on clicking a server error is shown, please enable `load unsafe scripts` in your Browser. Then the demo would work properly.
+---
+### Facing Problems?
+- File an issue with proper description so that the contributor can look into it.
